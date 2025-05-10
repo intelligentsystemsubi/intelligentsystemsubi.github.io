@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Link Test (Final)</title>
+  <style>
+    body { font-family: Arial, sans-serif; max-width: 800px; margin: 0 auto; padding: 20px; line-height: 1.6; }
+    h1 { color: #333; }
+    section { margin-bottom: 30px; padding: 20px; background: #f7f7f7; border-radius: 5px; }
+    h2 { color: #0066cc; margin-top: 0; }
+    ul { padding-left: 20px; }
+    li { margin-bottom: 10px; }
+    .note { font-size: 0.9em; color: #666; font-style: italic; }
+    pre { background: #eee; padding: 10px; border-radius: 3px; overflow-x: auto; }
+    .success { color: green; }
+    .fail { color: red; }
+  </style>
+</head>
+<body>
+  <h1>Team Member Link Testing Page</h1>
+  <p>This page tests various methods to link to team member profiles to identify why they're not working.</p>
+  
+  <!-- Direct Links -->
+  <section>
+    <h2>1. Direct Links</h2>
+    <ul>
+      <li><a href="/is-ubi/team/hugo_proenca/">Standard anchor link</a></li>
+      <li><a href="/is-ubi/team/hugo_proenca/index.html">Explicit index.html</a></li>
+      <li><a href="http://127.0.0.1:4000/is-ubi/team/hugo_proenca/">Absolute URL</a></li>
+    </ul>
+  </section>
+  
+  <!-- JavaScript Navigation -->
+  <section>
+    <h2>2. JavaScript Navigation</h2>
+    <ul>
+      <li><a href="#" onclick="window.location.href='/is-ubi/team/hugo_proenca/'; return false;">JS location.href</a></li>
+      <li><a href="#" onclick="window.open('/is-ubi/team/hugo_proenca/', '_self'); return false;">JS window.open (same tab)</a></li>
+      <li><a href="#" onclick="window.open('/is-ubi/team/hugo_proenca/', '_blank'); return false;">JS window.open (new tab)</a></li>
+    </ul>
+  </section>
+  
+  <!-- Form Submission -->
+  <section>
+    <h2>3. Form Navigation</h2>
+    <form action="/is-ubi/team/hugo_proenca/" method="get">
+      <button type="submit">Form Submit to Hugo's Profile</button>
+    </form>
+  </section>
+  
+  <!-- iFrame Embedding -->
+  <section>
+    <h2>4. iFrame Embedding</h2>
+    <iframe src="/is-ubi/team/hugo_proenca/" width="100%" height="300" frameborder="0"></iframe>
+  </section>
+  
+  <!-- Debug Info -->
+  <section>
+    <h2>Console Debug Info</h2>
+    <p>Open your browser's developer console to see debug messages.</p>
+    <pre id="debug-output">Click links above to see debug info here...</pre>
+  </section>
+  
+  <script>
+    // Debug functionality
+    const debugOutput = document.getElementById('debug-output');
+    
+    function logDebug(message) {
+      console.log(message);
+      debugOutput.textContent += message + '\n';
+    }
+    
+    // Test all anchors
+    document.addEventListener('DOMContentLoaded', function() {
+      logDebug('Page loaded. Testing links...');
+      
+      const links = document.querySelectorAll('a');
+      logDebug(`Found ${links.length} links on page`);
+      
+      links.forEach((link, index) => {
+        link.addEventListener('click', function(e) {
+          const href = this.getAttribute('href');
+          logDebug(`Link ${index+1} clicked: ${href}`);
+        });
+      });
+      
+      // Test if Hugo's profile can be fetched via fetch API
+      fetch('/is-ubi/team/hugo_proenca/')
+        .then(response => {
+          logDebug(`Fetch API response: ${response.status} ${response.statusText}`);
+          return response.text();
+        })
+        .then(html => {
+          logDebug(`Received ${html.length} characters of HTML`);
+        })
+        .catch(error => {
+          logDebug(`Fetch error: ${error}`);
+        });
+    });
+  </script>
+</body>
+</html> 

@@ -4089,6 +4089,23 @@ details > summary {
 }
 </style>
 
+<script>
+  // This script ensures the page loads correctly, even if the user navigated here using JavaScript
+  if (document.referrer && document.referrer.includes('/team')) {
+    console.log('Navigation from team page detected');
+  }
+  
+  // Detect if this page was loaded in an iframe
+  if (window !== window.top) {
+    console.log('Page loaded in iframe');
+    // Optionally break out of the iframe if needed
+    // window.top.location.href = window.location.href;
+  }
+  
+  // Add debugging info to console
+  console.log('Profile page loaded successfully:', window.location.pathname);
+</script>
+
     </main>
 
     <!-- Footer -->

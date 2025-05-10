@@ -1,0 +1,138 @@
+---
+layout: page
+title: Team Directory
+description: A simplified directory of all team members
+---
+
+<style>
+  .team-list {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  .team-category {
+    margin-bottom: 40px;
+  }
+  .team-category h2 {
+    border-bottom: 2px solid #3b82f6;
+    padding-bottom: 5px;
+    margin-bottom: 15px;
+  }
+  .member-item {
+    padding: 10px 15px;
+    margin-bottom: 5px;
+    background-color: #f3f4f6;
+    border-radius: 5px;
+  }
+  .member-item:hover {
+    background-color: #e5e7eb;
+  }
+  .member-item p {
+    margin: 0;
+  }
+  .member-item a {
+    display: block;
+    color: #2563eb;
+    font-weight: 500;
+    text-decoration: none;
+  }
+  .member-item a:hover {
+    text-decoration: underline;
+  }
+</style>
+
+<div class="team-list">
+  <h1>Team Member Directory</h1>
+  <p>This is a simplified directory with basic links to all team member profiles.</p>
+  
+  <!-- Direct URL links without JavaScript -->
+  {% assign all_members = site.team_members | where: "active", true | sort: "title" %}
+  
+  <!-- Faculty Members -->
+  <div class="team-category">
+    <h2>Faculty</h2>
+    {% assign faculty = all_members | where: "role", "faculty" %}
+    {% for member in faculty %}
+      <div class="member-item">
+        <p>
+          <!-- Three different link options for testing -->
+          <a href="{{ member.url }}">{{ member.title }}</a>
+          <small style="color: #666;">
+            ({{ member.position }} | 
+            <a href="{{ member.url | relative_url }}" style="display: inline; font-weight: normal;">relative</a> | 
+            <a href="{{ site.baseurl }}{{ member.url }}" style="display: inline; font-weight: normal;">baseurl</a>)
+          </small>
+        </p>
+      </div>
+    {% endfor %}
+  </div>
+  
+  <!-- Post-Doctoral Researchers -->
+  <div class="team-category">
+    <h2>Post-Doctoral Researchers</h2>
+    {% assign postdocs = all_members | where: "role", "postdoc" %}
+    {% for member in postdocs %}
+      <div class="member-item">
+        <p>
+          <a href="{{ member.url }}">{{ member.title }}</a>
+          <small style="color: #666;">({{ member.position }})</small>
+        </p>
+      </div>
+    {% endfor %}
+  </div>
+  
+  <!-- PhD Students -->
+  <div class="team-category">
+    <h2>PhD Students</h2>
+    {% assign phd_students = all_members | where: "role", "phd" %}
+    {% for member in phd_students %}
+      <div class="member-item">
+        <p>
+          <a href="{{ member.url }}">{{ member.title }}</a>
+          <small style="color: #666;">({{ member.position }})</small>
+        </p>
+      </div>
+    {% endfor %}
+  </div>
+  
+  <!-- Master Students -->
+  <div class="team-category">
+    <h2>Master Students</h2>
+    {% assign master_students = all_members | where: "role", "master" %}
+    {% for member in master_students %}
+      <div class="member-item">
+        <p>
+          <a href="{{ member.url }}">{{ member.title }}</a>
+          <small style="color: #666;">({{ member.position }})</small>
+        </p>
+      </div>
+    {% endfor %}
+  </div>
+  
+  <!-- Bachelor Students -->
+  <div class="team-category">
+    <h2>Bachelor Students</h2>
+    {% assign bachelor_students = all_members | where: "role", "bachelor" %}
+    {% for member in bachelor_students %}
+      <div class="member-item">
+        <p>
+          <a href="{{ member.url }}">{{ member.title }}</a>
+          <small style="color: #666;">({{ member.position }})</small>
+        </p>
+      </div>
+    {% endfor %}
+  </div>
+  
+  <!-- Research Staff -->
+  <div class="team-category">
+    <h2>Research Staff</h2>
+    {% assign staff = all_members | where: "role", "staff" %}
+    {% for member in staff %}
+      <div class="member-item">
+        <p>
+          <a href="{{ member.url }}">{{ member.title }}</a>
+          <small style="color: #666;">({{ member.position }})</small>
+        </p>
+      </div>
+    {% endfor %}
+  </div>
+</div> 

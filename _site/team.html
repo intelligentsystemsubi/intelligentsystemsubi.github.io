@@ -355,7 +355,7 @@
 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-16">
   <!-- Test link to debug -->
 <div style="background: #f0f0f0; padding: 10px; margin-bottom: 20px;">
-  <p>Test link: <a href="/is-ubi/team/hugo_proenca/" style="color: blue; text-decoration: underline;">Direct link to Hugo's profile</a></p>
+  <p>Test link: <a href="/is-ubi/team/hugo_proenca/" style="color: blue; text-decoration: underline;" onclick="window.location.href='/is-ubi/team/hugo_proenca/'; return false;">Direct link to Hugo's profile</a></p>
 </div>
 
 <!-- Team Header -->
@@ -388,7 +388,7 @@
             
             
             
-            <a href="/is-ubi/team/joao_neves/" class="group" target="_blank">
+            <a href="/is-ubi/team/joao_neves/" class="group" onclick="window.location.href='/is-ubi/team/joao_neves/'; return false;">
                 <div class="bg-white rounded-lg shadow-md overflow-hidden transition-all duration-300 hover:shadow-xl transform hover:-translate-y-1 h-full flex flex-col">
                     
                     <div class="relative bg-gradient-to-r from-gray-50 to-blue-50 h-64 flex items-center justify-center faculty-img-container">
@@ -435,7 +435,7 @@
                 </div>
             </a>
             
-            <a href="/is-ubi/team/hugo_proenca/" class="group" target="_blank">
+            <a href="/is-ubi/team/hugo_proenca/" class="group" onclick="window.location.href='/is-ubi/team/hugo_proenca/'; return false;">
                 <div class="bg-white rounded-lg shadow-md overflow-hidden transition-all duration-300 hover:shadow-xl transform hover:-translate-y-1 h-full flex flex-col">
                     
                     <div class="relative bg-gradient-to-r from-gray-50 to-blue-50 h-64 flex items-center justify-center faculty-img-container">
@@ -896,11 +896,16 @@ document.addEventListener('DOMContentLoaded', function() {
     const teamMemberLinks = document.querySelectorAll('.grid > a[href*="/team/"]');
     console.log('Found team member links:', teamMemberLinks.length);
     
+    // Remove the original event listeners if they exist
     teamMemberLinks.forEach(link => {
-      link.addEventListener('click', function(e) {
-        console.log('Team member link clicked:', this.getAttribute('href'));
-        // Test if link is working by manually navigating
-        window.location.href = this.getAttribute('href');
+      const newLink = link.cloneNode(true);
+      link.parentNode.replaceChild(newLink, link);
+      
+      newLink.addEventListener('click', function(e) {
+        e.preventDefault();
+        const href = this.getAttribute('href');
+        console.log('Team member link clicked:', href);
+        window.location.href = href;
       });
     });
   });
