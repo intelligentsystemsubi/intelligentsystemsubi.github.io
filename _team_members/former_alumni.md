@@ -7,7 +7,7 @@ email: "former.alumni@example.com"
 github: "formeralumni"
 scholar: "https://scholar.google.com/citations?user=FORMER_ID"
 website: "https://example.com/former"
-image: "/assets/team/formerstudent2.png"
+image: "/is-ubi/assets/team/formerstudent2.png"
 supervisor: "Hugo Proença"
 co_supervisor: "João C. Neves"
 joining_year: 2016

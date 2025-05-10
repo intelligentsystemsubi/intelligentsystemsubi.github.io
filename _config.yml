@@ -14,12 +14,12 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 title: Intelligent Systems
-email: socia@di.ubi.pt
+email: is-ubi@di.ubi.pt
 description: >-
   The Intelligent Systems Laboratory at the University of Beira Interior
   focuses on computer vision, pattern recognition, and biometrics research.
-baseurl: "/inlab-ubi" # the subpath of your site, e.g. /blog
-url: "https://kailashhambarde.github.io" # the base hostname & protocol for your site
+baseurl: "/is-ubi" # Keep the /is-ubi prefix for home landing
+url: "https://kailashhambarde.github.io" # Base URL without /is-ubi
 # twitter_username: jekyllrb # Optional
 # github_username:  jekyll # Optional
 logo: "/assets/images/lab_logo.png" # Path to your site logo, relative to root
@@ -46,7 +46,7 @@ plugins:
 collections:
   team_members:
     output: true # Generate individual pages for each team member
-    permalink: /inlab-ubi/team/:path/ # URL structure for member pages (e.g., /inlab-ubi/team/hugo_proenca/)
+    permalink: /is-ubi/team/:path/ # URL structure for member pages (e.g., /inlab-ubi/team/hugo_proenca/)
 
 # Defaults
 defaults:

@@ -3,14 +3,14 @@
   id: "object-detection" # Used for linking (e.g., from publications)
   description: "Developing efficient algorithms for detecting objects in images and videos."
   members: ["John Doe", "Jane Smith", "Prof. Ada Lovelace, Pranita Samale"]
-  image: "/assets/images/projects/object_detection.png" # Optional project image
+  image: "/is-ubi/assets/images/projects/object_detection.png" # Optional project image
   link: "/projects/object-detection" # Optional link to a dedicated project page
 
 - title: "3D Scene Reconstruction"
   id: "3d-reconstruction"
   description: "Reconstructing detailed 3D models from multiple camera views."
   members: ["Dr. Charles Babbage", "Grace Hopper"]
-  image: "/assets/images/projects/3d_reconstruction.jpg"
+  image: "/is-ubi/assets/images/projects/3d_reconstruction.jpg"
 
 # Sample Projects Data
 - title: "DeepOcular: Deep Learning for Ocular Biometrics"
@@ -20,7 +20,7 @@
   featured: true
   start_date: 2021-01-01
   end_date: 2023-12-31
-  image: "/assets/projects/deep_ocular.jpg"
+  image: "/is-ubi/assets/projects/deep_ocular.jpg"
   website: "https://deep-ocular.ubi.pt/"
   github: "https://github.com/socia-lab/deep-ocular"
   funding: "European Research Council (ERC) - €1.2 million"
@@ -115,7 +115,7 @@
   featured: true
   start_date: 2022-03-01
   end_date: 2025-02-28
-  image: "/assets/projects/visual_surveillance.jpg"
+  image: "/is-ubi/assets/projects/visual_surveillance.jpg"
   website: "https://visual-surveillance.ubi.pt/"
   github: "https://github.com/socia-lab/visual-surveillance"
   funding: "National Science Foundation - €900,000"
@@ -209,7 +209,7 @@
   featured: true
   start_date: 2020-05-01
   end_date: 2022-12-31
-  image: "/assets/projects/medical_vision.jpg"
+  image: "/is-ubi/assets/projects/medical_vision.jpg"
   demo: "https://medical-vision-demo.ubi.pt/"
   github: "https://github.com/socia-lab/medical-vision"
   funding: "Healthcare Innovation Foundation - €750,000"

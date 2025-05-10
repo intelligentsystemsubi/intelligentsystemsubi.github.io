@@ -7,7 +7,7 @@ email: "joao@di.ubi.pt"
 github: "jcneves"
 scholar: "https://scholar.google.com/citations?user=SCHOLAR_ID"
 website: "https://www.di.ubi.pt/~jcneves/"
-image: "/inlab-ubi/assets/team/joaocneves.jpg"
+image: "/assets/team/joaocneves.jpg"
 joining_year: 2012
 active: true
 research_interests:

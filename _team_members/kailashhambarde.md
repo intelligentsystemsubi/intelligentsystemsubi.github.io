@@ -9,7 +9,7 @@ scholar: "https://scholar.google.com/citations?user=W0gfv-UAAAAJ&hl=en"
 website: "https://kailashhambarde.github.io/"
 joining_year: 2022
 active: true
-image: "/assets/team/Kailash-Hambarde.png"
+image: "/is-ubi/assets/team/Kailash-Hambarde.png"
 research_interests:
   - "3D Computer Vision"
   - "Scene Understanding"

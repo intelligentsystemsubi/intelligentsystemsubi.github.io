@@ -8,7 +8,7 @@ github: "joanacosta"
 supervisor: "João C. Neves"
 scholar: "https://scholar.google.com/citations?user=ABC789"
 research_topic: "Deep Learning for Ocular Biometrics"
-image: "/assets/team/pranita.jpeg"
+image: "/is-ubi/assets/team/pranita.jpeg"
 joining_year: 2016
 departure_year: 2020
 active: true

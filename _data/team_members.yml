@@ -1,7 +1,7 @@
 - title: "João C. Neves"
   role: "faculty"
   position: "Full Professor"
-  image: "/assets/team/joaocneves.jpg"
+  image: "/is-ubi/assets/team/joaocneves.jpg"
   joining_year: 2012
   active: true
   email: "joao@di.ubi.pt"
@@ -11,7 +11,7 @@
 - title: "Pranita Samale"
   role: "phd"
   position: "PhD Student"
-  image: "/assets/team/pranita.jpeg"
+  image: "/is-ubi/assets/team/pranita.jpeg"
   joining_year: 2016
   active: true
   email: "pranita@di.ubi.pt"
@@ -20,7 +20,7 @@
 - title: "Joana C. Costa"
   role: "master"
   position: "Master Student"
-  image: "/assets/team/joana_costa.jpg"
+  image: "/is-ubi/assets/team/joana_costa.jpg"
   joining_year: 2022
   active: true
   email: "joana@di.ubi.pt"

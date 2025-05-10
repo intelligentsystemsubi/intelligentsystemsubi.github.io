@@ -13,7 +13,7 @@ orcid: "0000-0003-2551-8570"
 researchgate: "Hugo-Proenca-29998920"
 dblp: "72/3776"
 scopus: "14016540600"
-image: "assets/team/hugopro.png"
+image: "/is-ubi/assets/team/hugopro.png"
 joining_year: 2005
 active: true
 research_interests:

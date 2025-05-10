@@ -7,7 +7,7 @@ email: "sample.student@example.com"
 github: "samplestudent"
 scholar: "https://scholar.google.com/citations?user=SAMPLE_ID"
 website: "https://example.com/sample"
-image: "/assets/team/sample_st.png"
+image: "/is-ubi/assets/team/sample_st.png"
 supervisor: "João C. Neves"
 co_supervisor: "Hugo Proença"
 joining_year: 2021

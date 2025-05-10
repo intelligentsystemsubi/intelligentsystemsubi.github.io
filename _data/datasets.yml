@@ -2,8 +2,8 @@
   title: "DetReIDX: A Stress-Test Dataset for Real-World UAV-Based Person Recognition"
   year: 2025
   url: "https://www.it.ubi.pt/DetReIDX/"
-  image: "/assets/datasets/detreidx.jpg"
-  video: "/assets/datasets/intro.mp4"
+  image: "/is-ubi/assets/datasets/detreidx.jpg"
+  video: "/is-ubi/assets/datasets/intro.mp4"
   description: "A comprehensive benchmark dataset built for real-world, long-range human recognition. It supports key computer vision tasks like person detection, re-identification (ReID), multi-view tracking, and action recognition — all captured in complex outdoor scenes using drones and ground cameras."
   key_features:
     - "Long-Range Person Recognition"
@@ -18,7 +18,7 @@
   title: "P-DESTRE: Fully Annotated Datasets for Pedestrian Detection, Tracking, Re-Identification and Search from Aerial Devices"
   year: 2020
   url: "https://www.di.ubi.pt/~hugomcp/PReID/download.html"
-  image: "/assets/datasets/pedestree.png"
+  image: "/is-ubi/assets/datasets/pedestree.png"
   description: "A fully annotated multi-session dataset for Pedestrian Detection, Tracking, Re-identification (REID) and Search from aerial devices. It contains data for 253 identities, over 2 sessions (clothing/appearance changes), with 18 viewpoints per identity, acquired by drones flying at various altitudes, with pitch angles and lighting conditions."
   key_features:
     - "253 Identities"
