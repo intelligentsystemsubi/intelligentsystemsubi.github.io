@@ -14,7 +14,7 @@ researchgate: "Hugo-Proenca-29998920"
 dblp: "98/6305"
 scopus: "14016540600"
 image: "/assets/team/hugopro.png"
-joining_year: 2012
+joining_year: 2002
 active: true
 research_interests:
   - "Computer Vision"
