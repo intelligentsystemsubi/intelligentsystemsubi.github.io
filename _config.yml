@@ -18,7 +18,7 @@ email: is-ubi@di.ubi.pt
 description: >-
   The Intelligent Systems Laboratory at the University of Beira Interior
   focuses on computer vision, pattern recognition, and biometrics research.
-baseurl: "/is-ubi" # Keep the /is-ubi prefix for home landing
+baseurl: "/is-ubi" # Keep the /is-ubi prefix
 url: "https://kailashhambarde.github.io" # Base URL without /is-ubi
 # twitter_username: jekyllrb # Optional
 # github_username:  jekyll # Optional
@@ -45,8 +45,8 @@ plugins:
 # Collections configuration
 collections:
   team_members:
-    output: true # Generate individual pages for each team member
-    permalink: /is-ubi/team/:path/ # URL structure for member pages (e.g., /inlab-ubi/team/hugo_proenca/)
+    output: true
+    permalink: /is-ubi/team/:path/
 
 # Defaults
 defaults:

@@ -1,27 +1,27 @@
-- title: "João C. Neves"
-  role: "faculty"
-  position: "Full Professor"
-  image: "/is-ubi/assets/team/joaocneves.jpg"
-  joining_year: 2012
-  active: true
-  email: "joao@di.ubi.pt"
-  website: "https://example.com"
-  google_scholar: "https://scholar.google.com"
+# - title: "João C. Neves"
+#   role: "faculty"
+#   position: "Full Professor"
+#   image: "/is-ubi/assets/team/joaocneves.jpg"
+#   joining_year: 2012
+#   active: true
+#   email: "joao@di.ubi.pt"
+#   website: "https://example.com"
+#   google_scholar: "https://scholar.google.com"
 
-- title: "Pranita Samale"
-  role: "phd"
-  position: "PhD Student"
-  image: "/is-ubi/assets/team/pranita.jpeg"
-  joining_year: 2016
-  active: true
-  email: "pranita@di.ubi.pt"
-  supervisor: "João C. Neves"
+# - title: "Pranita Samale"
+#   role: "phd"
+#   position: "PhD Student"
+#   image: "/is-ubi/assets/team/pranita.jpeg"
+#   joining_year: 2016
+#   active: true
+#   email: "pranita@di.ubi.pt"
+#   supervisor: "João C. Neves"
 
-- title: "Joana C. Costa"
-  role: "master"
-  position: "Master Student"
-  image: "/is-ubi/assets/team/joana_costa.jpg"
-  joining_year: 2022
-  active: true
-  email: "joana@di.ubi.pt"
-  supervisor: "João C. Neves" 
+# - title: "Joana C. Costa"
+#   role: "master"
+#   position: "Master Student"
+#   image: "/is-ubi/assets/team/joana_costa.jpg"
+#   joining_year: 2022
+#   active: true
+#   email: "joana@di.ubi.pt"
+#   supervisor: "João C. Neves" 

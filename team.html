@@ -4,6 +4,11 @@ title: Our Team
 description: Meet our diverse team of researchers, professors, and students working together to advance the frontiers of computer vision.
 ---
 
+<!-- Test link to debug -->
+<div style="background: #f0f0f0; padding: 10px; margin-bottom: 20px;">
+  <p>Test link: <a href="/is-ubi/team/hugo_proenca/" style="color: blue; text-decoration: underline;">Direct link to Hugo's profile</a></p>
+</div>
+
 <!-- Team Header -->
 <div class="text-center mb-16 relative">
     <div class="absolute inset-0 bg-gradient-to-r from-blue-50 to-indigo-50 transform -skew-y-2 z-0"></div>
@@ -38,7 +43,7 @@ description: Meet our diverse team of researchers, professors, and students work
             {% assign sorted_faculty = full_professors | concat: associate_professors | concat: assistant_professors | concat: other_faculty %}
             
             {% for member in sorted_faculty %}
-            <a href="{{ member.url }}" class="group">
+            <a href="{{ member.url }}" class="group" target="_blank">
                 <div class="bg-white rounded-lg shadow-md overflow-hidden transition-all duration-300 hover:shadow-xl transform hover:-translate-y-1 h-full flex flex-col">
                     {% if member.image %}
                     <div class="relative bg-gradient-to-r from-gray-50 to-blue-50 h-64 flex items-center justify-center faculty-img-container">
@@ -116,7 +121,7 @@ description: Meet our diverse team of researchers, professors, and students work
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
             {% assign postdocs = site.team_members | where: "role", "postdoc" | where: "active", true | sort: "joining_year" | reverse %}
             {% for member in postdocs %}
-            <a href="{{ member.url }}" class="group">
+            <a href="{{ member.url }}" class="group" target="_blank">
                 <div class="bg-white rounded-lg shadow-md overflow-hidden transition-all duration-300 hover:shadow-xl transform hover:-translate-y-1 h-full flex flex-col">
                     {% if member.image %}
                     <div class="relative bg-gradient-to-r from-teal-50 to-cyan-50 h-56 flex items-center justify-center postdoc-img-container">
@@ -702,7 +707,7 @@ description: Meet our diverse team of researchers, professors, and students work
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
             {% assign staff = site.team_members | where: "role", "staff" | where: "active", true | sort: "joining_year" | reverse %}
             {% for member in staff %}
-            <a href="{{ member.url }}" class="group">
+            <a href="{{ member.url }}" class="group" target="_blank">
                 <div class="bg-white rounded-lg shadow-md overflow-hidden transition-all duration-300 hover:shadow-xl transform hover:-translate-y-1 h-full flex flex-col">
                     {% if member.image %}
                     <div class="relative bg-gradient-to-r from-emerald-50 to-green-50 h-40 flex items-center justify-center staff-img-container">
@@ -1097,3 +1102,20 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 }
 </style>
+
+<!-- Debug script for team member links -->
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    // Debug team member link clicks
+    const teamMemberLinks = document.querySelectorAll('.grid > a[href*="/team/"]');
+    console.log('Found team member links:', teamMemberLinks.length);
+    
+    teamMemberLinks.forEach(link => {
+      link.addEventListener('click', function(e) {
+        console.log('Team member link clicked:', this.getAttribute('href'));
+        // Test if link is working by manually navigating
+        window.location.href = this.getAttribute('href');
+      });
+    });
+  });
+</script>

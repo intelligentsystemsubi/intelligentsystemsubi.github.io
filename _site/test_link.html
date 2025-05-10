@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Test Links</title>
+</head>
+<body>
+  <h1>Test Team Member Links</h1>
+  <ul>
+    <li><a href="/is-ubi/team/hugo_proenca/" id="direct-link">Direct link to Hugo's profile</a></li>
+    <li><a href="/is-ubi/team/joao_neves/" id="joao-link">Link to João's profile</a></li>
+  </ul>
+
+  <script>
+    document.getElementById('direct-link').addEventListener('click', function(e) {
+      e.preventDefault();
+      console.log('Hugo link clicked');
+      window.location.href = '/is-ubi/team/hugo_proenca/';
+    });
+
+    document.getElementById('joao-link').addEventListener('click', function(e) {
+      e.preventDefault();
+      console.log('João link clicked');
+      window.location.href = '/is-ubi/team/joao_neves/';
+    });
+  </script>
+</body>
+</html> 

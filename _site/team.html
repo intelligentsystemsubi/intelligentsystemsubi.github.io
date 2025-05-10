@@ -353,7 +353,12 @@
 
 <!-- Main Content -->
 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-16">
-  <!-- Team Header -->
+  <!-- Test link to debug -->
+<div style="background: #f0f0f0; padding: 10px; margin-bottom: 20px;">
+  <p>Test link: <a href="/is-ubi/team/hugo_proenca/" style="color: blue; text-decoration: underline;">Direct link to Hugo's profile</a></p>
+</div>
+
+<!-- Team Header -->
 <div class="text-center mb-16 relative">
     <div class="absolute inset-0 bg-gradient-to-r from-blue-50 to-indigo-50 transform -skew-y-2 z-0"></div>
     <div class="relative z-10 py-12">
@@ -383,11 +388,11 @@
             
             
             
-            <a href="/is-ubi/team/joao_neves/" class="group">
+            <a href="/is-ubi/team/joao_neves/" class="group" target="_blank">
                 <div class="bg-white rounded-lg shadow-md overflow-hidden transition-all duration-300 hover:shadow-xl transform hover:-translate-y-1 h-full flex flex-col">
                     
                     <div class="relative bg-gradient-to-r from-gray-50 to-blue-50 h-64 flex items-center justify-center faculty-img-container">
-                        <img src="/assets/team/joaocneves.jpg" alt="João C. Neves" class="h-auto w-auto max-h-[90%] max-w-[90%] object-contain">
+                        <img src="/is-ubi/assets/team/joaocneves.jpg" alt="João C. Neves" class="h-auto w-auto max-h-[90%] max-w-[90%] object-contain">
                         <div class="absolute inset-0 bg-gradient-to-t from-indigo-900/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                         
                         <div class="absolute top-2 right-2 bg-blue-500 text-white text-xs font-bold px-2 py-1 rounded-full">
@@ -430,7 +435,7 @@
                 </div>
             </a>
             
-            <a href="/is-ubi/team/hugo_proenca/" class="group">
+            <a href="/is-ubi/team/hugo_proenca/" class="group" target="_blank">
                 <div class="bg-white rounded-lg shadow-md overflow-hidden transition-all duration-300 hover:shadow-xl transform hover:-translate-y-1 h-full flex flex-col">
                     
                     <div class="relative bg-gradient-to-r from-gray-50 to-blue-50 h-64 flex items-center justify-center faculty-img-container">
@@ -496,7 +501,7 @@
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
             
             
-            <a href="/is-ubi/team/kailashhambarde/" class="group">
+            <a href="/is-ubi/team/kailashhambarde/" class="group" target="_blank">
                 <div class="bg-white rounded-lg shadow-md overflow-hidden transition-all duration-300 hover:shadow-xl transform hover:-translate-y-1 h-full flex flex-col">
                     
                     <div class="relative bg-gradient-to-r from-teal-50 to-cyan-50 h-56 flex items-center justify-center postdoc-img-container">
@@ -883,6 +888,23 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 }
 </style>
+
+<!-- Debug script for team member links -->
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    // Debug team member link clicks
+    const teamMemberLinks = document.querySelectorAll('.grid > a[href*="/team/"]');
+    console.log('Found team member links:', teamMemberLinks.length);
+    
+    teamMemberLinks.forEach(link => {
+      link.addEventListener('click', function(e) {
+        console.log('Team member link clicked:', this.getAttribute('href'));
+        // Test if link is working by manually navigating
+        window.location.href = this.getAttribute('href');
+      });
+    });
+  });
+</script>
 
 </div>
 
