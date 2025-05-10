@@ -3,31 +3,32 @@ layout: member
 title: "Hugo Proença"
 role: "faculty"
 position: "Full Professor"
-email: "hugomcp@ubi.pt"
+email: "hugomcp@di.ubi.pt"
 github: "hugoproenca"
-scholar: "https://scholar.google.com/citations?user=HhxSgvYAAAAJ&hl=en"
-google_scholar: "https://scholar.google.com/citations?user=HhxSgvYAAAAJ&hl=en"
-website: "https://www.di.ubi.pt/~hugomcp/"
+scholar: "https://scholar.google.com/citations?user=UH5hO4MAAAAJ"
+google_scholar: "https://scholar.google.com/citations?user=UH5hO4MAAAAJ"
+website: "http://www.di.ubi.pt/~hugomcp/"
 linkedin: "hugo-proenca"
-orcid: "0000-0003-2551-8570"
+orcid: "0000-0002-7559-471X"
 researchgate: "Hugo-Proenca-29998920"
-dblp: "72/3776"
+dblp: "98/6305"
 scopus: "14016540600"
-image: "/is-ubi/assets/team/hugopro.png"
-joining_year: 2005
+image: "/assets/team/hugopro.png"
+joining_year: 2012
 active: true
 research_interests:
-  - "Biometrics"
   - "Computer Vision"
   - "Pattern Recognition"
+  - "Machine Learning"
   - "Artificial Intelligence"
+  - "Biometrics"
 cv: # Add path to CV PDF, e.g., /assets/cv/john_doe.pdf
 notes: # Optional notes
 courses:
-  - name: "Computer Vision"
-    code: "CV3"
+  - name: "Advanced Computer Vision"
+    code: "CV-501"
     description: "Fundamentals of computer vision algorithms and techniques"
-    semester: "Fall Semester"
+    semester: "Fall"
     year: "2023"
   - name: "Biometrics"
     code: "BIO2"
@@ -49,7 +50,7 @@ profile_links:
   - name: "CIÊNCIA ID"
     url: "https://www.cienciavitae.pt/portal/ED16-81E7-0319"
   - name: "ORCID"
-    url: "http://orcid.org/0000-0003-2551-8570"
+    url: "http://orcid.org/0000-0002-7559-471X"
   - name: "Scopus"
     url: "http://www.scopus.com/authid/detail.uri?authorId=14016540600"
   - name: "Publons"
@@ -59,7 +60,7 @@ profile_links:
   - name: "ResearchGate"
     url: "http://www.researchgate.net/scientific-contributions/Hugo-Proenca-29998920"
   - name: "DBLP"
-    url: "https://dblp.org/pid/72/3776.html"
+    url: "https://dblp.org/pid/98/6305.html"
   - name: "IT"
     url: "http://www.it.pt/Members/Index/987"
   - name: "Academia"
@@ -80,7 +81,7 @@ datasets:
     link: "http://iris.di.ubi.pt/ubiris2.html"
 ---
 
-Hugo Proença is a Full Professor at the Department of Computer Science, University of Beira Interior and a researcher at the SOCIA Lab. His research interests are focused on biometrics and visual-surveillance, with over 150 publications in these areas.
+Hugo Proença is a Full Professor at the Department of Computer Science, University of Beira Interior and a researcher at the Center for Informatics and Systems of the University of Coimbra (CISUC). His research interests are focused in the artificial intelligence, computer vision, pattern recognition, and biometrics areas. He has been the principal investigator of several national and international scientific research projects, including European FET programmes. He is the author of more than 150 publications in international journals and conferences.
 
 He serves as area editor for the Computer Vision and Image Understanding and Journal of Visual Communication and Image Representation journals, and as associate editor for the IEEE Transactions on Information Forensics and Security, Image and Vision Computing and International Journal of Biometrics.
 

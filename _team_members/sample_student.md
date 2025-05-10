@@ -1,28 +1,21 @@
 ---
 layout: member
-title: "Sample Student"
-role: "phd"
-position: "PhD Candidate"
-email: "sample.student@example.com"
-github: "samplestudent"
-scholar: "https://scholar.google.com/citations?user=SAMPLE_ID"
-website: "https://example.com/sample"
-image: "/is-ubi/assets/team/sample_st.png"
-supervisor: "João C. Neves"
-co_supervisor: "Hugo Proença"
-joining_year: 2021
+title: Sample Student
+position: PhD Student
+role: phd
+image: "/assets/team/sample_st.png"
+email: sample@ubi.pt
+supervisor: João C. Neves
 active: true
+joining_year: 2022
 research_interests:
-  - "Computer Vision"
-  - "Deep Learning"
-  - "Biometric Recognition"
-  - "Pattern Analysis"
+  - Biometrics
+  - Computer Vision
+  - Deep Learning
 ---
 
-Sample Student is a PhD candidate at the Department of Computer Science, University of Beira Interior, working under the supervision of Prof. João C. Neves and co-supervision of Prof. Hugo Proença.
+Sample Student is a PhD student at the Department of Computer Science, University of Beira Interior, working under the supervision of Prof. João C. Neves.
 
-His research focuses on developing novel deep learning architectures for biometric recognition in challenging environments. His work combines advanced computer vision techniques with state-of-the-art neural network designs to achieve robust recognition across various sensing conditions.
+His research focuses on developing novel approaches for biometric recognition systems. He is particularly interested in addressing the challenges of recognition in unconstrained environments.
 
-Sample has published papers in recognized conferences such as CVPR and ICCV, and journals including IEEE Transactions on Pattern Analysis and Machine Intelligence. He is particularly interested in multimodal biometric fusion and attention mechanisms for improving recognition accuracy.
-
-Before joining the Socia-Lab, Sample received his Master's degree in Computer Science from the Technical University of Lisbon, where he specialized in artificial intelligence and machine learning approaches for image analysis. 
+Before joining the PhD program, Sample completed his Master's degree in Computer Science with a focus on artificial intelligence and machine learning applications. He has also worked as a research assistant on several projects related to computer vision and pattern recognition. 
