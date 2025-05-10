@@ -28,9 +28,9 @@ description: Meet our diverse team of researchers, professors, and students work
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
             {% assign faculty = site.team_members | where: "role", "faculty" | where: "active", true %}
             
-            {% assign full_professors = faculty | where: "position", "Full Professor" | sort: "joining_year" | reverse %}
-            {% assign associate_professors = faculty | where: "position", "Associate Professor" | sort: "joining_year" | reverse %}
-            {% assign assistant_professors = faculty | where: "position", "Assistant Professor" | sort: "joining_year" | reverse %}
+            {% assign full_professors = faculty | where: "position", "Full Professor" | sort: "joining_year" %}
+            {% assign associate_professors = faculty | where: "position", "Associate Professor" | sort: "joining_year" %}
+            {% assign assistant_professors = faculty | where: "position", "Assistant Professor" | sort: "joining_year" %}
             
             {% assign other_faculty = "" | split: "" %}
             {% for member in faculty %}
@@ -38,7 +38,7 @@ description: Meet our diverse team of researchers, professors, and students work
                 {% assign other_faculty = other_faculty | push: member %}
               {% endif %}
             {% endfor %}
-            {% assign other_faculty = other_faculty | sort: "joining_year" | reverse %}
+            {% assign other_faculty = other_faculty | sort: "joining_year" %}
             
             {% assign sorted_faculty = full_professors | concat: associate_professors | concat: assistant_professors | concat: other_faculty %}
             
@@ -119,7 +119,7 @@ description: Meet our diverse team of researchers, professors, and students work
 
     <div class="mb-10">
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {% assign postdocs = site.team_members | where: "role", "postdoc" | where: "active", true | sort: "joining_year" | reverse %}
+            {% assign postdocs = site.team_members | where: "role", "postdoc" | where: "active", true | sort: "joining_year" %}
             {% for member in postdocs %}
             <a href="{{ member.url }}" class="group" target="_blank">
                 <div class="bg-white rounded-lg shadow-md overflow-hidden transition-all duration-300 hover:shadow-xl transform hover:-translate-y-1 h-full flex flex-col">
@@ -233,7 +233,7 @@ description: Meet our diverse team of researchers, professors, and students work
             
             <!-- Students with supervisor badge -->
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-4 pl-6 border-l-2 border-dashed border-purple-200">
-                {% assign supervisor_students = phd_students | where: "supervisor", supervisor | sort: "joining_year" | reverse %}
+                {% assign supervisor_students = phd_students | where: "supervisor", supervisor | sort: "joining_year" %}
                 {% for member in supervisor_students %}
                 <!-- Begin Card -->
                 <a href="{{ member.url }}" class="group transform transition-all duration-300 hover:-translate-y-2">
@@ -333,21 +333,35 @@ description: Meet our diverse team of researchers, professors, and students work
             </div>
         </div>
     {% endfor %}
-
-    <!-- Display PhD students without supervisors -->
+    
+    <!-- Students without supervisor -->
+    {% assign students_without_supervisor = phd_students | where_exp: "item", "item.supervisor == nil" | sort: "joining_year" %}
+    {% if students_without_supervisor.size > 0 %}
     <div class="mb-16">
-        <h3 class="text-xl font-semibold mb-8 text-purple-700">Unsupervised PhD Students</h3>
+        <div class="bg-white rounded-xl shadow-lg mb-8 overflow-hidden transform transition hover:shadow-xl border-l-4 border-purple-500">
+            <div class="flex items-center p-6">
+                <div class="flex-shrink-0 mr-4">
+                    <div class="w-14 h-14 rounded-full bg-gradient-to-br from-purple-400 to-indigo-500 shadow-inner flex items-center justify-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+                        </svg>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold text-gray-800">Other PhD Students</h3>
+                    <p class="text-sm text-purple-600 font-medium">No specific supervisor listed</p>
+                </div>
+                <!-- Right arrow indicator -->
+                <div class="ml-auto">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-purple-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                    </svg>
+                </div>
+            </div>
+        </div>
         
-        {% assign unsupervised_students = "" | split: "" %}
-        {% for student in phd_students %}
-          {% if student.supervisor == nil %}
-            {% assign unsupervised_students = unsupervised_students | push: student %}
-          {% endif %}
-        {% endfor %}
-        {% assign unsupervised_students = unsupervised_students | sort: "joining_year" | reverse %}
-        
-        <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
-            {% for member in unsupervised_students %}
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-4 pl-6 border-l-2 border-dashed border-purple-200">
+            {% for member in students_without_supervisor %}
             <a href="{{ member.url }}" class="group transform transition-all duration-300 hover:-translate-y-2">
                 <div class="bg-white rounded-lg shadow-md overflow-hidden transition-all duration-300 hover:shadow-xl h-full flex flex-col border border-transparent hover:border-purple-200 relative">
                     <!-- Independent badge -->
@@ -443,330 +457,82 @@ description: Meet our diverse team of researchers, professors, and students work
             {% endfor %}
         </div>
     </div>
+    {% endif %}
 </section>
 
 <!-- Master Students -->
 <section class="mb-16">
     <h2 class="text-2xl font-bold text-gray-900 mb-8">Master Students</h2>
     
-    <!-- Get all faculty members who supervise Master students -->
-    {% assign master_students = site.team_members | where: "role", "master" | where: "active", true %}
-    {% assign supervisors = "" | split: "" %}
-    {% for student in master_students %}
-        {% if student.supervisor %}
-            {% assign supervisors = supervisors | push: student.supervisor %}
-        {% endif %}
-    {% endfor %}
-    {% assign unique_supervisors = supervisors | uniq | sort %}
-    
-    <!-- Display students grouped by supervisor -->
-    {% for supervisor in unique_supervisors %}
-        <div class="mb-16">
-            <!-- Modern supervisor card with shadow and subtle animation -->
-            <div class="bg-white rounded-xl shadow-lg mb-8 overflow-hidden transform transition hover:shadow-xl border-l-4 border-cyan-500">
-                <div class="flex items-center p-6">
-                    <div class="flex-shrink-0 mr-4">
-                        <div class="w-14 h-14 rounded-full bg-gradient-to-br from-cyan-400 to-blue-500 shadow-inner flex items-center justify-center">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+        {% assign master_students = site.team_members | where: "role", "master" | where: "active", true | sort: "joining_year" %}
+        {% for member in master_students %}
+        <a href="{{ member.url }}" class="group" onclick="window.location.href='{{ member.url }}'; return false;">
+            <div class="bg-white rounded-lg shadow-md overflow-hidden transition-all duration-300 hover:shadow-xl transform hover:-translate-y-1 h-full flex flex-col">
+                {% if member.image %}
+                <div class="relative bg-gradient-to-r from-gray-50 to-blue-50 h-64 flex items-center justify-center faculty-img-container">
+                    <img src="{{ member.image }}" alt="{{ member.title }}" class="h-auto w-auto max-h-[90%] max-w-[90%] object-contain">
+                    <div class="absolute inset-0 bg-gradient-to-t from-indigo-900/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    {% if member.joining_year %}
+                    <div class="absolute top-2 right-2 bg-blue-500 text-white text-xs font-bold px-2 py-1 rounded-full">
+                        Since {{ member.joining_year }}
+                    </div>
+                    {% endif %}
+                </div>
+                {% else %}
+                <div class="relative bg-gradient-to-r from-blue-50 to-indigo-100 h-64 flex items-center justify-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-24 w-24 text-blue-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M5.121 17.804A13.937 13.937 0 0112 16c2.5 0 4.847.655 6.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0zm6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                    <div class="absolute inset-0 bg-gradient-to-t from-indigo-900/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    {% if member.joining_year %}
+                    <div class="absolute top-2 right-2 bg-blue-500 text-white text-xs font-bold px-2 py-1 rounded-full">
+                        Since {{ member.joining_year }}
+                    </div>
+                    {% endif %}
+                </div>
+                {% endif %}
+                <div class="p-6 relative z-10 flex-grow border-t border-gray-100">
+                    <h3 class="text-xl font-semibold mb-2 group-hover:text-blue-600 transition-colors">{{ member.title }}</h3>
+                    <p class="text-gray-600 mb-4">{{ member.position }}</p>
+                    <div class="flex flex-wrap gap-2 pt-2 border-t border-gray-100 mt-auto">
+                        {% if member.email %}
+                        <div class="text-blue-600 hover:text-blue-800 transition-colors inline-flex items-center text-sm">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                             </svg>
+                            Email
                         </div>
-                    </div>
-                    <div>
-                        <h3 class="text-xl font-bold text-gray-800">{{ supervisor }}</h3>
-                        <p class="text-sm text-cyan-600 font-medium">Supervisor</p>
-                    </div>
-                    <!-- Right arrow indicator -->
-                    <div class="ml-auto">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-cyan-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-                        </svg>
+                        {% endif %}
+                        {% if member.website %}
+                        <div class="text-blue-600 hover:text-blue-800 transition-colors inline-flex items-center text-sm">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" />
+                            </svg>
+                            Website
+                        </div>
+                        {% endif %}
+                        {% if member.github %}
+                        <div class="text-blue-600 hover:text-blue-800 transition-colors inline-flex items-center text-sm">
+                            <svg class="h-4 w-4 mr-1" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                <path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd" />
+                            </svg>
+                            GitHub
+                        </div>
+                        {% endif %}
+                        {% if member.google_scholar %}
+                        <div class="text-blue-600 hover:text-blue-800 transition-colors inline-flex items-center text-sm">
+                            <svg class="h-4 w-4 mr-1" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M5.242 13.769L0 9.5 12 0l12 9.5-5.242 4.269C17.548 11.249 14.978 9.5 12 9.5c-2.977 0-5.548 1.748-6.758 4.269zM12 10a7 7 0 1 0 0 14 7 7 0 0 0 0-14z" />
+                            </svg>
+                            Scholar
+                        </div>
+                        {% endif %}
                     </div>
                 </div>
             </div>
-            
-            <!-- Students with supervisor badge -->
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-4 pl-6 border-l-2 border-dashed border-cyan-200">
-                {% assign supervisor_students = master_students | where: "supervisor", supervisor | sort: "joining_year" | reverse %}
-                {% for member in supervisor_students %}
-                <!-- Begin Card -->
-                <a href="{{ member.url }}" class="group transform transition-all duration-300 hover:-translate-y-2">
-                    <div class="bg-white rounded-lg shadow-md overflow-hidden transition-all duration-300 hover:shadow-xl h-full flex flex-col border border-transparent hover:border-cyan-200 relative">
-                        <!-- Supervisor badge -->
-                        <div class="absolute -top-2 -left-2 z-20">
-                            <div class="bg-cyan-100 rounded-full p-1 shadow-sm">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-cyan-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
-                                </svg>
-                            </div>
-                        </div>
-                        
-                        {% if member.image %}
-                        <div class="relative bg-gradient-to-r from-cyan-50 to-blue-50 h-40 flex items-center justify-center master-img-container">
-                            <div class="absolute inset-0 bg-cyan-600 opacity-5 rounded-t-lg"></div>
-                            <img src="{{ member.image }}" alt="{{ member.title }}" class="h-auto w-auto max-h-[90%] max-w-[90%] object-contain relative z-10">
-                            <div class="absolute inset-0 bg-gradient-to-t from-cyan-900/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-t-lg"></div>
-                            {% if member.joining_year %}
-                            <div class="absolute top-2 right-2 bg-cyan-500 text-white text-xs font-bold px-2 py-1 rounded-full shadow-sm">
-                                Since {{ member.joining_year }}
-                            </div>
-                            {% endif %}
-                            {% if member.co_supervisor %}
-                            <div class="absolute bottom-2 left-2 bg-indigo-100 text-indigo-800 text-xs font-medium px-2 py-1 rounded-full flex items-center">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />
-                                </svg>
-                                Co: {{ member.co_supervisor }}
-                            </div>
-                            {% endif %}
-                        </div>
-                        {% else %}
-                        <div class="relative bg-gradient-to-r from-cyan-50 to-blue-100 h-40 flex items-center justify-center">
-                            <div class="absolute inset-0 bg-cyan-600 opacity-5 rounded-t-lg"></div>
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 text-cyan-300 relative z-10" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M5.121 17.804A13.937 13.937 0 0112 16c2.5 0 4.847.655 6.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0zm6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                            </svg>
-                            <div class="absolute inset-0 bg-gradient-to-t from-cyan-900/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-t-lg"></div>
-                            {% if member.joining_year %}
-                            <div class="absolute top-2 right-2 bg-cyan-500 text-white text-xs font-bold px-2 py-1 rounded-full shadow-sm">
-                                Since {{ member.joining_year }}
-                            </div>
-                            {% endif %}
-                            {% if member.co_supervisor %}
-                            <div class="absolute bottom-2 left-2 bg-indigo-100 text-indigo-800 text-xs font-medium px-2 py-1 rounded-full flex items-center">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />
-                                </svg>
-                                Co: {{ member.co_supervisor }}
-                            </div>
-                            {% endif %}
-                        </div>
-                        {% endif %}
-                        <div class="p-6 relative z-10 flex-grow border-t border-gray-100">
-                            <h3 class="text-xl font-semibold mb-2 group-hover:text-cyan-600 transition-colors">{{ member.title }}</h3>
-                            <p class="text-gray-600 mb-4">{{ member.position }}</p>
-                            <div class="flex flex-wrap gap-2 pt-2 border-t border-gray-100 mt-auto">
-                                {% if member.email %}
-                                <div class="text-cyan-600 hover:text-cyan-800 transition-colors inline-flex items-center text-sm">
-                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                                    </svg>
-                                    Email
-                                </div>
-                                {% endif %}
-                                {% if member.website %}
-                                <div class="text-cyan-600 hover:text-cyan-800 transition-colors inline-flex items-center text-sm">
-                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" />
-                                    </svg>
-                                    Website
-                                </div>
-                                {% endif %}
-                                {% if member.github %}
-                                <div class="text-cyan-600 hover:text-cyan-800 transition-colors inline-flex items-center text-sm">
-                                    <svg class="h-4 w-4 mr-1" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                                        <path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd" />
-                                    </svg>
-                                    GitHub
-                                </div>
-                                {% endif %}
-                                {% if member.scholar %}
-                                <div class="text-cyan-600 hover:text-cyan-800 transition-colors inline-flex items-center text-sm">
-                                    <svg class="h-4 w-4 mr-1" viewBox="0 0 24 24" fill="currentColor">
-                                        <path d="M5.242 13.769L0 9.5 12 0l12 9.5-5.242 4.269C17.548 11.249 14.978 9.5 12 9.5c-2.977 0-5.548 1.748-6.758 4.269zM12 10a7 7 0 1 0 0 14 7 7 0 0 0 0-14z" />
-                                    </svg>
-                                    Scholar
-                                </div>
-                                {% endif %}
-                            </div>
-                        </div>
-                    </div>
-                </a>
-                <!-- End Card -->
-                {% endfor %}
-            </div>
-        </div>
-    {% endfor %}
-
-    <!-- Display Master students without supervisors -->
-    <div class="mb-16">
-        <h3 class="text-xl font-semibold mb-8 text-indigo-700">Unsupervised Master Students</h3>
-        
-        {% assign unsupervised_students = "" | split: "" %}
-        {% for student in master_students %}
-          {% if student.supervisor == nil %}
-            {% assign unsupervised_students = unsupervised_students | push: student %}
-          {% endif %}
+        </a>
         {% endfor %}
-        {% assign unsupervised_students = unsupervised_students | sort: "joining_year" | reverse %}
-        
-        <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
-            {% for member in unsupervised_students %}
-            <a href="{{ member.url }}" class="group transform transition-all duration-300 hover:-translate-y-2">
-                <div class="bg-white rounded-lg shadow-md overflow-hidden transition-all duration-300 hover:shadow-xl h-full flex flex-col border border-transparent hover:border-purple-200 relative">
-                    <!-- Independent badge -->
-                    <div class="absolute -top-2 -left-2 z-20">
-                        <div class="bg-gray-100 rounded-full p-1 shadow-sm">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-gray-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
-                            </svg>
-                        </div>
-                    </div>
-                    
-                    {% if member.image %}
-                    <div class="relative bg-gradient-to-r from-purple-50 to-indigo-50 h-48 flex items-center justify-center phd-img-container">
-                        <div class="absolute inset-0 bg-purple-600 opacity-5 rounded-t-lg"></div>
-                        <img src="{{ member.image }}" alt="{{ member.title }}" class="h-auto w-auto max-h-[90%] max-w-[90%] object-contain relative z-10">
-                        <div class="absolute inset-0 bg-gradient-to-t from-purple-900/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-t-lg"></div>
-                        {% if member.joining_year %}
-                        <div class="absolute top-2 right-2 bg-purple-500 text-white text-xs font-bold px-2 py-1 rounded-full shadow-sm">
-                            Since {{ member.joining_year }}
-                        </div>
-                        {% endif %}
-                        {% if member.co_supervisor %}
-                        <div class="absolute bottom-2 left-2 bg-indigo-100 text-indigo-800 text-xs font-medium px-2 py-1 rounded-full flex items-center">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />
-                            </svg>
-                            Co: {{ member.co_supervisor }}
-                        </div>
-                        {% endif %}
-                    </div>
-                    {% else %}
-                    <div class="relative bg-gradient-to-r from-purple-50 to-indigo-100 h-48 flex items-center justify-center">
-                        <div class="absolute inset-0 bg-purple-600 opacity-5 rounded-t-lg"></div>
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 text-purple-300 relative z-10" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M5.121 17.804A13.937 13.937 0 0112 16c2.5 0 4.847.655 6.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0zm6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                        </svg>
-                        <div class="absolute inset-0 bg-gradient-to-t from-purple-900/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-t-lg"></div>
-                        {% if member.joining_year %}
-                        <div class="absolute top-2 right-2 bg-purple-500 text-white text-xs font-bold px-2 py-1 rounded-full shadow-sm">
-                            Since {{ member.joining_year }}
-                        </div>
-                        {% endif %}
-                        {% if member.co_supervisor %}
-                        <div class="absolute bottom-2 left-2 bg-indigo-100 text-indigo-800 text-xs font-medium px-2 py-1 rounded-full flex items-center">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />
-                            </svg>
-                            Co: {{ member.co_supervisor }}
-                        </div>
-                        {% endif %}
-                    </div>
-                    {% endif %}
-                    <div class="p-6 relative z-10 flex-grow border-t border-gray-100">
-                        <h3 class="text-xl font-semibold mb-2 group-hover:text-purple-600 transition-colors">{{ member.title }}</h3>
-                        <p class="text-gray-600 mb-4">{{ member.position }}</p>
-                        <div class="flex flex-wrap gap-2 pt-2 border-t border-gray-100 mt-auto">
-                            {% if member.email %}
-                            <div class="text-purple-600 hover:text-purple-800 transition-colors inline-flex items-center text-sm">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                                </svg>
-                                Email
-                            </div>
-                            {% endif %}
-                            {% if member.website %}
-                            <div class="text-purple-600 hover:text-purple-800 transition-colors inline-flex items-center text-sm">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" />
-                                </svg>
-                                Website
-                            </div>
-                            {% endif %}
-                            {% if member.github %}
-                            <div class="text-purple-600 hover:text-purple-800 transition-colors inline-flex items-center text-sm">
-                                <svg class="h-4 w-4 mr-1" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                                    <path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd" />
-                                </svg>
-                                GitHub
-                            </div>
-                            {% endif %}
-                            {% if member.scholar %}
-                            <div class="text-purple-600 hover:text-purple-800 transition-colors inline-flex items-center text-sm">
-                                <svg class="h-4 w-4 mr-1" viewBox="0 0 24 24" fill="currentColor">
-                                    <path d="M5.242 13.769L0 9.5 12 0l12 9.5-5.242 4.269C17.548 11.249 14.978 9.5 12 9.5c-2.977 0-5.548 1.748-6.758 4.269zM12 10a7 7 0 1 0 0 14 7 7 0 0 0 0-14z" />
-                                </svg>
-                                Scholar
-                            </div>
-                            {% endif %}
-                        </div>
-                    </div>
-                </div>
-            </a>
-            {% endfor %}
-        </div>
-    </div>
-</section>
-
-<!-- Research Staff -->
-<section class="mb-16">
-    <h2 class="text-2xl font-bold text-gray-900 mb-8">Research Staff</h2>
-    
-    <div class="mb-10">
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {% assign staff = site.team_members | where: "role", "staff" | where: "active", true | sort: "joining_year" | reverse %}
-            {% for member in staff %}
-            <a href="{{ member.url }}" class="group" target="_blank">
-                <div class="bg-white rounded-lg shadow-md overflow-hidden transition-all duration-300 hover:shadow-xl transform hover:-translate-y-1 h-full flex flex-col">
-                    {% if member.image %}
-                    <div class="relative bg-gradient-to-r from-emerald-50 to-green-50 h-40 flex items-center justify-center staff-img-container">
-                        <img src="{{ member.image }}" alt="{{ member.title }}" class="h-auto w-auto max-h-[90%] max-w-[90%] object-contain">
-                        <div class="absolute inset-0 bg-gradient-to-t from-emerald-900/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                        {% if member.joining_year %}
-                        <div class="absolute top-2 right-2 bg-emerald-500 text-white text-xs font-bold px-2 py-1 rounded-full">
-                            Since {{ member.joining_year }}
-                        </div>
-                        {% endif %}
-                    </div>
-                    {% else %}
-                    <div class="relative bg-gradient-to-r from-emerald-50 to-green-100 h-40 flex items-center justify-center">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 text-emerald-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M5.121 17.804A13.937 13.937 0 0112 16c2.5 0 4.847.655 6.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0zm6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                        </svg>
-                        <div class="absolute inset-0 bg-gradient-to-t from-emerald-900/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                        {% if member.joining_year %}
-                        <div class="absolute top-2 right-2 bg-emerald-500 text-white text-xs font-bold px-2 py-1 rounded-full">
-                            Since {{ member.joining_year }}
-                        </div>
-                        {% endif %}
-                    </div>
-                    {% endif %}
-                    <div class="p-6 relative z-10 flex-grow border-t border-gray-100">
-                        <h3 class="text-xl font-semibold mb-2 group-hover:text-emerald-600 transition-colors">{{ member.title }}</h3>
-                        <p class="text-gray-600 mb-4">{{ member.position }}</p>
-                        <div class="text-sm text-gray-500 mb-4">
-                        <div class="flex flex-wrap gap-2 pt-2 border-t border-gray-100 mt-auto">
-                            {% if member.email %}
-                            <div class="text-emerald-600 hover:text-emerald-800 transition-colors inline-flex items-center text-sm">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                                </svg>
-                                Email
-                            </div>
-                            {% endif %}
-                            {% if member.website %}
-                            <div class="text-emerald-600 hover:text-emerald-800 transition-colors inline-flex items-center text-sm">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" />
-                                </svg>
-                                Website
-                            </div>
-                            {% endif %}
-                            {% if member.github %}
-                            <div class="text-emerald-600 hover:text-emerald-800 transition-colors inline-flex items-center text-sm">
-                                <svg class="h-4 w-4 mr-1" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                                    <path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd" />
-                                </svg>
-                                GitHub
-                            </div>
-                            {% endif %}
-                        </div>
-                    </div>
-                </div>
-            </a>
-            {% endfor %}
-        </div>
     </div>
 </section>
 
@@ -774,253 +540,144 @@ description: Meet our diverse team of researchers, professors, and students work
 <section class="mb-16">
     <h2 class="text-2xl font-bold text-gray-900 mb-8">Bachelor Students</h2>
     
-    <!-- Get all faculty members who supervise Bachelor students -->
-    {% assign bachelor_students = site.team_members | where: "role", "bachelor" | where: "active", true %}
-    {% assign supervisors = "" | split: "" %}
-    {% for student in bachelor_students %}
-        {% if student.supervisor %}
-            {% assign supervisors = supervisors | push: student.supervisor %}
-        {% endif %}
-    {% endfor %}
-    {% assign unique_supervisors = supervisors | uniq | sort %}
-    
-    <!-- Display students grouped by supervisor -->
-    {% for supervisor in unique_supervisors %}
-        <div class="mb-16">
-            <!-- Modern supervisor card with shadow and subtle animation -->
-            <div class="bg-white rounded-xl shadow-lg mb-8 overflow-hidden transform transition hover:shadow-xl border-l-4 border-amber-500">
-                <div class="flex items-center p-6">
-                    <div class="flex-shrink-0 mr-4">
-                        <div class="w-14 h-14 rounded-full bg-gradient-to-br from-amber-400 to-yellow-500 shadow-inner flex items-center justify-center">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
-                            </svg>
-                        </div>
-                    </div>
-                    <div>
-                        <h3 class="text-xl font-bold text-gray-800">{{ supervisor }}</h3>
-                        <p class="text-sm text-amber-600 font-medium">Supervisor</p>
-                    </div>
-                    <!-- Right arrow indicator -->
-                    <div class="ml-auto">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-amber-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-                        </svg>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Students with supervisor badge -->
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-4 pl-6 border-l-2 border-dashed border-amber-200">
-                {% assign supervisor_students = bachelor_students | where: "supervisor", supervisor | sort: "joining_year" | reverse %}
-                {% for member in supervisor_students %}
-                <!-- Begin Card -->
-                <a href="{{ member.url }}" class="group transform transition-all duration-300 hover:-translate-y-2">
-                    <div class="bg-white rounded-lg shadow-md overflow-hidden transition-all duration-300 hover:shadow-xl h-full flex flex-col border border-transparent hover:border-amber-200 relative">
-                        <!-- Supervisor badge -->
-                        <div class="absolute -top-2 -left-2 z-20">
-                            <div class="bg-amber-100 rounded-full p-1 shadow-sm">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-amber-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
-                                </svg>
-                            </div>
-                        </div>
-                        
-                        {% if member.image %}
-                        <div class="relative bg-gradient-to-r from-amber-50 to-yellow-50 h-40 flex items-center justify-center bachelor-img-container">
-                            <div class="absolute inset-0 bg-amber-600 opacity-5 rounded-t-lg"></div>
-                            <img src="{{ member.image }}" alt="{{ member.title }}" class="h-auto w-auto max-h-[90%] max-w-[90%] object-contain relative z-10">
-                            <div class="absolute inset-0 bg-gradient-to-t from-amber-900/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-t-lg"></div>
-                            {% if member.joining_year %}
-                            <div class="absolute top-2 right-2 bg-amber-500 text-white text-xs font-bold px-2 py-1 rounded-full shadow-sm">
-                                Since {{ member.joining_year }}
-                            </div>
-                            {% endif %}
-                            {% if member.co_supervisor %}
-                            <div class="absolute bottom-2 left-2 bg-yellow-100 text-yellow-800 text-xs font-medium px-2 py-1 rounded-full flex items-center">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />
-                                </svg>
-                                Co: {{ member.co_supervisor }}
-                            </div>
-                            {% endif %}
-                        </div>
-                        {% else %}
-                        <div class="relative bg-gradient-to-r from-amber-50 to-yellow-100 h-40 flex items-center justify-center">
-                            <div class="absolute inset-0 bg-amber-600 opacity-5 rounded-t-lg"></div>
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 text-amber-300 relative z-10" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M5.121 17.804A13.937 13.937 0 0112 16c2.5 0 4.847.655 6.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0zm6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                            </svg>
-                            <div class="absolute inset-0 bg-gradient-to-t from-amber-900/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-t-lg"></div>
-                            {% if member.joining_year %}
-                            <div class="absolute top-2 right-2 bg-amber-500 text-white text-xs font-bold px-2 py-1 rounded-full shadow-sm">
-                                Since {{ member.joining_year }}
-                            </div>
-                            {% endif %}
-                            {% if member.co_supervisor %}
-                            <div class="absolute bottom-2 left-2 bg-yellow-100 text-yellow-800 text-xs font-medium px-2 py-1 rounded-full flex items-center">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />
-                                </svg>
-                                Co: {{ member.co_supervisor }}
-                            </div>
-                            {% endif %}
-                        </div>
-                        {% endif %}
-                        <div class="p-6 relative z-10 flex-grow border-t border-gray-100">
-                            <h3 class="text-xl font-semibold mb-2 group-hover:text-amber-600 transition-colors">{{ member.title }}</h3>
-                            <p class="text-gray-600 mb-4">{{ member.position }}</p>
-                            <div class="flex flex-wrap gap-2 pt-2 border-t border-gray-100 mt-auto">
-                                {% if member.email %}
-                                <div class="text-amber-600 hover:text-amber-800 transition-colors inline-flex items-center text-sm">
-                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                                    </svg>
-                                    Email
-                                </div>
-                                {% endif %}
-                                {% if member.website %}
-                                <div class="text-amber-600 hover:text-amber-800 transition-colors inline-flex items-center text-sm">
-                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" />
-                                    </svg>
-                                    Website
-                                </div>
-                                {% endif %}
-                                {% if member.github %}
-                                <div class="text-amber-600 hover:text-amber-800 transition-colors inline-flex items-center text-sm">
-                                    <svg class="h-4 w-4 mr-1" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                                        <path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd" />
-                                    </svg>
-                                    GitHub
-                                </div>
-                                {% endif %}
-                                {% if member.scholar %}
-                                <div class="text-amber-600 hover:text-amber-800 transition-colors inline-flex items-center text-sm">
-                                    <svg class="h-4 w-4 mr-1" viewBox="0 0 24 24" fill="currentColor">
-                                        <path d="M5.242 13.769L0 9.5 12 0l12 9.5-5.242 4.269C17.548 11.249 14.978 9.5 12 9.5c-2.977 0-5.548 1.748-6.758 4.269zM12 10a7 7 0 1 0 0 14 7 7 0 0 0 0-14z" />
-                                    </svg>
-                                    Scholar
-                                </div>
-                                {% endif %}
-                            </div>
-                        </div>
-                    </div>
-                </a>
-                <!-- End Card -->
-                {% endfor %}
-            </div>
-        </div>
-    {% endfor %}
-
-    <!-- Display Bachelor students without supervisors -->
-    <div class="mb-16">
-        <h3 class="text-xl font-semibold mb-8 text-amber-700">Unsupervised Bachelor Students</h3>
-        
-        {% assign unsupervised_students = "" | split: "" %}
-        {% for student in bachelor_students %}
-          {% if student.supervisor == nil %}
-            {% assign unsupervised_students = unsupervised_students | push: student %}
-          {% endif %}
-        {% endfor %}
-        {% assign unsupervised_students = unsupervised_students | sort: "joining_year" | reverse %}
-        
-        <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
-            {% for member in unsupervised_students %}
-            <a href="{{ member.url }}" class="group transform transition-all duration-300 hover:-translate-y-2">
-                <div class="bg-white rounded-lg shadow-md overflow-hidden transition-all duration-300 hover:shadow-xl h-full flex flex-col border border-transparent hover:border-purple-200 relative">
-                    <!-- Independent badge -->
-                    <div class="absolute -top-2 -left-2 z-20">
-                        <div class="bg-gray-100 rounded-full p-1 shadow-sm">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-gray-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
-                            </svg>
-                        </div>
-                    </div>
-                    
-                    {% if member.image %}
-                    <div class="relative bg-gradient-to-r from-purple-50 to-indigo-50 h-48 flex items-center justify-center phd-img-container">
-                        <div class="absolute inset-0 bg-purple-600 opacity-5 rounded-t-lg"></div>
-                        <img src="{{ member.image }}" alt="{{ member.title }}" class="h-auto w-auto max-h-[90%] max-w-[90%] object-contain relative z-10">
-                        <div class="absolute inset-0 bg-gradient-to-t from-purple-900/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-t-lg"></div>
-                        {% if member.joining_year %}
-                        <div class="absolute top-2 right-2 bg-purple-500 text-white text-xs font-bold px-2 py-1 rounded-full shadow-sm">
-                            Since {{ member.joining_year }}
-                        </div>
-                        {% endif %}
-                        {% if member.co_supervisor %}
-                        <div class="absolute bottom-2 left-2 bg-indigo-100 text-indigo-800 text-xs font-medium px-2 py-1 rounded-full flex items-center">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />
-                            </svg>
-                            Co: {{ member.co_supervisor }}
-                        </div>
-                        {% endif %}
-                    </div>
-                    {% else %}
-                    <div class="relative bg-gradient-to-r from-purple-50 to-indigo-100 h-48 flex items-center justify-center">
-                        <div class="absolute inset-0 bg-purple-600 opacity-5 rounded-t-lg"></div>
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 text-purple-300 relative z-10" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M5.121 17.804A13.937 13.937 0 0112 16c2.5 0 4.847.655 6.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0zm6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                        </svg>
-                        <div class="absolute inset-0 bg-gradient-to-t from-purple-900/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-t-lg"></div>
-                        {% if member.joining_year %}
-                        <div class="absolute top-2 right-2 bg-purple-500 text-white text-xs font-bold px-2 py-1 rounded-full shadow-sm">
-                            Since {{ member.joining_year }}
-                        </div>
-                        {% endif %}
-                        {% if member.co_supervisor %}
-                        <div class="absolute bottom-2 left-2 bg-indigo-100 text-indigo-800 text-xs font-medium px-2 py-1 rounded-full flex items-center">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />
-                            </svg>
-                            Co: {{ member.co_supervisor }}
-                        </div>
-                        {% endif %}
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+        {% assign bachelor_students = site.team_members | where: "role", "bachelor" | where: "active", true | sort: "joining_year" %}
+        {% for member in bachelor_students %}
+        <a href="{{ member.url }}" class="group" onclick="window.location.href='{{ member.url }}'; return false;">
+            <div class="bg-white rounded-lg shadow-md overflow-hidden transition-all duration-300 hover:shadow-xl transform hover:-translate-y-1 h-full flex flex-col">
+                {% if member.image %}
+                <div class="relative bg-gradient-to-r from-gray-50 to-blue-50 h-64 flex items-center justify-center faculty-img-container">
+                    <img src="{{ member.image }}" alt="{{ member.title }}" class="h-auto w-auto max-h-[90%] max-w-[90%] object-contain">
+                    <div class="absolute inset-0 bg-gradient-to-t from-indigo-900/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    {% if member.joining_year %}
+                    <div class="absolute top-2 right-2 bg-blue-500 text-white text-xs font-bold px-2 py-1 rounded-full">
+                        Since {{ member.joining_year }}
                     </div>
                     {% endif %}
-                    <div class="p-6 relative z-10 flex-grow border-t border-gray-100">
-                        <h3 class="text-xl font-semibold mb-2 group-hover:text-purple-600 transition-colors">{{ member.title }}</h3>
-                        <p class="text-gray-600 mb-4">{{ member.position }}</p>
-                        <div class="flex flex-wrap gap-2 pt-2 border-t border-gray-100 mt-auto">
-                            {% if member.email %}
-                            <div class="text-purple-600 hover:text-purple-800 transition-colors inline-flex items-center text-sm">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                                </svg>
-                                Email
-                            </div>
-                            {% endif %}
-                            {% if member.website %}
-                            <div class="text-purple-600 hover:text-purple-800 transition-colors inline-flex items-center text-sm">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" />
-                                </svg>
-                                Website
-                            </div>
-                            {% endif %}
-                            {% if member.github %}
-                            <div class="text-purple-600 hover:text-purple-800 transition-colors inline-flex items-center text-sm">
-                                <svg class="h-4 w-4 mr-1" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                                    <path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd" />
-                                </svg>
-                                GitHub
-                            </div>
-                            {% endif %}
-                            {% if member.scholar %}
-                            <div class="text-purple-600 hover:text-purple-800 transition-colors inline-flex items-center text-sm">
-                                <svg class="h-4 w-4 mr-1" viewBox="0 0 24 24" fill="currentColor">
-                                    <path d="M5.242 13.769L0 9.5 12 0l12 9.5-5.242 4.269C17.548 11.249 14.978 9.5 12 9.5c-2.977 0-5.548 1.748-6.758 4.269zM12 10a7 7 0 1 0 0 14 7 7 0 0 0 0-14z" />
-                                </svg>
-                                Scholar
-                            </div>
-                            {% endif %}
+                </div>
+                {% else %}
+                <div class="relative bg-gradient-to-r from-blue-50 to-indigo-100 h-64 flex items-center justify-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-24 w-24 text-blue-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M5.121 17.804A13.937 13.937 0 0112 16c2.5 0 4.847.655 6.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0zm6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                    <div class="absolute inset-0 bg-gradient-to-t from-indigo-900/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    {% if member.joining_year %}
+                    <div class="absolute top-2 right-2 bg-blue-500 text-white text-xs font-bold px-2 py-1 rounded-full">
+                        Since {{ member.joining_year }}
+                    </div>
+                    {% endif %}
+                </div>
+                {% endif %}
+                <div class="p-6 relative z-10 flex-grow border-t border-gray-100">
+                    <h3 class="text-xl font-semibold mb-2 group-hover:text-blue-600 transition-colors">{{ member.title }}</h3>
+                    <p class="text-gray-600 mb-4">{{ member.position }}</p>
+                    <div class="flex flex-wrap gap-2 pt-2 border-t border-gray-100 mt-auto">
+                        {% if member.email %}
+                        <div class="text-blue-600 hover:text-blue-800 transition-colors inline-flex items-center text-sm">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                            </svg>
+                            Email
                         </div>
+                        {% endif %}
+                        {% if member.website %}
+                        <div class="text-blue-600 hover:text-blue-800 transition-colors inline-flex items-center text-sm">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" />
+                            </svg>
+                            Website
+                        </div>
+                        {% endif %}
+                        {% if member.github %}
+                        <div class="text-blue-600 hover:text-blue-800 transition-colors inline-flex items-center text-sm">
+                            <svg class="h-4 w-4 mr-1" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                <path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd" />
+                            </svg>
+                            GitHub
+                        </div>
+                        {% endif %}
+                        {% if member.google_scholar %}
+                        <div class="text-blue-600 hover:text-blue-800 transition-colors inline-flex items-center text-sm">
+                            <svg class="h-4 w-4 mr-1" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M5.242 13.769L0 9.5 12 0l12 9.5-5.242 4.269C17.548 11.249 14.978 9.5 12 9.5c-2.977 0-5.548 1.748-6.758 4.269zM12 10a7 7 0 1 0 0 14 7 7 0 0 0 0-14z" />
+                            </svg>
+                            Scholar
+                        </div>
+                        {% endif %}
                     </div>
                 </div>
-            </a>
-            {% endfor %}
-        </div>
+            </div>
+        </a>
+        {% endfor %}
+    </div>
+</section>
+
+<!-- Research Assistants and Staff -->
+<section class="mb-16">
+    <h2 class="text-2xl font-bold text-gray-900 mb-8">Research Assistants & Staff</h2>
+    
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        {% assign staff = site.team_members | where: "role", "staff" | where: "active", true | sort: "joining_year" %}
+        {% for member in staff %}
+        <a href="{{ member.url }}" class="group" target="_blank">
+            <div class="bg-white rounded-lg shadow-md overflow-hidden transition-all duration-300 hover:shadow-xl transform hover:-translate-y-1 h-full flex flex-col">
+                {% if member.image %}
+                <div class="relative bg-gradient-to-r from-emerald-50 to-green-50 h-40 flex items-center justify-center staff-img-container">
+                    <img src="{{ member.image }}" alt="{{ member.title }}" class="h-auto w-auto max-h-[90%] max-w-[90%] object-contain">
+                    <div class="absolute inset-0 bg-gradient-to-t from-emerald-900/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    {% if member.joining_year %}
+                    <div class="absolute top-2 right-2 bg-emerald-500 text-white text-xs font-bold px-2 py-1 rounded-full">
+                        Since {{ member.joining_year }}
+                    </div>
+                    {% endif %}
+                </div>
+                {% else %}
+                <div class="relative bg-gradient-to-r from-emerald-50 to-green-100 h-40 flex items-center justify-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 text-emerald-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M5.121 17.804A13.937 13.937 0 0112 16c2.5 0 4.847.655 6.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0zm6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                    <div class="absolute inset-0 bg-gradient-to-t from-emerald-900/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    {% if member.joining_year %}
+                    <div class="absolute top-2 right-2 bg-emerald-500 text-white text-xs font-bold px-2 py-1 rounded-full">
+                        Since {{ member.joining_year }}
+                    </div>
+                    {% endif %}
+                </div>
+                {% endif %}
+                <div class="p-6 relative z-10 flex-grow border-t border-gray-100">
+                    <h3 class="text-xl font-semibold mb-2 group-hover:text-emerald-600 transition-colors">{{ member.title }}</h3>
+                    <p class="text-gray-600 mb-4">{{ member.position }}</p>
+                    <div class="text-sm text-gray-500 mb-4"></div>
+                    <div class="flex flex-wrap gap-2 pt-2 border-t border-gray-100 mt-auto">
+                        {% if member.email %}
+                        <div class="text-emerald-600 hover:text-emerald-800 transition-colors inline-flex items-center text-sm">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                            </svg>
+                            Email
+                        </div>
+                        {% endif %}
+                        {% if member.website %}
+                        <div class="text-emerald-600 hover:text-emerald-800 transition-colors inline-flex items-center text-sm">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" />
+                            </svg>
+                            Website
+                        </div>
+                        {% endif %}
+                        {% if member.github %}
+                        <div class="text-emerald-600 hover:text-emerald-800 transition-colors inline-flex items-center text-sm">
+                            <svg class="h-4 w-4 mr-1" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                <path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd" />
+                            </svg>
+                            GitHub
+                        </div>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </a>
+        {% endfor %}
     </div>
 </section>
 
