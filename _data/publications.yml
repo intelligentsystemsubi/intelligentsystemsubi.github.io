@@ -8,7 +8,7 @@
   publication_type: "conference"
   doi: "10.1109/CIB.2009.4925680"
   pdf: "http://www.di.ubi.pt/~hugomcp/doc/CIBIM09.pdf"
-  thumbnail: "/is-ubi/assets/publications/paper-20.png"
+  thumbnail: "/assets/publications/paper-20.png"
   tags:
     - "Iris Recognition"
     - "Visible Wavelength"
@@ -24,7 +24,7 @@
   publication_type: "conference"
   doi: "10.1007/978-3-540-89639-5_70"
   pdf: "http://www.di.ubi.pt/~hugomcp/doc/ISVC08.pdf"
-  thumbnail: "/is-ubi/assets/publications/paper-19.png"
+  thumbnail: "/assets/publications/paper-19.png"
   tags:
     - "Iris Recognition"
     - "Image Segmentation"
@@ -40,7 +40,7 @@
   publication_type: "conference"
   doi: "10.1109/ICOSP.2008.4697274"
   pdf: "http://www.di.ubi.pt/~hugomcp/doc/ICSP08.pdf"
-  thumbnail: "/is-ubi/assets/publications/paper-18.png"
+  thumbnail: "/assets/publications/paper-18.png"
   tags:
     - "Face Detection"
     - "Computer Vision"
@@ -56,7 +56,7 @@
   publication_type: "conference"
   doi: "10.1109/ICCIMA.2007.119"
   pdf: "http://www.di.ubi.pt/~hugomcp/doc/iccima15.pdf"
-  thumbnail: "/is-ubi/assets/publications/paper-17.png"
+  thumbnail: "/assets/publications/paper-17.png"
   tags:
     - "Iris Recognition"
     - "Feature Selection"
@@ -72,7 +72,7 @@
   publication_type: "conference"
   doi: "10.1007/978-3-540-76858-6_60"
   pdf: "http://www.di.ubi.pt/~hugomcp/doc/ISVC07.pdf"
-  thumbnail: "/is-ubi/assets/publications/paper-16.png"
+  thumbnail: "/assets/publications/paper-16.png"
   tags:
     - "Iris Recognition"
     - "Entropy-Based Coding"
@@ -88,7 +88,7 @@
   publication_type: "conference"
   doi: "10.1007/978-3-540-75175-5_90"
   pdf: "http://www.di.ubi.pt/~hugomcp/doc/CORES07.pdf"
-  thumbnail: "/is-ubi/assets/publications/paper-15.png"
+  thumbnail: "/assets/publications/paper-15.png"
   tags:
     - "Iris Recognition"
     - "Structural Pattern Analysis"
@@ -104,7 +104,7 @@
   publication_type: "conference"
   doi: "10.1109/BTAS.2007.4401910"
   pdf: "http://www.di.ubi.pt/~hugomcp/doc/BTAS07.pdf"
-  thumbnail: "/is-ubi/assets/publications/paper-14.png"
+  thumbnail: "/assets/publications/paper-14.png"
   tags:
     - "Iris Recognition"
     - "Image Segmentation"
@@ -120,7 +120,7 @@
   publication_type: "journal"
   doi: "10.1109/TPAMI.2007.1016"
   pdf: "http://www.di.ubi.pt/~hugomcp/doc/ProencaAlexandreMultipleSignaturesPAMI2007.pdf"
-  thumbnail: "/is-ubi/assets/publications/paper-58.png"
+  thumbnail: "/assets/publications/paper-58.png"
   tags:
     - "Iris Recognition"
     - "Non-Cooperative Recognition"
@@ -135,7 +135,7 @@
   status: "published"
   publication_type: "special_issue"
   pdf: "http://www.sciencedirect.com/science/publication?issn=02628856&volume=28&issue=2"
-  thumbnail: "/is-ubi/assets/publications/paper-127.png"
+  thumbnail: "/assets/publications/paper-127.png"
   tags:
     - "Iris Recognition"
     - "Image Segmentation"
@@ -151,7 +151,7 @@
   publication_type: "book_chapter"
   doi: "10.1007/978-94-007-0011-6_10"
   pdf: "http://www.di.ubi.pt/~hugomcp/doc/BC_Caries.pdf"
-  thumbnail: "/is-ubi/assets/publications/paper-1.png"
+  thumbnail: "/assets/publications/paper-1.png"
   tags:
     - "Dental X-Ray"
     - "Caries Detection"
@@ -167,7 +167,7 @@
   publication_type: "journal"
   doi: "10.1016/j.imavis.2009.03.003"
   pdf: "http://www.di.ubi.pt/~hugomcp/doc/IVC_SegmentInnaccuracies.pdf"
-  thumbnail: "/is-ubi/assets/publications/paper-59.png"
+  thumbnail: "/assets/publications/paper-59.png"
   tags:
     - "Iris Recognition"
     - "Image Segmentation"
@@ -183,7 +183,7 @@
   publication_type: "journal"
   doi: "10.1111/j.1468-0394.2009.00534.x"
   pdf: "http://www.di.ubi.pt/~hugomcp/doc/ES_Structural.pdf"
-  thumbnail: "/is-ubi/assets/publications/paper-60.png"
+  thumbnail: "/assets/publications/paper-60.png"
   tags:
     - "Iris Recognition"
     - "Structural Pattern Analysis"
@@ -199,7 +199,7 @@
   publication_type: "journal"
   doi: "10.1016/j.imavis.2009.09.004"
   pdf: "http://www.di.ubi.pt/~hugomcp/doc/Introd_NICE1.pdf"
-  thumbnail: "/is-ubi/assets/publications/paper-61.png"
+  thumbnail: "/assets/publications/paper-61.png"
   tags:
     - "Iris Recognition"
     - "Image Segmentation"
@@ -216,7 +216,7 @@
   publication_type: "conference"
   doi: "10.1109/CIS.2009.113"
   pdf: "http://www.di.ubi.pt/~hugomcp/doc/cis09.pdf"
-  thumbnail: "/is-ubi/assets/publications/paper-22.png"
+  thumbnail: "/assets/publications/paper-22.png"
   tags:
     - "Iris Recognition"
     - "Image Interpolation"
@@ -232,7 +232,7 @@
   publication_type: "conference"
   doi: "10.1007/978-3-642-10520-3_66"
   pdf: "http://www.di.ubi.pt/~hugomcp/doc/ISVC09.pdf"
-  thumbnail: "/is-ubi/assets/publications/paper-23.png"
+  thumbnail: "/assets/publications/paper-23.png"
   tags:
     - "Biometric Recognition"
     - "Evidence Fusion"
@@ -247,7 +247,7 @@
   status: "published"
   publication_type: "conference"
   pdf: "http://www.di.ubi.pt/~hugomcp/doc/ECCOMAS09.pdf"
-  thumbnail: "/is-ubi/assets/publications/paper-21.png"
+  thumbnail: "/assets/publications/paper-21.png"
   tags:
     - "Dental X-Ray"
     - "Dataset"
@@ -262,7 +262,7 @@
   status: "published"
   publication_type: "conference"
   pdf: "http://di.ubi.pt/~hugomcp/doc/EUSIPCO11.pdf"
-  thumbnail: "/is-ubi/assets/publications/paper-27.png"
+  thumbnail: "/assets/publications/paper-27.png"
   tags:
     - "Iris Recognition"
     - "Biometrics"
@@ -278,7 +278,7 @@
   publication_type: "journal"
   doi: "10.1109/TIFS.2010.2086446"
   pdf: "http://www.di.ubi.pt/~hugomcp/doc/VWIQ_IEEETIFS.pdf"
-  thumbnail: "/is-ubi/assets/publications/paper-64.png"
+  thumbnail: "/assets/publications/paper-64.png"
   tags:
     - "Iris Recognition"
     - "Biometrics"
@@ -295,7 +295,7 @@
   publication_type: "journal"
   doi: "10.1007/s11760-011-0243-7"
   pdf: "http://www.di.ubi.pt/~hugomcp/doc/Introd_SIVP.pdf"
-  thumbnail: "/is-ubi/assets/publications/paper-65.png"
+  thumbnail: "/assets/publications/paper-65.png"
   tags:
     - "Unconstrained Biometrics"
     - "Signal Processing"
@@ -311,7 +311,7 @@
   publication_type: "conference"
   doi: "10.1109/CIBIM.2011.5949208"
   pdf: "http://di.ubi.pt/~hugomcp/doc/UBEAR_SSCI10.pdf"
-  thumbnail: "/is-ubi/assets/publications/paper-26.png"
+  thumbnail: "/assets/publications/paper-26.png"
   tags:
     - "Ear Biometrics"
     - "Dataset"
@@ -327,7 +327,7 @@
   publication_type: "conference"
   doi: "10.1109/ISM.2010.56"
   pdf: "http://di.ubi.pt/~hugomcp/doc/MIPR2010.pdf"
-  thumbnail: "/is-ubi/assets/publications/paper-25.png"
+  thumbnail: "/assets/publications/paper-25.png"
   tags:
     - "Iris Recognition"
     - "Visible Wavelength"
@@ -343,7 +343,7 @@
   publication_type: "conference"
   doi: "10.1109/CISP.2010.5647404"
   pdf: "http://di.ubi.pt/~hugomcp/doc/CISP2010.pdf"
-  thumbnail: "/is-ubi/assets/publications/paper-24.png"
+  thumbnail: "/assets/publications/paper-24.png"
   tags:
     - "Iris Recognition"
     - "Biometrics"
@@ -359,7 +359,7 @@
   publication_type: "journal"
   doi: "10.1109/TPAMI.2009.66"
   pdf: "http://di.ubi.pt/~hugomcp/doc/UBIRISv2_IEEETPAMI.pdf"
-  thumbnail: "/is-ubi/assets/publications/paper-62.png"
+  thumbnail: "/assets/publications/paper-62.png"
   tags:
     - "Iris Recognition"
     - "Dataset"
@@ -375,7 +375,7 @@
   publication_type: "journal"
   doi: "10.1109/TPAMI.2009.140"
   pdf: "http://www.di.ubi.pt/~hugomcp/doc/VWIS_IEEETPAMI.pdf"
-  thumbnail: "/is-ubi/assets/publications/paper-63.png"
+  thumbnail: "/assets/publications/paper-63.png"
   tags:
     - "Iris Recognition"
     - "Image Segmentation"
@@ -391,7 +391,7 @@
   publication_type: "conference"
   doi: "10.1109/BTAS.2012.6374579"
   pdf: "http://di.ubi.pt/~hugomcp/doc/BTAS12.pdf"
-  thumbnail: "/is-ubi/assets/publications/paper-30.png"
+  thumbnail: "/assets/publications/paper-30.png"
   tags:
     - "Ocular Biometrics"
     - "Multimodal Biometrics"
@@ -407,7 +407,7 @@
   publication_type: "journal"
   doi: "10.1016/j.patrec.2012.03.003"
   pdf: "http://www.di.ubi.pt/~hugomcp/doc/Introd_PRL.pdf"
-  thumbnail: "/is-ubi/assets/publications/paper-68.png"
+  thumbnail: "/assets/publications/paper-68.png"
   tags:
     - "Iris Recognition"
     - "Visible Wavelength"
@@ -422,7 +422,7 @@
   status: "published"
   publication_type: "special_issue"
   pdf: "http://www.journals.elsevier.com/pattern-recognition-letters/"
-  thumbnail: "/is-ubi/assets/publications/paper-126.png"
+  thumbnail: "/assets/publications/paper-126.png"
   tags:
     - "Iris Recognition"
     - "Visible Wavelength"
@@ -437,7 +437,7 @@
   publication_type: "journal"
   doi: "10.1109/TIFS.2011.2177659"
   pdf: "http://www.di.ubi.pt/~hugomcp/doc/NICE_TIFS.pdf"
-  thumbnail: "/is-ubi/assets/publications/paper-67.png"
+  thumbnail: "/assets/publications/paper-67.png"
   tags:
     - "Iris Recognition"
     - "Visible Wavelength"
@@ -453,7 +453,7 @@
   publication_type: "conference"
   doi: "10.1109/ICB.2012.6199790"
   pdf: "http://di.ubi.pt/~hugomcp/doc/ICB12.pdf"
-  thumbnail: "/is-ubi/assets/publications/paper-29.png"
+  thumbnail: "/assets/publications/paper-29.png"
   tags:
     - "Periocular Recognition"
     - "Biometrics"
@@ -469,7 +469,7 @@
   publication_type: "journal"
   doi: "10.1016/j.cviu.2011.10.008"
   pdf: "http://www.di.ubi.pt/~hugomcp/doc/VWIR_CVIU.pdf"
-  thumbnail: "/is-ubi/assets/publications/paper-66.png"
+  thumbnail: "/assets/publications/paper-66.png"
   tags:
     - "Iris Recognition"
     - "Visible Wavelength"
@@ -486,7 +486,7 @@
   publication_type: "conference"
   doi: "10.1109/IJCB.2011.6117596"
   pdf: "http://di.ubi.pt/~hugomcp/doc/IJCB11.pdf"
-  thumbnail: "/is-ubi/assets/publications/paper-28.png"
+  thumbnail: "/assets/publications/paper-28.png"
   tags:
     - "Eye Corner Detection"
     - "Computer Vision"
@@ -501,7 +501,7 @@
   status: "published"
   publication_type: "special_issue"
   pdf: "http://www.springer.com/engineering/signals/journal/11760"
-  thumbnail: "/is-ubi/assets/publications/paper-125.png"
+  thumbnail: "/assets/publications/paper-125.png"
   tags:
     - "Unconstrained Biometrics"
     - "Signal Processing"
@@ -516,7 +516,7 @@
   publication_type: "journal"
   doi: "10.1007/s11760-013-0535-1"
   pdf: "http://www.di.ubi.pt/~hugomcp/doc/keypoints_SIVP.pdf"
-  thumbnail: "/is-ubi/assets/publications/paper-71.png"
+  thumbnail: "/assets/publications/paper-71.png"
   tags:
     - "Keypoint Detection"
     - "Keypoint Matching"
@@ -533,7 +533,7 @@
   publication_type: "journal"
   doi: "10.1109/TIFS.2013.2262942"
   pdf: "http://www.di.ubi.pt/~hugomcp/doc/NOISYRIS_TIFS.pdf"
-  thumbnail: "/is-ubi/assets/publications/paper-69.png"
+  thumbnail: "/assets/publications/paper-69.png"
   tags:
     - "Iris Recognition"
     - "Synthetic Data"
@@ -550,7 +550,7 @@
   publication_type: "journal"
   doi: "10.1109/TIFS.2013.2283458"
   pdf: "http://www.di.ubi.pt/~hugomcp/doc/VWII_TIFS.pdf"
-  thumbnail: "/is-ubi/assets/publications/paper-73.png"
+  thumbnail: "/assets/publications/paper-73.png"
   tags:
     - "Iris Biometrics"
     - "Indexing"
@@ -567,7 +567,7 @@
   publication_type: "conference"
   doi: "10.1007/978-3-642-39094-4_70"
   pdf: "http://di.ubi.pt/~hugomcp/doc/ICIAR13.pdf"
-  thumbnail: "/is-ubi/assets/publications/paper-33.png"
+  thumbnail: "/assets/publications/paper-33.png"
   tags:
     - "Fluorescence Microscopy"
     - "Leishmania"
@@ -584,7 +584,7 @@
   publication_type: "journal"
   doi: "10.1504/IJBM.2013.055971"
   pdf: "http://www.di.ubi.pt/~hugomcp/doc/Chandra_IJB.pdf"
-  thumbnail: "/is-ubi/assets/publications/paper-70.png"
+  thumbnail: "/assets/publications/paper-70.png"
   tags:
     - "Periocular Biometrics"
     - "Pose Compensation"
@@ -601,7 +601,7 @@
   publication_type: "conference"
   doi: "10.1109/CIBIM.2013.6607908"
   pdf: "http://di.ubi.pt/~hugomcp/doc/CIBIM13.pdf"
-  thumbnail: "/is-ubi/assets/publications/paper-31.png"
+  thumbnail: "/assets/publications/paper-31.png"
   tags:
     - "Periocular Biometrics"
     - "Unconstrained Scenarios"
@@ -617,7 +617,7 @@
   publication_type: "conference"
   doi: "10.1109/CIBIM.2013.6607918"
   pdf: "http://di.ubi.pt/~hugomcp/doc/CIBIM13_01.pdf"
-  thumbnail: "/is-ubi/assets/publications/paper-32.png"
+  thumbnail: "/assets/publications/paper-32.png"
   tags:
     - "Facial Expressions"
     - "Biometric Recognition"
@@ -634,7 +634,7 @@
   publication_type: "journal"
   doi: "10.1049/iet-bmt.2013.0039"
   pdf: "http://www.di.ubi.pt/~hugomcp/doc/EGM_IETB.pdf"
-  thumbnail: "/is-ubi/assets/publications/paper-72.png"
+  thumbnail: "/assets/publications/paper-72.png"
   tags:
     - "Periocular Biometrics"
     - "Elastic Graph Matching"
@@ -650,7 +650,7 @@
   publication_type: "book_chapter"
   isbn: "978-1-4471-4401-4"
   pdf: "http://www.di.ubi.pt/~hugomcp/doc/BC_Handbook.pdf"
-  thumbnail: "/is-ubi/assets/publications/paper-2.png"
+  thumbnail: "/assets/publications/paper-2.png"
   tags:
     - "Iris Recognition"
     - "Visible Wavelength"
@@ -666,7 +666,7 @@
   publication_type: "special_issue"
   issn: "2073-899"
   pdf: "http://www.di.ubi.pt/~hugomcp/doc/Symmetry_SI.pdf"
-  thumbnail: "/is-ubi/assets/publications/paper-122.png"
+  thumbnail: "/assets/publications/paper-122.png"
   tags:
     - "Biometric Recognition"
     - "In-The-Wild"
@@ -681,7 +681,7 @@
   status: "published"
   publication_type: "special_issue"
   pdf: "http://www.di.ubi.pt/~hugomcp/doc/MICHE_SI.pdf"
-  thumbnail: "/is-ubi/assets/publications/paper-123.png"
+  thumbnail: "/assets/publications/paper-123.png"
   tags:
     - "Iris Recognition"
     - "Mobile Biometrics"
@@ -696,7 +696,7 @@
   status: "published"
   publication_type: "book"
   isbn: "978-3-642-54079-0"
-  thumbnail: "/is-ubi/assets/publications/paper-129.png"
+  thumbnail: "/assets/publications/paper-129.png"
   tags:
     - "Signal Processing"
     - "Image Processing"
@@ -712,7 +712,7 @@
   publication_type: "conference"
   doi: "10.1145/2523514.2523540"
   pdf: "http://di.ubi.pt/~hugomcp/doc/SIN13.pdf"
-  thumbnail: "/is-ubi/assets/publications/paper-35.png"
+  thumbnail: "/assets/publications/paper-35.png"
   tags:
     - "Periocular Recognition"
     - "Sparse Representations"
@@ -728,7 +728,7 @@
   publication_type: "conference"
   doi: "10.1109/BIOMS.2013.6656141"
   pdf: "http://di.ubi.pt/~hugomcp/doc/BioMS13.pdf"
-  thumbnail: "/is-ubi/assets/publications/paper-34.png"
+  thumbnail: "/assets/publications/paper-34.png"
   tags:
     - "Iris Recognition"
     - "Synthetic Data"
@@ -745,7 +745,7 @@
   publication_type: "journal"
   doi: "10.1007/s00138-014-0593-6"
   pdf: "http://www.di.ubi.pt/~hugomcp/doc/Keypoints_MVA.pdf"
-  thumbnail: "/is-ubi/assets/publications/paper-74.png"
+  thumbnail: "/assets/publications/paper-74.png"
   tags:
     - "Keypoint Correspondences"
     - "Computer Vision"
@@ -762,7 +762,7 @@
   publication_type: "book_chapter"
   issn: "2327-0411"
   pdf: "http://www.di.ubi.pt/~hugomcp/doc/BC_UOD.pdf"
-  thumbnail: "/is-ubi/assets/publications/paper-3.png"
+  thumbnail: "/assets/publications/paper-3.png"
   tags:
     - "Ocular Biometrics"
     - "Periocular Recognition"
@@ -777,7 +777,7 @@
   status: "published"
   publication_type: "book_chapter"
   pdf: "http://www.di.ubi.pt/~hugomcp/doc/BC_Sketches.pdf"
-  thumbnail: "/is-ubi/assets/publications/paper-4.png"
+  thumbnail: "/assets/publications/paper-4.png"
   tags:
     - "Facial Sketches"
     - "Biometric Identification"
@@ -793,7 +793,7 @@
   publication_type: "journal"
   doi: "10.1016/j.cviu.2014.04.010"
   pdf: "http://www.di.ubi.pt/~hugomcp/doc/MRI_Segmentation.pdf"
-  thumbnail: "/is-ubi/assets/publications/paper-76.png"
+  thumbnail: "/assets/publications/paper-76.png"
   tags:
     - "Brain MRI Segmentation"
     - "Active Contours"
@@ -810,7 +810,7 @@
   publication_type: "journal"
   doi: "10.1049/iet-cvi.2014.0039"
   pdf: "http://www.di.ubi.pt/~hugomcp/doc/FaceSparse_IETCV.pdf"
-  thumbnail: "/is-ubi/assets/publications/paper-77.png"
+  thumbnail: "/assets/publications/paper-77.png"
   tags:
     - "Face Recognition"
     - "Sparse Representations"
@@ -827,7 +827,7 @@
   publication_type: "journal"
   doi: "10.1155/2015/427270"
   pdf: "http://www.di.ubi.pt/~hugomcp/doc/MasterSlaveCalibration_MPE.pdf"
-  thumbnail: "/is-ubi/assets/publications/paper-85.png"
+  thumbnail: "/assets/publications/paper-85.png"
   tags:
     - "Master-slave System"
     - "Calibration"
@@ -844,7 +844,7 @@
   publication_type: "journal"
   doi: "10.1109/TIP.2014.2361285"
   pdf: "http://www.di.ubi.pt/~hugomcp/doc/Atomistic_TIP.pdf"
-  thumbnail: "/is-ubi/assets/publications/paper-78.png"
+  thumbnail: "/assets/publications/paper-78.png"
   tags:
     - "Ocular Biometrics"
     - "Score-Level Fusion"
@@ -861,7 +861,7 @@
   publication_type: "conference"
   doi: "10.1109/BTAS.2014.6996228"
   pdf: "http://di.ubi.pt/~hugomcp/doc/IJCB14.pdf"
-  thumbnail: "/is-ubi/assets/publications/paper-36.png"
+  thumbnail: "/assets/publications/paper-36.png"
   tags:
     - "Periocular Region"
     - "Segmentation"
@@ -878,7 +878,7 @@
   publication_type: "journal"
   doi: "10.1002/cyto.a.22465"
   pdf: "http://www.di.ubi.pt/~hugomcp/doc/Leishmania_CytometryA.pdf"
-  thumbnail: "/is-ubi/assets/publications/paper-75.png"
+  thumbnail: "/assets/publications/paper-75.png"
   tags:
     - "Cell Detection"
     - "Image Processing"
@@ -895,7 +895,7 @@
   publication_type: "conference"
   doi: "10.1117/12.2054539"
   pdf: "https://www.spiedigitallibrary.org/conference-proceedings-of-spie/9138/913804/Automatic-face-recognition-in-HDR-imaging/10.1117/12.2054539.short"
-  thumbnail: "/is-ubi/assets/publications/paper-131.png"
+  thumbnail: "/assets/publications/paper-131.png"
   tags:
     - "Face Recognition"
     - "HDR Imaging"
@@ -912,7 +912,7 @@
   publication_type: "conference"
   doi: "10.1109/AVSS.2015.7301790"
   pdf: ""
-  thumbnail: "/is-ubi/assets/publications/paper-38.png"
+  thumbnail: "/assets/publications/paper-38.png"
   tags:
     - "Camera Scheduling"
     - "PTZ Camera"
@@ -929,7 +929,7 @@
   publication_type: "conference"
   doi: "10.1007/978-3-319-19390-8_62"
   pdf: "http://di.ubi.pt/~hugomcp/doc/ibpria15.pdf"
-  thumbnail: "/is-ubi/assets/publications/paper-37.png"
+  thumbnail: "/assets/publications/paper-37.png"
   tags:
     - "Camera Calibration"
     - "Visual Surveillance"
@@ -946,7 +946,7 @@
   publication_type: "journal"
   doi: "10.1049/iet-bmt.2014.0045"
   pdf: "http://www.di.ubi.pt/~hugomcp/doc/BioHDD_IET-Biom.pdf"
-  thumbnail: "/is-ubi/assets/publications/paper-79.png"
+  thumbnail: "/assets/publications/paper-79.png"
   tags:
     - "Biometric Identification"
     - "Degraded Data"
@@ -963,7 +963,7 @@
   publication_type: "journal"
   doi: "10.1007/s11265-015-1023-3"
   pdf: "http://www.di.ubi.pt/~hugomcp/doc/SparseFusion_JSPS.pdf"
-  thumbnail: "/is-ubi/assets/publications/paper-82.png"
+  thumbnail: "/assets/publications/paper-82.png"
   tags:
     - "Periocular Recognition"
     - "Sparse Representation"
@@ -980,7 +980,7 @@
   publication_type: "journal"
   doi: "10.1007/s10044-015-0493-z"
   pdf: "http://www.di.ubi.pt/~hugomcp/doc/PeriocularExpressions_PAA.pdf"
-  thumbnail: "/is-ubi/assets/publications/paper-83.png"
+  thumbnail: "/assets/publications/paper-83.png"
   tags:
     - "Periocular Recognition"
     - "Facial Expressions"
@@ -996,7 +996,7 @@
   publication_type: "journal"
   doi: "10.1007/s10044-015-0468-0"
   pdf: "http://www.di.ubi.pt/~hugomcp/doc/Gait_PAA.pdf"
-  thumbnail: "/is-ubi/assets/publications/paper-81.png"
+  thumbnail: "/assets/publications/paper-81.png"
   tags:
     - "Gait Recognition"
     - "Feature Representation"
@@ -1012,7 +1012,7 @@
   status: "published"
   publication_type: "book"
   isbn: "978-0-08-100705-1"
-  thumbnail: "/is-ubi/assets/publications/paper-128.png"
+  thumbnail: "/assets/publications/paper-128.png"
   tags:
     - "Human Recognition"
     - "Unconstrained Environments"
@@ -1028,7 +1028,7 @@
   status: "published"
   publication_type: "conference"
   pdf: "http://www.di.ubi.pt/~hugomcp/doc/ICSIPA15.pdf"
-  thumbnail: "/is-ubi/assets/publications/paper-41.png"
+  thumbnail: "/assets/publications/paper-41.png"
   tags:
     - "Background Subtraction"
     - "Visual Surveillance"
@@ -1044,7 +1044,7 @@
   publication_type: "journal"
   doi: "10.1109/TIFS.2014.2371691"
   pdf: "http://www.di.ubi.pt/~hugomcp/doc/BitFragility.pdf"
-  thumbnail: "/is-ubi/assets/publications/paper-80.png"
+  thumbnail: "/assets/publications/paper-80.png"
   tags:
     - "Iris Recognition"
     - "Bit Fragility"
@@ -1061,7 +1061,7 @@
   publication_type: "conference"
   doi: "10.1109/BTAS.2015.7358744"
   pdf: ""
-  thumbnail: "/is-ubi/assets/publications/paper-39.png"
+  thumbnail: "/assets/publications/paper-39.png"
   tags:
     - "Face Recognition"
     - "Surveillance"
@@ -1078,7 +1078,7 @@
   publication_type: "conference"
   doi: "10.1007/978-3-319-23222-5_8"
   pdf: "http://di.ubi.pt/~hugomcp/doc/ICIAP15.pdf"
-  thumbnail: "/is-ubi/assets/publications/paper-40.png"
+  thumbnail: "/assets/publications/paper-40.png"
   tags:
     - "Biometric Recognition"
     - "Surveillance"
@@ -1096,7 +1096,7 @@
   publication_type: "journal"
   doi: "10.1007/s10462-016-9474-x"
   pdf: "http://www.di.ubi.pt/~hugomcp/doc/BiometricsSurveillance_Survey.pdf"
-  thumbnail: "/is-ubi/assets/publications/paper-87.png"
+  thumbnail: "/assets/publications/paper-87.png"
   tags:
     - "Biometric Recognition"
     - "Surveillance"
@@ -1112,7 +1112,7 @@
   status: "published"
   publication_type: "book_chapter"
   pdf: "http://www.di.ubi.pt/~hugomcp/doc/Hand_1.pdf"
-  thumbnail: "/is-ubi/assets/publications/paper-5.png"
+  thumbnail: "/assets/publications/paper-5.png"
   tags:
     - "Iris Recognition"
     - "Visible Wavelength"
@@ -1128,7 +1128,7 @@
   status: "published"
   publication_type: "book_chapter"
   pdf: "http://www.di.ubi.pt/~hugomcp/doc/BC_II.pdf"
-  thumbnail: "/is-ubi/assets/publications/paper-6.png"
+  thumbnail: "/assets/publications/paper-6.png"
   tags:
     - "Iris Recognition"
     - "Biometric Indexing"
@@ -1144,7 +1144,7 @@
   publication_type: "journal"
   doi: "10.1016/j.imavis.2016.03.015"
   pdf: "http://www.di.ubi.pt/~hugomcp/doc/PeriocularImagingSurveillance.pdf"
-  thumbnail: "/is-ubi/assets/publications/paper-88.png"
+  thumbnail: "/assets/publications/paper-88.png"
   tags:
     - "Visual Surveillance"
     - "Iris Recognition"
@@ -1159,7 +1159,7 @@
   year: 2016
   status: "published"
   publication_type: "special_issue"
-  thumbnail: "/is-ubi/assets/publications/paper-121.png"
+  thumbnail: "/assets/publications/paper-121.png"
   tags:
     - "Biometric Recognition"
     - "In-the-Wild"
@@ -1174,7 +1174,7 @@
   publication_type: "journal"
   doi: "10.1007/s00357-017-9223-0"
   pdf: "http://www.di.ubi.pt/~hugomcp/doc/VPC.pdf"
-  thumbnail: "/is-ubi/assets/publications/paper-84.png"
+  thumbnail: "/assets/publications/paper-84.png"
   tags:
     - "Classification"
     - "Nearest Neighbor"
@@ -1191,7 +1191,7 @@
   publication_type: "journal"
   doi: "10.1016/j.patrec.2016.12.013"
   pdf: "http://www.di.ubi.pt/~hugomcp/doc/ResultsMICHE2.pdf"
-  thumbnail: "/is-ubi/assets/publications/paper-90.png"
+  thumbnail: "/assets/publications/paper-90.png"
   tags:
     - "Mobile Biometrics"
     - "Iris Recognition"
@@ -1207,7 +1207,7 @@
   publication_type: "conference"
   doi: "10.1109/ICPR.2016.7899624"
   pdf: "http://www.di.ubi.pt/~hugomcp/doc/icpr2016.pdf"
-  thumbnail: "/is-ubi/assets/publications/paper-43.png"
+  thumbnail: "/assets/publications/paper-43.png"
   tags:
     - "Mobile Biometrics"
     - "Iris Recognition"
@@ -1223,7 +1223,7 @@
   publication_type: "journal"
   doi: "10.1109/TPAMI.2016.2522441"
   pdf: "http://www.di.ubi.pt/~hugomcp/doc/SoftBiometrics.pdf"
-  thumbnail: "/is-ubi/assets/publications/paper-86.png"
+  thumbnail: "/assets/publications/paper-86.png"
   tags:
     - "Soft Biometrics"
     - "Head Pose Estimation"
@@ -1240,7 +1240,7 @@
   publication_type: "conference"
   doi: "10.1109/ICB.2016.7550066"
   pdf: "http://www.di.ubi.pt/~hugomcp/doc/ICB16.pdf"
-  thumbnail: "/is-ubi/assets/publications/paper-42.png"
+  thumbnail: "/assets/publications/paper-42.png"
   tags:
     - "Biometric Recognition"
     - "Wild Conditions"
@@ -1256,7 +1256,7 @@
   publication_type: "journal"
   doi: "10.1109/TIFS.2017.2680246"
   pdf: "http://www.di.ubi.pt/~hugomcp/doc/HairAnalysis_TIFS.pdf"
-  thumbnail: "/is-ubi/assets/publications/tifs.jpg"
+  thumbnail: "/assets/publications/tifs.jpg"
   tags:
     - "Soft Biometrics"
     - "Hair Segmentation"
@@ -1273,7 +1273,7 @@
   publication_type: "journal"
   doi: "10.1016/j.patcog.2017.08.028"
   pdf: "http://www.di.ubi.pt/~hugomcp/doc/MICHEInsights.pdf"
-  thumbnail: "/is-ubi/assets/publications/prl.jpg"
+  thumbnail: "/assets/publications/prl.jpg"
   tags:
     - "Iris Recognition"
     - "Mobile Biometrics"
@@ -1290,7 +1290,7 @@
   publication_type: "conference"
   doi: "10.1109/CVPR.2017.714"
   pdf: "http://www.di.ubi.pt/~hugomcp/doc/CVPR2017.pdf"
-  thumbnail: "/is-ubi/assets/publications/cvf.jpg"
+  thumbnail: "/assets/publications/cvf.jpg"
   tags:
     - "Iris Recognition"
     - "Segmentation Robustness"
@@ -1307,7 +1307,7 @@
   publication_type: "journal"
   doi: "10.1049/iet-bmt.2016.0178"
   pdf: "http://www.di.ubi.pt/~hugomcp/doc/QUISCAMPI_IET.pdf"
-  thumbnail: "/is-ubi/assets/publications/ietbiometrics.jpg"
+  thumbnail: "/assets/publications/ietbiometrics.jpg"
   tags:
     - "Multi-biometrics"
     - "Surveillance"
@@ -1324,7 +1324,7 @@
   publication_type: "conference"
   doi: "10.1109/FG.2017.122"
   pdf: "http://www.di.ubi.pt/~hugomcp/doc/fg2017.pdf"
-  thumbnail: "/is-ubi/assets/publications/ieeexplore.jpg"
+  thumbnail: "/assets/publications/ieeexplore.jpg"
   tags:
     - "Error Detection"
     - "Biometric Signatures"
@@ -1341,7 +1341,7 @@
   publication_type: "journal"
   doi: "10.1109/TIFS.2017.2771230"
   pdf: "http://www.di.ubi.pt/~hugomcp/doc/Deep-PRWIS.pdf"
-  thumbnail: "/is-ubi/assets/publications/tifs.jpg"
+  thumbnail: "/assets/publications/tifs.jpg"
   tags:
     - "Periocular Recognition"
     - "Deep Learning"
@@ -1358,7 +1358,7 @@
   publication_type: "journal"
   doi: "10.1109/MIS.2018.033001416"
   pdf: "http://www.di.ubi.pt/~hugomcp/doc/mex201803.issue.pdf"
-  thumbnail: "/is-ubi/assets/publications/is.jpg"
+  thumbnail: "/assets/publications/is.jpg"
   tags:
     - "Biometric Recognition"
     - "Surveillance"
@@ -1375,7 +1375,7 @@
   publication_type: "journal"
   doi: "10.1109/MITP.2018.032501748"
   pdf: "http://www.di.ubi.pt/~hugomcp/doc/ITProfessional_Akhtar.pdf" 
-  thumbnail: "/is-ubi/assets/publications/itprofessional.jpg"
+  thumbnail: "/assets/publications/itprofessional.jpg"
   tags:
     - "Ocular Biometrics"
     - "Databases"
@@ -1392,7 +1392,7 @@
   publication_type: "journal"
   doi: "10.1109/TIFS.2018.2846617"
   pdf: "http://www.di.ubi.pt/~hugomcp/doc/Leopard_TIFS.pdf"
-  thumbnail: "/is-ubi/assets/publications/tifs.jpg"
+  thumbnail: "/assets/publications/tifs.jpg"
   tags:
     - "Face Recognition"
     - "3D Caricatures"
@@ -1422,7 +1422,7 @@
   publication_type: "journal"
   doi: "10.1109/TIFS.2018.2883853"
   pdf: "http://www.di.ubi.pt/~hugomcp/doc/Mastermind_TIFS.pdf"
-  thumbnail: "/is-ubi/assets/publications/tifs.jpg"
+  thumbnail: "/assets/publications/tifs.jpg"
   tags:
     - "Iris Recognition"
     - "Periocular Biometrics"
@@ -1439,7 +1439,7 @@
   publication_type: "journal"
   doi: "10.1049/iet-bmt.2019.0116"
   pdf: "http://www.di.ubi.pt/~hugomcp/doc/Deep_IET.pdf"
-  thumbnail: "/is-ubi/assets/publications/ietbiometrics.jpg"
+  thumbnail: "/assets/publications/ietbiometrics.jpg"
   tags:
     - "Cross-spectral Biometrics"
     - "Ocular Recognition"
@@ -1484,7 +1484,7 @@
   publication_type: "conference"
   doi: "10.1109/SIBGRAPI.2018.00068"
   pdf: "http://www.di.ubi.pt/~hugomcp/doc/SIBGRAPI2018.pdf"
-  thumbnail: "/is-ubi/assets/publications/ieeexplore.jpg"
+  thumbnail: "/assets/publications/ieeexplore.jpg"
   tags:
     - "Biometric Recognition"
     - "Surveillance"
@@ -1501,7 +1501,7 @@
   status: "published"
   publication_type: "conference"
   pdf: "http://www.di.ubi.pt/~hugomcp/doc/biosig2019_ehsan.pdf"
-  thumbnail: "/is-ubi/assets/publications/springer.jpg"
+  thumbnail: "/assets/publications/springer.jpg"
   tags:
     - "Gender Recognition"
     - "Visual Surveillance"
@@ -1518,7 +1518,7 @@
   publication_type: "journal"
   doi: "10.1109/ACCESS.2019.2940175"
   pdf: "http://www.di.ubi.pt/~hugomcp/doc/IEEE_Access_SI_2019.pdf"
-  thumbnail: "/is-ubi/assets/publications/ieeeaccess.jpg"
+  thumbnail: "/assets/publications/ieeeaccess.jpg"
   tags:
     - "Visual Surveillance"
     - "Biometrics"
@@ -1535,7 +1535,7 @@
   publication_type: "conference"
   doi: "10.1109/CVPRW.2019.00283"
   pdf: "http://www.di.ubi.pt/~hugomcp/doc/CVPRW19.pdf"
-  thumbnail: "/is-ubi/assets/publications/cvf.jpg"
+  thumbnail: "/assets/publications/cvf.jpg"
   tags:
     - "Iris Recognition"
     - "Segmentation-less"
@@ -1552,7 +1552,7 @@
   publication_type: "conference"
   doi: "10.1109/CVPRW.2019.00278"
   pdf: "http://www.di.ubi.pt/~hugomcp/doc/cvprw_2019.pdf"
-  thumbnail: "/is-ubi/assets/publications/cvf.jpg"
+  thumbnail: "/assets/publications/cvf.jpg"
   tags:
     - "Face Recognition"
     - "Gender Bias"
@@ -1569,7 +1569,7 @@
   publication_type: "journal"
   doi: "10.3390/app10165608"
   pdf: "http://www.di.ubi.pt/~hugomcp/doc/Ehsan_MDPI_AS.pdf"
-  thumbnail: "/is-ubi/assets/publications/as.jpg"
+  thumbnail: "/assets/publications/as.jpg"
   tags:
     - "Human Attribute Recognition"
     - "Survey"
@@ -1585,7 +1585,7 @@
   status: "published"
   publication_type: "journal"
   doi: "10.1016/j.imavis.2020.103981"
-  thumbnail: "/is-ubi/assets/publications/ivc.jpg"
+  thumbnail: "/assets/publications/ivc.jpg"
   tags:
     - "Pedestrian Attributes Recognition"
     - "Attention Mechanism"
@@ -1601,7 +1601,7 @@
   status: "published"
   publication_type: "journal"
   doi: "10.1109/JSTSP.2020.3007250"
-  thumbnail: "/is-ubi/assets/publications/paper-130.png"
+  thumbnail: "/assets/publications/paper-130.png"
   tags:
     - "Face Manipulation Detection"
     - "GAN Fingerprints"
@@ -1618,7 +1618,7 @@
   publication_type: "journal"
   doi: "10.1016/j.patrec.2020.03.024"
   pdf: "http://www.di.ubi.pt/~hugomcp/doc/ibpria19_PRL.pdf"
-  thumbnail: "/is-ubi/assets/publications/prl.jpg"
+  thumbnail: "/assets/publications/prl.jpg"
   tags:
     - "Editorial"
     - "Pattern Recognition"
@@ -1634,7 +1634,7 @@
   status: "published"
   publication_type: "conference"
   pdf: "http://www.di.ubi.pt/~hugomcp/doc/biosig2019_pendar.pdf"
-  thumbnail: "/is-ubi/assets/publications/ieeexplore.jpg"
+  thumbnail: "/assets/publications/ieeexplore.jpg"
   tags:
     - "Clothing Analysis"
     - "Visual Surveillance"
@@ -1664,7 +1664,7 @@
   publication_type: "conference"
   doi: "10.1109/DASA51403.2020.9317219"
   pdf: "http://www.di.ubi.pt/~hugomcp/doc/DASA_2020.pdf"
-  thumbnail: "/is-ubi/assets/publications/ieeexplore.jpg"
+  thumbnail: "/assets/publications/ieeexplore.jpg"
   tags:
     - "Fruit Disease Classification"
     - "Deep Learning"
@@ -1681,7 +1681,7 @@
   publication_type: "conference"
   doi: "10.1109/ICIP40778.2020.9191251"
   pdf: "http://www.di.ubi.pt/~hugomcp/doc/icip2020.pdf"
-  thumbnail: "/is-ubi/assets/publications/springer.jpg"
+  thumbnail: "/assets/publications/springer.jpg"
   tags:
     - "Periocular Recognition"
     - "Attribute Normalization"
@@ -1697,7 +1697,7 @@
   status: "published"
   publication_type: "conference"
   doi: "10.1109/IJCB48548.2020.9304904"
-  thumbnail: "/is-ubi/assets/publications/ieeexplore.jpg"
+  thumbnail: "/assets/publications/ieeexplore.jpg"
   tags:
     - "Hair Segmentation"
     - "Hair Characterization"
@@ -1714,7 +1714,7 @@
   publication_type: "conference"
   doi: "10.1109/IJCB48548.2020.9304905"
   pdf: "http://www.di.ubi.pt/~hugomcp/doc/ijcb2020_degardin.pdf"
-  thumbnail: "/is-ubi/assets/publications/ieeexplore.jpg"
+  thumbnail: "/assets/publications/ieeexplore.jpg"
   tags:
     - "Human Activity Analysis"
     - "Abnormal Events Detection"
@@ -1731,7 +1731,7 @@
   publication_type: "journal"
   doi: "10.1016/j.patrec.2021.01.031"
   pdf: "http://www.di.ubi.pt/~hugomcp/doc/Events_PRL.pdf"
-  thumbnail: "/is-ubi/assets/publications/prl.jpg"
+  thumbnail: "/assets/publications/prl.jpg"
   tags:
     - "Abnormal Events Detection"
     - "Weak Supervision"
@@ -1748,7 +1748,7 @@
   publication_type: "journal"
   doi: "10.1016/j.patrec.2020.12.017"
   pdf: "http://www.di.ubi.pt/~hugomcp/doc/SSS-PR.pdf"
-  thumbnail: "/is-ubi/assets/publications/prl.jpg"
+  thumbnail: "/assets/publications/prl.jpg"
   tags:
     - "Person Re-identification"
     - "Survey"
@@ -1764,7 +1764,7 @@
   publication_type: "conference"
   doi: "10.1109/CVPRW53098.2021.00161"
   pdf: "http://www.di.ubi.pt/~hugomcp/doc/cvprw2021.pdf"
-  thumbnail: "/is-ubi/assets/publications/cvf.jpg"
+  thumbnail: "/assets/publications/cvf.jpg"
   tags:
     - "Visual Interpretability"
     - "Biometric Recognition"
@@ -1781,7 +1781,7 @@
   publication_type: "journal"
   doi: "10.1109/TIFS.2020.3040881"
   pdf: "http://www.di.ubi.pt/~hugomcp/doc/PDESTRE.pdf"
-  thumbnail: "/is-ubi/assets/publications/tifs.jpg"
+  thumbnail: "/assets/publications/tifs.jpg"
   tags:
     - "Pedestrian Detection"
     - "Pedestrian Tracking"
@@ -1798,7 +1798,7 @@
   publication_type: "journal"
   doi: "10.1109/TIFS.2020.3023304"
   pdf: "http://www.di.ubi.pt/~hugomcp/doc/Quadruplet.pdf"
-  thumbnail: "/is-ubi/assets/publications/tifs.jpg"
+  thumbnail: "/assets/publications/tifs.jpg"
   tags:
     - "Quadruplet Loss"
     - "Multi-output Classification"
@@ -1815,7 +1815,7 @@
   publication_type: "journal"
   doi: "10.3390/app11188324"
   pdf: "http://www.di.ubi.pt/~hugomcp/doc/AS_Degardin.pdf"
-  thumbnail: "/is-ubi/assets/publications/As.jpg"
+  thumbnail: "/assets/publications/As.jpg"
   tags:
     - "Human Behavior Analysis"
     - "Action Recognition"
@@ -1832,7 +1832,7 @@
   publication_type: "journal"
   doi: "10.1016/j.imavis.2021.104227"
   pdf: "http://www.di.ubi.pt/~hugomcp/doc/IVC_SI.pdf"
-  thumbnail: "/is-ubi/assets/publications/Ivc.jpg"
+  thumbnail: "/assets/publications/Ivc.jpg"
   tags:
     - "Ocular Biometrics"
     - "Periocular Recognition"
@@ -1849,7 +1849,7 @@
   publication_type: "journal"
   doi: "10.1016/j.imavis.2021.104288"
   pdf: "http://www.di.ubi.pt/~hugomcp/doc/IVC_Ehsan_2021.pdf"
-  thumbnail: "/is-ubi/assets/publications/ivc.jpg"
+  thumbnail: "/assets/publications/ivc.jpg"
   tags:
     - "Person Re-identification"
     - "Long-term Recognition"
@@ -1866,7 +1866,7 @@
   publication_type: "journal"
   doi: "10.1016/j.patrec.2021.01.035"
   pdf: "http://www.di.ubi.pt/~hugomcp/doc/RF_PRL.pdf"
-  thumbnail: "/is-ubi/assets/publications/prl.jpg"
+  thumbnail: "/assets/publications/prl.jpg"
   tags:
     - "Person Re-identification"
     - "Receptive Fields"
@@ -1883,7 +1883,7 @@
   publication_type: "journal"
   doi: "10.3390/electronics10151861"
   pdf: "http://www.di.ubi.pt/~hugomcp/doc/Electronics_JBrito.pdf"
-  thumbnail: "/is-ubi/assets/publications/mdpielectronics.jpg"
+  thumbnail: "/assets/publications/mdpielectronics.jpg"
   tags:
     - "Machine Learning Explainability"
     - "Periocular Recognition"
@@ -1900,7 +1900,7 @@
   publication_type: "journal"
   doi: "10.3390/rs14174217"
   pdf: "http://www.di.ubi.pt/~hugomcp/doc/rs_22.pdf"
-  thumbnail: "/is-ubi/assets/publications/rs.jpg"
+  thumbnail: "/assets/publications/rs.jpg"
   tags:
     - "Deep Neural Networks"
     - "Edge Computing"
@@ -1917,7 +1917,7 @@
   publication_type: "journal"
   doi: "10.3390/app12157385"
   pdf: "http://www.di.ubi.pt/~hugomcp/doc/applsci-12-07385.pdf"
-  thumbnail: "/is-ubi/assets/publications/as.jpg"
+  thumbnail: "/assets/publications/as.jpg"
   tags:
     - "Brain Tissue Segmentation"
     - "Fuzzy Clustering"
@@ -1934,7 +1934,7 @@
   publication_type: "journal"
   doi: "10.1049/bme2.12089"
   pdf: "http://www.di.ubi.pt/~hugomcp/doc/ICPR_2022.pdf"
-  thumbnail: "/is-ubi/assets/publications/ietbiometrics.jpg"
+  thumbnail: "/assets/publications/ietbiometrics.jpg"
   tags:
     - "Visual Surveillance"
     - "Real-time Processing"
@@ -1951,7 +1951,7 @@
   publication_type: "journal"
   doi: "10.1109/ACCESS.2022.3157857"
   pdf: "http://www.di.ubi.pt/~hugomcp/doc/Tiago_Roxo_IEEEAccess.pdf"
-  thumbnail: "/is-ubi/assets/publications/paper-133.png"
+  thumbnail: "/assets/publications/paper-133.png"
   tags:
     - "Gender Recognition"
     - "Soft Biometrics"
@@ -1968,7 +1968,7 @@
   publication_type: "journal"
   doi: "10.1109/TCSVT.2021.3066054"
   pdf: "http://www.di.ubi.pt/~hugomcp/doc/UU-Net.pdf"
-  thumbnail: "/is-ubi/assets/publications/tcsvt.jpg"
+  thumbnail: "/assets/publications/tcsvt.jpg"
   tags:
     - "Face De-Identification"
     - "Visual Surveillance"
@@ -1985,7 +1985,7 @@
   publication_type: "journal"
   doi: "10.3390/cli1010000"
   pdf: "http://www.di.ubi.pt/~hugomcp/doc/climate.pdf"
-  thumbnail: "/is-ubi/assets/publications/paper-132.png"
+  thumbnail: "/assets/publications/paper-132.png"
   tags:
     - "Peaches Detection"
     - "Deep Learning"
@@ -2002,7 +2002,7 @@
   publication_type: "conference"
   doi: "10.1109/WACV51458.2022.00281"
   pdf: "http://www.di.ubi.pt/~hugomcp/doc/wacv21.pdf"
-  thumbnail: "/is-ubi/assets/publications/cvf.jpg"
+  thumbnail: "/assets/publications/cvf.jpg"
   tags:
     - "Human Action Synthesis"
     - "Generative Adversarial Networks"
@@ -2018,7 +2018,7 @@
   publication_type: "journal"
   doi: "10.1109/TIFS.2021.3130437"
   pdf: "http://di.ubi.pt/~hugomcp/doc/degardin_tifs_2021.pdf"
-  thumbnail: "/is-ubi/assets/publications/tifs.jpg"
+  thumbnail: "/assets/publications/tifs.jpg"
   tags:
     - "Human Action Recognition"
     - "Graph Convolutional Networks"
@@ -2047,7 +2047,7 @@
   publication_type: "book chapter"
   doi: "10.1109/JSTSP.2020.3007250"
   pdf: "http://www.di.ubi.pt/~hugomcp/doc/paper-130.png"
-  thumbnail: "/is-ubi/assets/publications/paper-130.png"
+  thumbnail: "/assets/publications/paper-130.png"
   tags:
     - "GAN Fingerprints"
     - "Face Image Synthesis"
@@ -2063,7 +2063,7 @@
   publication_type: "journal"
   doi: "10.1109/TBIOM.2021.3100926"
   pdf: "http://www.di.ubi.pt/~hugomcp/doc/TBIOM_Tiago_Roxo.pdf"
-  thumbnail: "/is-ubi/assets/publications/tbiom.jpg"
+  thumbnail: "/assets/publications/tbiom.jpg"
   tags:
     - "Gender Inference"
     - "Soft Biometrics"
@@ -2080,7 +2080,7 @@
   publication_type: "conference"
   doi: "10.1109/SIBGRAPI.2022.000xx"
   pdf: "http://www.di.ubi.pt/~hugomcp/doc/sibgrapi_22.pdf"
-  thumbnail: "/is-ubi/assets/publications/paper-137.png"
+  thumbnail: "/assets/publications/paper-137.png"
   tags:
     - "Super-resolution"
     - "Stochastic Differential Equations"
@@ -2098,7 +2098,7 @@
   publication_type: "journal"
   doi: "10.1109/TIFS.2022.3214098"
   pdf: "http://www.di.ubi.pt/~hugomcp/doc/tifs_deep_gabor_22.pdf"
-  thumbnail: "/is-ubi/assets/publications/paper-139.png"
+  thumbnail: "/assets/publications/paper-139.png"
   tags:
     - "Iris Recognition"
     - "IrisCode"
@@ -2117,7 +2117,7 @@
   publication_type: "journal"
   doi: "10.3390/fi14110323"
   pdf: "http://www.di.ubi.pt/~hugomcp/doc/mdpi_future_internet.pdf"
-  thumbnail: "/is-ubi/assets/publications/paper-140.png"
+  thumbnail: "/assets/publications/paper-140.png"
   tags:
     - "Edge Computing"
     - "Fruit Detection"
@@ -2135,7 +2135,7 @@
   publication_type: "journal"
   doi: "10.1016/j.patrec.2022.12.002"
   pdf: "http://www.di.ubi.pt/~hugomcp/doc/PRL_SIBGRAPI21.pdf"
-  thumbnail: "/is-ubi/assets/publications/paper-141.png"
+  thumbnail: "/assets/publications/paper-141.png"
   tags:
     - "Special Issue"
     - "Graphics"
@@ -2153,7 +2153,7 @@
   publication_type: "journal"
   doi: "10.1016/j.imavis.2023.104645"
   pdf: "http://www.di.ubi.pt/~hugomcp/doc/IVC_Lucia_Chiara.pdf"
-  thumbnail: "/is-ubi/assets/publications/paper-142.png"
+  thumbnail: "/assets/publications/paper-142.png"
   tags:
     - "Explainable AI"
     - "Biometric Verification"
@@ -2171,7 +2171,7 @@
   publication_type: "journal"
   doi: "10.3390/s23052456"
   pdf: "http://www.di.ubi.pt/~hugomcp/doc/Diana_Ehsan_Sensors_2023.pdf"
-  thumbnail: "/is-ubi/assets/publications/paper-143.png"
+  thumbnail: "/assets/publications/paper-143.png"
   tags:
     - "Periocular Recognition"
     - "Deep Learning"
@@ -2189,7 +2189,7 @@
   publication_type: "conference"
   doi: ""
   pdf: "http://www.di.ubi.pt/~hugomcp/doc/Hambarde_ICTIS_2023.pdf"
-  thumbnail: "/is-ubi/assets/publications/paper-144.png"
+  thumbnail: "/assets/publications/paper-144.png"
   tags:
     - "Text Retrieval"
     - "Negative Sampling"
@@ -2207,7 +2207,7 @@
   publication_type: "journal"
   doi: "10.1016/j.imavis.2023.104692"
   pdf: "http://www.di.ubi.pt/~hugomcp/doc/Naser_IVC_2023.pdf"
-  thumbnail: "/is-ubi/assets/publications/paper-145.png"
+  thumbnail: "/assets/publications/paper-145.png"
   tags:
     - "Periocular Recognition"
     - "Synthetic Data"
@@ -2225,7 +2225,7 @@
   publication_type: "journal"
   doi: "10.1016/j.imavis.2023.104750"
   pdf: "http://www.di.ubi.pt/~hugomcp/doc/Degardin_IVC_ATOM_2023.pdf"
-  thumbnail: "/is-ubi/assets/publications/paper-146.png"
+  thumbnail: "/assets/publications/paper-146.png"
   tags:
     - "Self-supervised Learning"
     - "Human Action Recognition"
@@ -2243,7 +2243,7 @@
   publication_type: "journal"
   doi: "10.1109/ACCESS.2023.3295776"
   pdf: "http://www.di.ubi.pt/~hugomcp/doc/Survey_Information_Retrieval_2023.pdf"
-  thumbnail: "/is-ubi/assets/publications/paper-148.png"
+  thumbnail: "/assets/publications/paper-148.png"
   tags:
     - "Information Retrieval"
     - "Survey"
@@ -2261,7 +2261,7 @@
   publication_type: "conference"
   doi: "10.1109/WIFS58808.2023.10374734"
   pdf: "http://www.di.ubi.pt/~hugomcp/doc/Tiago_WIFS_23.pdf"
-  thumbnail: "/is-ubi/assets/publications/paper-150.png"
+  thumbnail: "/assets/publications/paper-150.png"
   tags:
     - "Audio Anomaly"
     - "Speech Analysis"
@@ -2279,7 +2279,7 @@
   publication_type: "conference"
   doi: ""
   pdf: "http://www.di.ubi.pt/~hugomcp/doc/Marcelo_VISAPP_24.pdf"
-  thumbnail: "/is-ubi/assets/publications/paper-149.png"
+  thumbnail: "/assets/publications/paper-149.png"
   tags:
     - "Super-Resolution"
     - "Diffusion Models"
@@ -2297,7 +2297,7 @@
   publication_type: "conference"
   doi: ""
   pdf: "http://www.di.ubi.pt/~hugomcp/doc/Asmae_ESCI_24.pdf"
-  thumbnail: "/is-ubi/assets/publications/paper-151.png"
+  thumbnail: "/assets/publications/paper-151.png"
   tags:
     - "Manufacturing"
     - "Energy Efficiency"
@@ -2317,7 +2317,7 @@
   publication_type: "journal"
   doi: "10.1016/j.imavis.2024.104917"
   pdf: "http://www.di.ubi.pt/~hugomcp/doc/Kailash_IVC_2024.pdf"
-  thumbnail: "/is-ubi/assets/publications/paper-152.png"
+  thumbnail: "/assets/publications/paper-152.png"
   tags:
     - "Human Re-identification"
     - "Biometric Menagerie"
@@ -2336,7 +2336,7 @@
   publication_type: "journal"
   doi: "10.1016/j.ijcce.2024.01.002"
   pdf: "http://www.di.ubi.pt/~hugomcp/doc/Krishnamoorthya_2024.pdf"
-  thumbnail: "/is-ubi/assets/publications/paper-153.png"
+  thumbnail: "/assets/publications/paper-153.png"
   tags:
     - "Email Classification"
     - "Emotion Detection"
@@ -2354,7 +2354,7 @@
   publication_type: "journal"
   doi: "10.1109/ACCESS.2024.3395118"
   pdf: "http://www.di.ubi.pt/~hugomcp/doc/joana_survey_access_2024.pdf"
-  thumbnail: "/is-ubi/assets/publications/paper-156.png"
+  thumbnail: "/assets/publications/paper-156.png"
   tags:
     - "Deep Learning"
     - "Adversarial Attacks"
@@ -2373,7 +2373,7 @@
   publication_type: "journal"
   doi: "10.1109/MC.2023.3298095"
   pdf: "http://www.di.ubi.pt/~hugomcp/doc/Periocular_Computer_2023.pdf"
-  thumbnail: "/is-ubi/assets/publications/paper-147.png"
+  thumbnail: "/assets/publications/paper-147.png"
   tags:
     - "Periocular Biometrics"
     - "Unconstrained Recognition"
@@ -2391,7 +2391,7 @@
   publication_type: "journal"
   doi: "10.3390/app14125298"
   pdf: "http://www.di.ubi.pt/~hugomcp/doc/carrilho_as_2024.pdf"
-  thumbnail: "/is-ubi/assets/publications/paper-158.png"
+  thumbnail: "/assets/publications/paper-158.png"
   tags:
     - "Fabric Defect Detection"
     - "Anomaly Detection"
@@ -2409,7 +2409,7 @@
   publication_type: "journal"
   doi: "10.3390/electronics13183728"
   pdf: "http://www.di.ubi.pt/~hugomcp/doc/carrilho_electronics_2024.pdf"
-  thumbnail: "/is-ubi/assets/publications/paper-161.png"
+  thumbnail: "/assets/publications/paper-161.png"
   tags:
     - "Fabric Defect Detection"
     - "Computer Vision"
@@ -2428,7 +2428,7 @@
   publication_type: "conference"
   doi: ""
   pdf: "http://www.di.ubi.pt/~hugomcp/doc/henrique_ijcb_2024.pdf"
-  thumbnail: "/is-ubi/assets/publications/paper-160.png"
+  thumbnail: "/assets/publications/paper-160.png"
   tags:
     - "Video Anomaly Detection"
     - "Multi-camera Systems"
@@ -2446,7 +2446,7 @@
   publication_type: "conference"
   doi: ""
   pdf: "http://www.di.ubi.pt/~hugomcp/doc/henrique_ijcb_2024.pdf"
-  thumbnail: "/is-ubi/assets/publications/paper-159.png"
+  thumbnail: "/assets/publications/paper-159.png"
   tags:
     - "Zero-Shot Learning"
     - "Human Recognition"
@@ -2467,7 +2467,7 @@
   publication_type: "conference"
   doi: ""
   pdf: "http://www.di.ubi.pt/~hugomcp/doc/tiago_eccvw_2024.pdf"
-  thumbnail: "/is-ubi/assets/publications/paper-163.png"
+  thumbnail: "/assets/publications/paper-163.png"
   tags:
     - "Interpretability"
     - "Explainable AI"
@@ -2485,7 +2485,7 @@
   publication_type: "journal"
   doi: "10.1109/TBIOM.2024.3459108"
   pdf: "http://www.di.ubi.pt/~hugomcp/doc/IJCB2023_TBIOM.pdf"
-  thumbnail: "/is-ubi/assets/publications/paper-164.png"
+  thumbnail: "/assets/publications/paper-164.png"
   tags:
     - "Biometrics"
     - "Special Issue"
@@ -2505,7 +2505,7 @@
   publication_type: "conference"
   doi: ""
   pdf: "http://www.di.ubi.pt/~hugomcp/doc/asmae_icmla_2024.pdf"
-  thumbnail: "/is-ubi/assets/publications/paper-162.png" #/is-ubi/assets/publications/paper-162.png
+  thumbnail: "/assets/publications/paper-162.png" #/assets/publications/paper-162.png
   tags:
     - "Causal Feature Construction"
     - "Average Treatment Effect"
@@ -2523,7 +2523,7 @@
   publication_type: "journal"
   doi: "10.1109/TBIOM.2024.3412821"
   pdf: "http://www.di.ubi.pt/~hugomcp/doc/tiago_wasd_2024.pdf"
-  thumbnail: "/is-ubi/assets/publications/paper-157.png"
+  thumbnail: "/assets/publications/paper-157.png"
   tags:
     - "Active Speaker Detection"
     - "Dataset"
@@ -2541,7 +2541,7 @@
   publication_type: "journal"
   doi: "10.1016/j.imavis.2025.105424"
   pdf: "http://www.di.ubi.pt/~hugomcp/doc/Obregon_IVC.pdf"
-  thumbnail: "/is-ubi/assets/publications/paper-166.png"
+  thumbnail: "/assets/publications/paper-166.png"
   tags:
     - "Biometric Recognition"
     - "Ear Sketches"
@@ -2559,7 +2559,7 @@
   publication_type: "journal"
   doi: "10.3390/s25082373"
   pdf: "http://www.di.ubi.pt/~hugomcp/doc/Asmae_sensors_2025.pdf"
-  thumbnail: "/is-ubi/assets/publications/paper-168.png"
+  thumbnail: "/assets/publications/paper-168.png"
   tags:
     - "Causality"
     - "Machine Learning"
@@ -2577,7 +2577,7 @@
   publication_type: "journal"
   doi: "10.1007/s11128-025-04725-6"
   pdf: "http://www.di.ubi.pt/~hugomcp/doc/Hamed_qip.pdf"
-  thumbnail: "/is-ubi/assets/publications/paper-167.png"
+  thumbnail: "/assets/publications/paper-167.png"
   tags:
     - "Quantum Computing"
     - "Graph Neural Networks"
@@ -2595,7 +2595,7 @@
   publication_type: "journal"
   doi: "10.1109/TIFS.2014.2371691"
   pdf: "http://www.di.ubi.pt/~hugomcp/doc/BitFragility.pdf"
-  thumbnail: "/is-ubi/assets/publications/paper-80.png"
+  thumbnail: "/assets/publications/paper-80.png"
   tags:
     - "Iris Recognition"
     - "Bit Fragility"
@@ -2611,7 +2611,7 @@
   publication_type: "journal"
   doi: "10.1109/TIP.2014.2361285"
   pdf: "http://www.di.ubi.pt/~hugomcp/doc/Atomistic_TIP.pdf"
-  thumbnail: "/is-ubi/assets/publications/paper-78.png"
+  thumbnail: "/assets/publications/paper-78.png"
   tags:
     - "Ocular Biometrics"
     - "Score-Level Fusion"
@@ -2627,7 +2627,7 @@
   publication_type: "journal"
   doi: "10.1109/TIFS.2013.2283458"
   pdf: "http://www.di.ubi.pt/~hugomcp/doc/VWII_TIFS.pdf"
-  thumbnail: "/is-ubi/assets/publications/paper-73.png"
+  thumbnail: "/assets/publications/paper-73.png"
   tags:
     - "Iris Recognition"
     - "Indexing"
@@ -2644,7 +2644,7 @@
   publication_type: "journal"
   doi: "10.1109/TPAMI.2009.66"
   pdf: "http://di.ubi.pt/~hugomcp/doc/UBIRISv2_IEEETPAMI.pdf"
-  thumbnail: "/is-ubi/assets/publications/paper-62.png"
+  thumbnail: "/assets/publications/paper-62.png"
   tags:
     - "Iris Recognition"
     - "Database"
@@ -2661,7 +2661,7 @@
   publication_type: "journal"
   doi: "10.1109/TPAMI.2009.140"
   pdf: "http://www.di.ubi.pt/~hugomcp/doc/VWIS_IEEETPAMI.pdf"
-  thumbnail: "/is-ubi/assets/publications/paper-63.png"
+  thumbnail: "/assets/publications/paper-63.png"
   tags:
     - "Iris Recognition"
     - "Image Segmentation"
@@ -2677,7 +2677,7 @@
   publication_type: "journal"
   doi: "10.1109/TPAMI.2007.1016"
   pdf: "http://www.di.ubi.pt/~hugomcp/doc/ProencaAlexandreMultipleSignaturesPAMI2007.pdf"
-  thumbnail: "/is-ubi/assets/publications/paper-58.png"
+  thumbnail: "/assets/publications/paper-58.png"
   tags:
     - "Iris Recognition"
     - "Non-Cooperative"
@@ -2695,7 +2695,7 @@
   publication_type: "journal"
   doi: "10.1109/TIFS.2018.2846617"
   pdf: "http://www.di.ubi.pt/~hugomcp/doc/Leopard_TIFS.pdf"
-  thumbnail: "/is-ubi/assets/publications/paper-96.png"
+  thumbnail: "/assets/publications/paper-96.png"
   tags:
     - "Face Recognition"
     - "Caricatures"
@@ -2711,7 +2711,7 @@
   publication_type: "journal"
   doi: "10.1109/TIFS.2017.2680246"
   pdf: "http://www.di.ubi.pt/~hugomcp/doc/HairAnalysis_TIFS.pdf"
-  thumbnail: "/is-ubi/assets/publications/paper-91.png"
+  thumbnail: "/assets/publications/paper-91.png"
   tags:
     - "Soft Biometrics"
     - "Hair Analysis"
@@ -2728,7 +2728,7 @@
   publication_type: "conference"
   doi: "10.1109/CVPR.2017.714"
   pdf: "http://www.di.ubi.pt/~hugomcp/doc/CVPR2017.pdf"
-  thumbnail: "/is-ubi/assets/publications/paper-44.png"
+  thumbnail: "/assets/publications/paper-44.png"
   tags:
     - "Iris Recognition"
     - "Biometrics"
@@ -2744,7 +2744,7 @@
   publication_type: "journal"
   doi: "10.1109/TPAMI.2016.2522441"
   pdf: "http://www.di.ubi.pt/~hugomcp/doc/SoftBiometrics.pdf"
-  thumbnail: "/is-ubi/assets/publications/paper-86.png"
+  thumbnail: "/assets/publications/paper-86.png"
   tags:
     - "Soft Biometrics"
     - "Head Pose Estimation"
@@ -2761,7 +2761,7 @@
   publication_type: "journal"
   doi: "10.1109/TIFS.2017.2771230"
   pdf: "http://www.di.ubi.pt/~hugomcp/doc/Deep-PRWIS.pdf"
-  thumbnail: "/is-ubi/assets/publications/tifs.jpg"
+  thumbnail: "/assets/publications/tifs.jpg"
   tags:
     - "Periocular Recognition"
     - "Deep Learning"
@@ -2779,7 +2779,7 @@
   publication_type: "journal"
   doi: "10.1109/TIFS.2020.3023304"
   pdf: "http://www.di.ubi.pt/~hugomcp/doc/Quadruplet.pdf"
-  thumbnail: "/is-ubi/assets/publications/tifs.jpg"
+  thumbnail: "/assets/publications/tifs.jpg"
   tags:
     - "Deep Learning"
     - "Multi-output Classification"
@@ -2797,7 +2797,7 @@
   publication_type: "journal"
   doi: "10.1109/TIFS.2021.3130437"
   pdf: "http://di.ubi.pt/~hugomcp/doc/degardin_tifs_2021.pdf"
-  thumbnail: "/is-ubi/assets/publications/tifs.jpg"
+  thumbnail: "/assets/publications/tifs.jpg"
   tags:
     - "Human Action Recognition"
     - "Graph Convolutional Networks"
@@ -2816,7 +2816,7 @@
   publication_type: "conference"
   doi: "10.1109/WACV51458.2022.00281"
   pdf: "http://www.di.ubi.pt/~hugomcp/doc/wacv21.pdf"
-  thumbnail: "/is-ubi/assets/publications/cvf.jpg"
+  thumbnail: "/assets/publications/cvf.jpg"
   tags:
     - "Human Action Synthesis"
     - "Graph Convolutional Networks"
@@ -2835,7 +2835,7 @@
   publication_type: "journal"
   doi: "10.1109/TCSVT.2021.3066054"
   pdf: "http://www.di.ubi.pt/~hugomcp/doc/UUNet.pdf"
-  thumbnail: "/is-ubi/assets/publications/tcsvt.jpg"
+  thumbnail: "/assets/publications/tcsvt.jpg"
   tags:
     - "Face De-Identification"
     - "Visual Surveillance"
@@ -2853,7 +2853,7 @@
   publication_type: "journal"
   doi: "10.1109/TIFS.2022.3214098"
   pdf: "http://www.di.ubi.pt/~hugomcp/doc/tifs_deep_gabor_22.pdf"
-  thumbnail: "/is-ubi/assets/publications/tifs.jpg"
+  thumbnail: "/assets/publications/tifs.jpg"
   tags:
     - "Iris Recognition"
     - "Deep Learning"
@@ -2872,7 +2872,7 @@
   publication_type: "journal"
   doi: "10.1109/TBIOM.2024.3375453"
   pdf: "http://www.di.ubi.pt/~hugomcp/doc/Degardin_TBIOM_2024.pdf"
-  thumbnail: "/is-ubi/assets/publications/tbiom.jpg"
+  thumbnail: "/assets/publications/tbiom.jpg"
   tags:
     - "Human Action Recognition"
     - "Generative Models"
@@ -2891,7 +2891,7 @@
   publication_type: "journal"
   doi: "10.1145/3651306"
   pdf: "http://www.di.ubi.pt/~hugomcp/doc/iris_survey.pdf"
-  thumbnail: "/is-ubi/assets/publications/csur.jpg"
+  thumbnail: "/assets/publications/csur.jpg"
   tags:
     - "Deep Learning"
     - "Iris Recognition"
@@ -2908,7 +2908,7 @@
   publication_type: "journal"
   doi: "10.1109/TBIOM.2024.3520030"
   pdf: "http://www.di.ubi.pt/~hugomcp/doc/BIAS_TBIOM.pdf"
-  thumbnail: "/is-ubi/assets/publications/tbiom.jpg"
+  thumbnail: "/assets/publications/tbiom.jpg"
   tags:
     - "Active Speaker Detection"
     - "Biometrics"
@@ -2949,7 +2949,7 @@
   publication_type: "conference"
   doi: "10.1007/978-3-540-89639-5_70"
   pdf: "http://www.di.ubi.pt/~hugomcp/doc/ISVC08.pdf"
-  thumbnail: "/is-ubi/assets/publications/paper-19.png"
+  thumbnail: "/assets/publications/paper-19.png"
   tags:
     - "Iris Recognition"
     - "Biometrics"
@@ -2969,7 +2969,7 @@
   publication_type: "conference"
   doi: "10.1109/CIB.2009.4925680"
   pdf: "http://www.di.ubi.pt/~hugomcp/doc/CIBIM09.pdf"
-  thumbnail: "/is-ubi/assets/publications/paper-20.png"
+  thumbnail: "/assets/publications/paper-20.png"
   tags:
     - "Iris Recognition"
     - "Biometrics"
@@ -2986,7 +2986,7 @@
   year: 2009
   publication_type: "conference"
   pdf: "http://www.di.ubi.pt/~hugomcp/doc/ECCOMAS09.pdf"
-  thumbnail: "/is-ubi/assets/publications/paper-21.png"
+  thumbnail: "/assets/publications/paper-21.png"
   tags:
     - "Medical Imaging"
     - "Dental Radiographs"
@@ -3007,7 +3007,7 @@
   publication_type: "conference"
   doi: "10.1007/978-3-642-10520-3_66"
   pdf: "http://www.di.ubi.pt/~hugomcp/doc/ISVC09.pdf"
-  thumbnail: "/is-ubi/assets/publications/paper-23.png"
+  thumbnail: "/assets/publications/paper-23.png"
   tags:
     - "Biometrics"
     - "Evidence Fusion"
@@ -3027,7 +3027,7 @@
   publication_type: "conference"
   doi: "10.1109/CIS.2009.113"
   pdf: "http://www.di.ubi.pt/~hugomcp/doc/cis09.pdf"
-  thumbnail: "/is-ubi/assets/publications/paper-22.png"
+  thumbnail: "/assets/publications/paper-22.png"
   tags:
     - "Iris Recognition"
     - "Biometrics"
@@ -3047,7 +3047,7 @@
   publication_type: "conference"
   doi: "10.1109/ICCIAS.2006.295366"
   pdf: "http://www.di.ubi.pt/~hugomcp/doc/CIS06.pdf"
-  thumbnail: "/is-ubi/assets/publications/paper-12.png"
+  thumbnail: "/assets/publications/paper-12.png"
   tags:
     - "Iris Recognition"
     - "Biometrics"
@@ -3065,7 +3065,7 @@
   publication_type: "conference"
   doi: "10.1109/BTAS.2007.4401910"
   pdf: "http://www.di.ubi.pt/~hugomcp/doc/BTAS07.pdf"
-  thumbnail: "/is-ubi/assets/publications/paper-14.png"
+  thumbnail: "/assets/publications/paper-14.png"
   tags:
     - "Iris Recognition"
     - "Biometrics"
@@ -3084,7 +3084,7 @@
   publication_type: "journal"
   doi: "10.1109/TPAMI.2007.1016"
   pdf: "http://www.di.ubi.pt/~hugomcp/doc/ProencaAlexandreMultipleSignaturesPAMI2007.pdf"
-  thumbnail: "/is-ubi/assets/publications/paper-58.png"
+  thumbnail: "/assets/publications/paper-58.png"
   tags:
     - "Iris Recognition"
     - "Biometrics"
@@ -3103,7 +3103,7 @@
   publication_type: "journal"
   doi: "10.1109/TPAMI.2009.66"
   pdf: "http://di.ubi.pt/~hugomcp/doc/UBIRISv2_IEEETPAMI.pdf"
-  thumbnail: "/is-ubi/assets/publications/pami.jpg"
+  thumbnail: "/assets/publications/pami.jpg"
   tags:
     - "Iris Recognition"
     - "Biometrics"
@@ -3124,7 +3124,7 @@
   publication_type: "conference"
   doi: "10.1109/ICPR.2006.100"
   pdf: "http://www.di.ubi.pt/~hugomcp/doc/ICPR06.pdf"
-  thumbnail: "/is-ubi/assets/publications/paper-11.png"
+  thumbnail: "/assets/publications/paper-11.png"
   tags:
     - "Iris Recognition"
     - "Biometrics"
@@ -3145,7 +3145,7 @@
   publication_type: "conference"
   doi: "10.1109/ARES.2006.9"
   pdf: "http://www.di.ubi.pt/~hugomcp/doc/ARES2006.pdf"
-  thumbnail: "/is-ubi/assets/publications/paper-10.png"
+  thumbnail: "/assets/publications/paper-10.png"
   tags:
     - "Iris Recognition"
     - "Biometrics"
@@ -3165,7 +3165,7 @@
   publication_type: "journal"
   doi: "10.1049/ip-vis:20050213"
   pdf: "http://www.di.ubi.pt/~hugomcp/doc/ProencaAlexandreIrisSegmentationIEE.pdf"
-  thumbnail: "/is-ubi/assets/publications/paper-57.png"
+  thumbnail: "/assets/publications/paper-57.png"
   tags:
     - "Iris Recognition"
     - "Biometrics"
@@ -3185,7 +3185,7 @@
   publication_type: "conference"
   doi: "10.1007/11553595_119"
   pdf: "http://www.di.ubi.pt/~hugomcp/doc/ubiris_iciap.pdf"
-  thumbnail: "/is-ubi/assets/publications/paper-9.png"
+  thumbnail: "/assets/publications/paper-9.png"
   tags:
     - "Iris Recognition"
     - "Biometrics"
@@ -3200,9 +3200,9 @@
   year: 2004
   publication_type: "book_chapter"
   doi: "10.1007/978-3-540-30498-2_2"
-  pdf: "/is-ubi/assets/papers/MARCS.png"
+  pdf: "/assets/papers/MARCS.png"
   code: "https://github.com/socia-lab/periocular-attention"
-  thumbnail: "/is-ubi/assets/publications/MARCS.png"
+  thumbnail: "/assets/publications/MARCS.png"
   tags:
     - "Multi-Agent Systems"
     - "Railway Control"
