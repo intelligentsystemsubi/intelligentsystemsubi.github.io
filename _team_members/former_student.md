@@ -11,7 +11,7 @@ departure_year: 2020
 active: false
 current_affiliation: "Tech Company Inc., Senior AI Researcher"
 research_topic: "Person Re-identification in Surveillance Videos"
-image: "/is-ubi/assets/team/formerstudent1.png"
+image: "/assets/team/formerstudent1.png"
 research_interests:
   - "Person Re-identification"
   - "Deep Learning"

@@ -3,17 +3,17 @@ layout: member
 title: "Former Alumni"
 role: "phd"
 position: "Former PhD Researcher"
-email: "former.alumni@example.com"
+email: "former.alumni@ubi.pt"
 github: "formeralumni"
 scholar: "https://scholar.google.com/citations?user=FORMER_ID"
 website: "https://example.com/former"
-image: "/is-ubi/assets/team/formerstudent2.png"
+image: "/assets/team/formerstudent2.png"
 supervisor: "Hugo Proença"
 co_supervisor: "João C. Neves"
-joining_year: 2016
+joining_year: 2015
 departure_year: 2021
 active: false
-current_affiliation: "Google AI Research, Zurich"
+current_affiliation: "AI Research Institute, University of Excellence"
 research_interests:
   - "Deep Learning"
   - "Computer Vision"
@@ -22,9 +22,11 @@ research_interests:
   - "Federated Learning"
 ---
 
-Former Alumni was a PhD researcher at the SOCIA Lab from 2016 to 2021, working under the supervision of Prof. Hugo Proença and co-supervision of Prof. João C. Neves. Her dissertation, titled "Robust Deep Learning Architectures for Biometric Recognition in Adversarial Environments," focused on developing novel defense mechanisms against adversarial attacks on biometric systems.
+Former Alumni was a researcher at the Intelligent Systems Laboratory from 2015 to 2021. During this time, they contributed to several projects in computer vision and deep learning for biometric applications.
 
-During her time at SOCIA Lab, she published over 15 papers in top-tier conferences and journals, including IEEE TPAMI, CVPR, and ICCV. Her work on adversarial training for face recognition systems received the Best Paper Award at the International Conference on Biometrics (ICB) in 2019.
+After completing their research at IS-UBI, they joined the AI Research Institute at the University of Excellence, where they currently lead research on advanced computer vision techniques.
+
+Their work at IS-UBI resulted in multiple publications in top-tier conferences and journals, and they continue to collaborate with the lab on joint research projects.
 
 ## Key Contributions
 
