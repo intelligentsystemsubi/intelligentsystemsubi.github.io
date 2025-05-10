@@ -46,7 +46,7 @@ plugins:
 collections:
   team_members:
     output: true
-    permalink: /team/:path/
+    permalink: /team/:path
 
 # Defaults
 defaults:

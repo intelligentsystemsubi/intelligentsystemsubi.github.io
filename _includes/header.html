@@ -14,7 +14,7 @@
         {% assign navigation_items = "news,team,publications,projects,datasets,funding,alumni" | split: "," %}
         
         {% for nav_item in navigation_items %}
-        {% assign nav_url = nav_item | prepend: '/' | append: '/' %}
+        {% assign nav_url = nav_item | prepend: '/' %}
         <a href="{{ nav_url | relative_url }}" 
            class="px-3 py-2 rounded-md text-ink hover:text-primary hover:bg-primary/5 transition-all duration-200 font-medium gradient-border {% if current_page == nav_url %}text-primary bg-primary/10 font-semibold{% endif %}">
           {{ nav_item | capitalize }}
@@ -22,7 +22,7 @@
         {% endfor %}
         
         <!-- Contact Button with special styling -->
-        <a href="/contact/" class="ml-2 px-4 py-2 gradient-button rounded-md transition-all duration-200 shadow-sm hover:shadow-md font-medium">
+        <a href="/contact" class="ml-2 px-4 py-2 gradient-button rounded-md transition-all duration-200 shadow-sm hover:shadow-md font-medium">
           Contact
         </a>
       </nav>
@@ -40,14 +40,14 @@
     <!-- Mobile Nav Menu -->
     <div class="mobile-menu hidden md:hidden pb-4 space-y-1 bg-white">
       {% for nav_item in navigation_items %}
-      {% assign nav_url = nav_item | prepend: '/' | append: '/' %}
+      {% assign nav_url = nav_item | prepend: '/' %}
       <a href="{{ nav_url | relative_url }}" 
          class="block py-2 px-3 rounded-md text-ink hover:text-primary hover:bg-primary/5 transition-colors {% if current_page == nav_url %}text-primary bg-primary/10 font-medium{% endif %}">
         {{ nav_item | capitalize }}
       </a>
       {% endfor %}
       <!-- Mobile Contact Button -->
-      <a href="/contact/" class="block py-2 px-3 mt-2 text-primary font-medium">
+      <a href="/contact" class="block py-2 px-3 mt-2 text-primary font-medium">
         Contact
       </a>
     </div>
