@@ -1,0 +1,45 @@
+{% comment %}
+  Expects a 'publication' object as input, like:
+  {% include publication_item.html publication=pub %}
+{% endcomment %}
+{% assign pub = include.publication %}
+
+<li class="publication-item">
+  <div class="pub-container">
+    {% if pub.preview_image %}
+    <div class="pub-preview">
+      <img src="{{ pub.preview_image | relative_url }}" alt="Preview for {{ pub.title }}">
+    </div>
+    {% endif %}
+    <div class="pub-details">
+      <p class="pub-title"><strong>{{ pub.title }}</strong></p>
+      <p class="pub-authors">
+        {% for author in pub.authors %}
+          {% if author.url %}
+            <a href="{{ author.url }}" target="_blank">{{ author.name }}</a>{% unless forloop.last %}, {% endunless %}
+          {% else %}
+            {{ author.name }}{% unless forloop.last %}, {% endunless %}
+          {% endif %}
+        {% endfor %}
+      </p>
+      <p class="pub-venue"><em>{{ pub.venue }}</em>, {{ pub.year }}</p>
+      <p class="pub-links">
+        {% if pub.pdf %}
+          <a href="{{ pub.pdf | relative_url }}" target="_blank">[PDF]</a>
+        {% endif %}
+        {% if pub.code %}
+          <a href="{{ pub.code }}" target="_blank">[Code]</a>
+        {% endif %}
+        {% if pub.project_page %}
+          <a href="{{ pub.project_page | relative_url }}">[Project]</a>
+        {% endif %}
+        {% if pub.bibtex %}
+          {# Generate a unique ID for each bibtex toggle based on title/year #}
+          {% assign bibtex_id = pub.title | slugify | append: '-' | append: pub.year %}
+          <a href="#" onclick="toggleBibtex('bibtex-{{ bibtex_id }}'); return false;">[BibTeX]</a>
+          <pre id="bibtex-{{ bibtex_id }}" class="bibtex-entry" style="display: none;"><code>{{ pub.bibtex | escape }}</code></pre>
+        {% endif %}
+      </p>
+    </div>
+  </div>
+</li>

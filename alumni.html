@@ -1,0 +1,306 @@
+---
+layout: page
+title: Alumni
+description: Former members of SOCIA Lab who have contributed to our research and projects over the years.
+permalink: /alumni/
+---
+
+<!-- Alumni Header -->
+<div class="text-center mb-16 relative">
+    <div class="absolute inset-0 bg-gradient-to-r from-gray-50 to-gray-200 transform -skew-y-2 z-0"></div>
+    <div class="relative z-10 py-12">
+        <h1 class="text-4xl font-bold text-gray-900 mb-4">Alumni</h1>
+        <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+            Former members of SOCIA Lab who have contributed to our research and projects over the years.
+        </p>
+    </div>
+</div>
+
+<!-- Faculty Alumni -->
+{% assign faculty_alumni = site.team_members | where: "role", "faculty" | where: "active", false | sort: "departure_year" | reverse %}
+{% if faculty_alumni.size > 0 %}
+<section class="mb-16">
+    <h2 class="text-2xl font-bold text-gray-900 mb-8">Faculty Alumni</h2>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        {% for member in faculty_alumni %}
+        <a href="{{ member.url }}" class="group">
+            <div class="bg-white rounded-lg shadow-md overflow-hidden transition-all duration-300 hover:shadow-xl transform hover:-translate-y-1 h-full flex flex-col">
+                {% if member.image %}
+                <div class="relative bg-gradient-to-r from-gray-50 to-blue-50 h-64 flex items-center justify-center grayscale">
+                    <img src="{{ member.image }}" alt="{{ member.title }}" class="h-auto w-auto max-h-[90%] max-w-[90%] object-contain">
+                    <div class="absolute inset-0 bg-gradient-to-t from-indigo-900/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    {% if member.joining_year %}
+                    <div class="absolute top-2 right-2 bg-gray-500 text-white text-xs font-bold px-2 py-1 rounded-full">
+                        {{ member.joining_year }} - {{ member.departure_year | default: "Present" }}
+                    </div>
+                    {% endif %}
+                </div>
+                {% else %}
+                <div class="relative bg-gradient-to-r from-blue-50 to-indigo-100 h-64 flex items-center justify-center grayscale">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-24 w-24 text-blue-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M5.121 17.804A13.937 13.937 0 0112 16c2.5 0 4.847.655 6.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0zm6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                    <div class="absolute inset-0 bg-gradient-to-t from-indigo-900/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    {% if member.joining_year %}
+                    <div class="absolute top-2 right-2 bg-gray-500 text-white text-xs font-bold px-2 py-1 rounded-full">
+                        {{ member.joining_year }} - {{ member.departure_year | default: "Present" }}
+                    </div>
+                    {% endif %}
+                </div>
+                {% endif %}
+                <div class="p-6 relative z-10 flex-grow border-t border-gray-100">
+                    <h3 class="text-xl font-semibold mb-2 group-hover:text-blue-600 transition-colors">{{ member.title }}</h3>
+                    <p class="text-gray-600 mb-4">{{ member.position }}</p>
+                    <div class="text-sm text-gray-500 mb-4">
+                        {% if member.current_affiliation %}
+                        <p class="mb-2"><strong>Current:</strong> {{ member.current_affiliation }}</p>
+                        {% endif %}
+                        {% if member.research_interests %}
+                        <p class="mb-2"><strong>Research Interests:</strong></p>
+                        <ul class="list-disc list-inside">
+                            {% for interest in member.research_interests limit:3 %}
+                            <li>{{ interest }}</li>
+                            {% endfor %}
+                        </ul>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </a>
+        {% endfor %}
+    </div>
+</section>
+{% endif %}
+
+<!-- Post-Doctoral Alumni -->
+{% assign postdoc_alumni = site.team_members | where: "role", "postdoc" | where: "active", false | sort: "departure_year" | reverse %}
+{% if postdoc_alumni.size > 0 %}
+<section class="mb-16">
+    <h2 class="text-2xl font-bold text-gray-900 mb-8">Post-Doctoral Alumni</h2>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        {% for member in postdoc_alumni %}
+        <a href="{{ member.url }}" class="group">
+            <div class="bg-white rounded-lg shadow-md overflow-hidden transition-all duration-300 hover:shadow-xl transform hover:-translate-y-1 h-full flex flex-col">
+                {% if member.image %}
+                <div class="relative bg-gradient-to-r from-teal-50 to-cyan-50 h-56 flex items-center justify-center grayscale">
+                    <img src="{{ member.image }}" alt="{{ member.title }}" class="h-auto w-auto max-h-[90%] max-w-[90%] object-contain">
+                    <div class="absolute inset-0 bg-gradient-to-t from-teal-900/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    {% if member.joining_year %}
+                    <div class="absolute top-2 right-2 bg-gray-500 text-white text-xs font-bold px-2 py-1 rounded-full">
+                        {{ member.joining_year }} - {{ member.departure_year | default: "Present" }}
+                    </div>
+                    {% endif %}
+                </div>
+                {% else %}
+                <div class="relative bg-gradient-to-r from-teal-50 to-cyan-100 h-56 flex items-center justify-center grayscale">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-20 w-20 text-teal-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M5.121 17.804A13.937 13.937 0 0112 16c2.5 0 4.847.655 6.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0zm6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                    <div class="absolute inset-0 bg-gradient-to-t from-teal-900/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    {% if member.joining_year %}
+                    <div class="absolute top-2 right-2 bg-gray-500 text-white text-xs font-bold px-2 py-1 rounded-full">
+                        {{ member.joining_year }} - {{ member.departure_year | default: "Present" }}
+                    </div>
+                    {% endif %}
+                </div>
+                {% endif %}
+                <div class="p-6 relative z-10 flex-grow border-t border-gray-100">
+                    <h3 class="text-xl font-semibold mb-2 group-hover:text-teal-600 transition-colors">{{ member.title }}</h3>
+                    <p class="text-gray-600 mb-4">{{ member.position }}</p>
+                    <div class="text-sm text-gray-500 mb-4">
+                        {% if member.current_affiliation %}
+                        <p class="mb-2"><strong>Current:</strong> {{ member.current_affiliation }}</p>
+                        {% endif %}
+                        {% if member.research_interests %}
+                        <p class="mb-2"><strong>Research Interests:</strong></p>
+                        <ul class="list-disc list-inside">
+                            {% for interest in member.research_interests limit:3 %}
+                            <li>{{ interest }}</li>
+                            {% endfor %}
+                        </ul>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </a>
+        {% endfor %}
+    </div>
+</section>
+{% endif %}
+
+<!-- PhD Alumni -->
+{% assign phd_alumni = site.team_members | where: "role", "phd" | where: "active", false | sort: "departure_year" | reverse %}
+{% if phd_alumni.size > 0 %}
+<section class="mb-16">
+    <h2 class="text-2xl font-bold text-gray-900 mb-8">PhD Alumni</h2>
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+        {% for member in phd_alumni %}
+        <a href="{{ member.url }}" class="group">
+            <div class="bg-white rounded-lg shadow-md overflow-hidden transition-all duration-300 hover:shadow-xl transform hover:-translate-y-1 h-full flex flex-col">
+                {% if member.image %}
+                <div class="relative bg-gradient-to-r from-purple-50 to-indigo-50 h-48 flex items-center justify-center grayscale">
+                    <img src="{{ member.image }}" alt="{{ member.title }}" class="h-auto w-auto max-h-[90%] max-w-[90%] object-contain">
+                    <div class="absolute inset-0 bg-gradient-to-t from-purple-900/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    {% if member.joining_year %}
+                    <div class="absolute top-2 right-2 bg-gray-500 text-white text-xs font-bold px-2 py-1 rounded-full">
+                        {{ member.joining_year }} - {{ member.departure_year | default: "Present" }}
+                    </div>
+                    {% endif %}
+                </div>
+                {% else %}
+                <div class="relative bg-gradient-to-r from-purple-50 to-indigo-100 h-48 flex items-center justify-center grayscale">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 text-purple-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M5.121 17.804A13.937 13.937 0 0112 16c2.5 0 4.847.655 6.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0zm6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                    <div class="absolute inset-0 bg-gradient-to-t from-purple-900/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    {% if member.joining_year %}
+                    <div class="absolute top-2 right-2 bg-gray-500 text-white text-xs font-bold px-2 py-1 rounded-full">
+                        {{ member.joining_year }} - {{ member.departure_year | default: "Present" }}
+                    </div>
+                    {% endif %}
+                </div>
+                {% endif %}
+                <div class="p-4 relative z-10 flex-grow border-t border-gray-100">
+                    <h3 class="text-lg font-semibold mb-1 group-hover:text-purple-600 transition-colors">{{ member.title }}</h3>
+                    <p class="text-gray-600 text-sm mb-3">{{ member.research_topic }}</p>
+                    {% if member.current_affiliation %}
+                    <p class="text-gray-600 text-sm mb-3"><strong>Current:</strong> {{ member.current_affiliation }}</p>
+                    {% endif %}
+                    {% if member.supervisor %}
+                    <p class="text-gray-600 text-sm mb-3">
+                        <strong>Supervised by:</strong> {{ member.supervisor }}
+                        {% if member.co_supervisor %} and {{ member.co_supervisor }}{% endif %}
+                    </p>
+                    {% endif %}
+                </div>
+            </div>
+        </a>
+        {% endfor %}
+    </div>
+</section>
+{% endif %}
+
+<!-- Master Alumni -->
+{% assign master_alumni = site.team_members | where: "role", "master" | where: "active", false | sort: "departure_year" | reverse %}
+{% if master_alumni.size > 0 %}
+<section class="mb-16">
+    <h2 class="text-2xl font-bold text-gray-900 mb-8">Master Alumni</h2>
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+        {% for member in master_alumni %}
+        <a href="{{ member.url }}" class="group">
+            <div class="bg-white rounded-lg shadow-md overflow-hidden transition-all duration-300 hover:shadow-xl transform hover:-translate-y-1 h-full flex flex-col">
+                {% if member.image %}
+                <div class="relative bg-gradient-to-r from-green-50 to-teal-50 h-48 flex items-center justify-center grayscale">
+                    <img src="{{ member.image }}" alt="{{ member.title }}" class="h-auto w-auto max-h-[90%] max-w-[90%] object-contain">
+                    <div class="absolute inset-0 bg-gradient-to-t from-green-900/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    {% if member.joining_year %}
+                    <div class="absolute top-2 right-2 bg-gray-500 text-white text-xs font-bold px-2 py-1 rounded-full">
+                        {{ member.joining_year }} - {{ member.departure_year | default: "Present" }}
+                    </div>
+                    {% endif %}
+                </div>
+                {% else %}
+                <div class="relative bg-gradient-to-r from-green-50 to-teal-100 h-48 flex items-center justify-center grayscale">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 text-green-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M5.121 17.804A13.937 13.937 0 0112 16c2.5 0 4.847.655 6.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0zm6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                    <div class="absolute inset-0 bg-gradient-to-t from-green-900/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    {% if member.joining_year %}
+                    <div class="absolute top-2 right-2 bg-gray-500 text-white text-xs font-bold px-2 py-1 rounded-full">
+                        {{ member.joining_year }} - {{ member.departure_year | default: "Present" }}
+                    </div>
+                    {% endif %}
+                </div>
+                {% endif %}
+                <div class="p-4 relative z-10 flex-grow border-t border-gray-100">
+                    <h3 class="text-lg font-semibold mb-1 group-hover:text-green-600 transition-colors">{{ member.title }}</h3>
+                    <p class="text-gray-600 text-sm mb-3">{{ member.research_topic }}</p>
+                    {% if member.current_affiliation %}
+                    <p class="text-gray-600 text-sm mb-3"><strong>Current:</strong> {{ member.current_affiliation }}</p>
+                    {% endif %}
+                    {% if member.supervisor %}
+                    <p class="text-gray-600 text-sm mb-3">
+                        <strong>Supervised by:</strong> {{ member.supervisor }}
+                        {% if member.co_supervisor %} and {{ member.co_supervisor }}{% endif %}
+                    </p>
+                    {% endif %}
+                </div>
+            </div>
+        </a>
+        {% endfor %}
+    </div>
+</section>
+{% endif %}
+
+<!-- Staff Alumni -->
+{% assign staff_alumni = site.team_members | where: "role", "staff" | where: "active", false | sort: "departure_year" | reverse %}
+{% if staff_alumni.size > 0 %}
+<section class="mb-16">
+    <h2 class="text-2xl font-bold text-gray-900 mb-8">Staff Alumni</h2>
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+        {% for member in staff_alumni %}
+        <a href="{{ member.url }}" class="group">
+            <div class="bg-white rounded-lg shadow-md overflow-hidden transition-all duration-300 hover:shadow-xl transform hover:-translate-y-1 h-full flex flex-col">
+                {% if member.image %}
+                <div class="relative bg-gradient-to-r from-amber-50 to-yellow-50 h-48 flex items-center justify-center grayscale">
+                    <img src="{{ member.image }}" alt="{{ member.title }}" class="h-auto w-auto max-h-[90%] max-w-[90%] object-contain">
+                    <div class="absolute inset-0 bg-gradient-to-t from-amber-900/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    {% if member.joining_year %}
+                    <div class="absolute top-2 right-2 bg-gray-500 text-white text-xs font-bold px-2 py-1 rounded-full">
+                        {{ member.joining_year }} - {{ member.departure_year | default: "Present" }}
+                    </div>
+                    {% endif %}
+                </div>
+                {% else %}
+                <div class="relative bg-gradient-to-r from-amber-50 to-yellow-100 h-48 flex items-center justify-center grayscale">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 text-amber-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M5.121 17.804A13.937 13.937 0 0112 16c2.5 0 4.847.655 6.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0zm6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                    <div class="absolute inset-0 bg-gradient-to-t from-amber-900/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    {% if member.joining_year %}
+                    <div class="absolute top-2 right-2 bg-gray-500 text-white text-xs font-bold px-2 py-1 rounded-full">
+                        {{ member.joining_year }} - {{ member.departure_year | default: "Present" }}
+                    </div>
+                    {% endif %}
+                </div>
+                {% endif %}
+                <div class="p-4 relative z-10 flex-grow border-t border-gray-100">
+                    <h3 class="text-lg font-semibold mb-1 group-hover:text-amber-600 transition-colors">{{ member.title }}</h3>
+                    <p class="text-gray-600 text-sm mb-3">{{ member.position }}</p>
+                    {% if member.current_affiliation %}
+                    <p class="text-gray-600 text-sm mb-3"><strong>Current:</strong> {{ member.current_affiliation }}</p>
+                    {% endif %}
+                </div>
+            </div>
+        </a>
+        {% endfor %}
+    </div>
+</section>
+{% endif %}
+
+<style>
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+section {
+  animation: fadeIn 0.5s ease-out forwards;
+}
+
+/* Image greyscale effect for alumni */
+.grayscale {
+  filter: grayscale(100%);
+  transition: filter 0.3s ease;
+}
+
+.grayscale:hover {
+  filter: grayscale(50%);
+}
+</style>

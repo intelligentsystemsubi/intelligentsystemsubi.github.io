@@ -1,0 +1,13 @@
+# List of funding sources
+- agency: "National Science Foundation (NSF)"
+  grant_id: "XYZ-123456"
+  title: "Foundations of Robust Computer Vision"
+  period: "2023-2026"
+  pi: "Prof. Ada Lovelace"
+  link: "https://www.nsf.gov/awardsearch/showAward?AWD_ID=123456" # Optional link
+
+- agency: "European Research Council (ERC)"
+  grant_id: "ERC-StG-789012"
+  title: "Next-Generation 3D Scene Analysis"
+  period: "2024-2029"
+  pi: "Dr. Charles Babbage"

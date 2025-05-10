@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Funding & Sponsors - Intelligent Systems</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            DEFAULT: '#2563eb',
+                            dark: '#1d4ed8',
+                            light: '#3b82f6'
+                        },
+                        secondary: {
+                            DEFAULT: '#7c3aed',
+                            dark: '#6d28d9',
+                            light: '#8b5cf6'
+                        },
+                        accent: '#0ea5e9',
+                        surface: '#f9fafb',
+                        ink: {
+                            DEFAULT: '#1e293b',2
+                            light: '#64748b'
+                        }
+                    },
+                    boxShadow: {
+                        'intense': '0 10px 25px rgba(0, 0, 0, 0.1)',
+                        'hover': '0 15px 30px rgba(0, 0, 0, 0.12)'
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="/inlab-ubi/assets/css/modern.css">
+    <link rel="stylesheet" href="/inlab-ubi/assets/css/gradient-headings.css">
+    <style>
+        /* Base styles for the Intelligent Systems lab */
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        }
+        
+        /* Gradient Text for Headings */
+        .gradient-text {
+            background: linear-gradient(to right, #facc15, #f97316, #ef4444); /* warm */
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            font-weight: 700;
+            }
+
+        
+            h1 {
+  background: linear-gradient(to right, #ffffff, #facc15, #fda4af);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  font-weight: 700;
+  display: inline-block; /* ensures background-clip works correctly */
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.15); /* subtle depth */
+
+}
+
+        
+        /* Modern card styling with subtle hover effects */
+        .card {
+            transition: all 0.3s ease;
+        }
+        
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.12);
+        }
+        
+        /* Modern gradient decorations */
+        .gradient-line {
+            height: 3px;
+            width: 50px;
+            background: linear-gradient(90deg, #2563eb 0%, #7c3aed 100%);
+            border-radius: 3px;
+            margin: 0.5rem 0 1.5rem 0;
+        }
+        
+        /* Logo animation */
+        .site-logo {
+            transition: transform 0.3s ease;
+        }
+        
+        .site-logo:hover {
+            transform: scale(1.05);
+        }
+        
+        /* Cool gradient borders */
+        .gradient-border {
+            position: relative;
+        }
+        
+        .gradient-border::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -3px;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(90deg, #2563eb, #7c3aed, #0ea5e9);
+            border-radius: 3px;
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.3s ease;
+        }
+        
+        .gradient-border:hover::after {
+            transform: scaleX(1);
+        }
+        
+        /* Fix for member profile spacing issues */
+        .relative.z-10 svg {
+            height: 40px !important;
+            max-height: 40px !important;
+        }
+        .container.mx-auto.px-4.py-4 {
+            margin-top: 0rem !important;
+        }
+        
+        /* Modern soft styling for the header strip */
+        .relative.overflow-hidden {
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+        }
+        
+        .relative.overflow-hidden::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: rgba(255, 255, 255, 0.05);
+            z-index: 1;
+        }
+        
+        /* Soften text shadows for better readability */
+        .drop-shadow-sm {
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+    
+</head>
+<body class="min-h-screen bg-surface flex flex-col">
+    <!-- Header -->
+    <header class="bg-white shadow-md fixed top-0 left-0 right-0 z-50 transition-all duration-300">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex justify-between items-center py-4">
+      <a class="flex items-center gap-3 group transition-all duration-300" rel="author" href="/inlab-ubi/">
+        
+          <img src="/inlab-ubi/assets/images/lab_logo.png" alt="Intelligent Systems logo" class="h-12 w-auto transform transition-transform duration-300 group-hover:scale-110">
+        
+        <span class="text-xl gradient-text transition-all duration-300">Intelligent Systems</span>
+      </a>
+
+      <!-- Desktop Nav -->
+      <nav class="hidden md:flex items-center space-x-1">
+        
+        
+        
+        
+        
+        <a href="/inlab-ubi/news/" 
+           class="px-3 py-2 rounded-md text-ink hover:text-primary hover:bg-primary/5 transition-all duration-200 font-medium gradient-border ">
+          News
+        </a>
+        
+        
+        <a href="/inlab-ubi/team/" 
+           class="px-3 py-2 rounded-md text-ink hover:text-primary hover:bg-primary/5 transition-all duration-200 font-medium gradient-border ">
+          Team
+        </a>
+        
+        
+        <a href="/inlab-ubi/publications/" 
+           class="px-3 py-2 rounded-md text-ink hover:text-primary hover:bg-primary/5 transition-all duration-200 font-medium gradient-border ">
+          Publications
+        </a>
+        
+        
+        <a href="/inlab-ubi/projects/" 
+           class="px-3 py-2 rounded-md text-ink hover:text-primary hover:bg-primary/5 transition-all duration-200 font-medium gradient-border ">
+          Projects
+        </a>
+        
+        
+        <a href="/inlab-ubi/datasets/" 
+           class="px-3 py-2 rounded-md text-ink hover:text-primary hover:bg-primary/5 transition-all duration-200 font-medium gradient-border ">
+          Datasets
+        </a>
+        
+        
+        <a href="/inlab-ubi/funding/" 
+           class="px-3 py-2 rounded-md text-ink hover:text-primary hover:bg-primary/5 transition-all duration-200 font-medium gradient-border ">
+          Funding
+        </a>
+        
+        
+        <a href="/inlab-ubi/alumni/" 
+           class="px-3 py-2 rounded-md text-ink hover:text-primary hover:bg-primary/5 transition-all duration-200 font-medium gradient-border ">
+          Alumni
+        </a>
+        
+        
+        <!-- Contact Button with special styling -->
+        <a href="/contact/" class="ml-2 px-4 py-2 gradient-button rounded-md transition-all duration-200 shadow-sm hover:shadow-md font-medium">
+          Contact
+        </a>
+      </nav>
+
+      <!-- Mobile Nav Button -->
+      <div class="md:hidden">
+        <button type="button" class="mobile-menu-button text-ink hover:text-primary transition-colors" aria-label="Toggle menu">
+          <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Nav Menu -->
+    <div class="mobile-menu hidden md:hidden pb-4 space-y-1 bg-white">
+      
+      
+      <a href="/inlab-ubi/news/" 
+         class="block py-2 px-3 rounded-md text-ink hover:text-primary hover:bg-primary/5 transition-colors ">
+        News
+      </a>
+      
+      
+      <a href="/inlab-ubi/team/" 
+         class="block py-2 px-3 rounded-md text-ink hover:text-primary hover:bg-primary/5 transition-colors ">
+        Team
+      </a>
+      
+      
+      <a href="/inlab-ubi/publications/" 
+         class="block py-2 px-3 rounded-md text-ink hover:text-primary hover:bg-primary/5 transition-colors ">
+        Publications
+      </a>
+      
+      
+      <a href="/inlab-ubi/projects/" 
+         class="block py-2 px-3 rounded-md text-ink hover:text-primary hover:bg-primary/5 transition-colors ">
+        Projects
+      </a>
+      
+      
+      <a href="/inlab-ubi/datasets/" 
+         class="block py-2 px-3 rounded-md text-ink hover:text-primary hover:bg-primary/5 transition-colors ">
+        Datasets
+      </a>
+      
+      
+      <a href="/inlab-ubi/funding/" 
+         class="block py-2 px-3 rounded-md text-ink hover:text-primary hover:bg-primary/5 transition-colors ">
+        Funding
+      </a>
+      
+      
+      <a href="/inlab-ubi/alumni/" 
+         class="block py-2 px-3 rounded-md text-ink hover:text-primary hover:bg-primary/5 transition-colors ">
+        Alumni
+      </a>
+      
+      <!-- Mobile Contact Button -->
+      <a href="/contact/" class="block py-2 px-3 mt-2 text-primary font-medium">
+        Contact
+      </a>
+    </div>
+  </div>
+
+  <!-- Mobile menu JavaScript -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const btn = document.querySelector('.mobile-menu-button');
+      const menu = document.querySelector('.mobile-menu');
+      const header = document.querySelector('header');
+      
+      btn.addEventListener('click', function() {
+        menu.classList.toggle('hidden');
+        // Add a slight animation
+        if (!menu.classList.contains('hidden')) {
+          // Menu is now visible - animate items
+          const menuItems = menu.querySelectorAll('a');
+          menuItems.forEach((item, index) => {
+            item.style.opacity = '0';
+            item.style.transform = 'translateY(-10px)';
+            setTimeout(() => {
+              item.style.transition = 'opacity 0.3s ease, transform 0.3s ease';
+              item.style.opacity = '1';
+              item.style.transform = 'translateY(0)';
+            }, index * 50);
+          });
+        }
+      });
+      
+      // Close mobile menu when clicking outside
+      document.addEventListener('click', function(event) {
+        if (!menu.classList.contains('hidden') && 
+            !menu.contains(event.target) && 
+            !btn.contains(event.target)) {
+          menu.classList.add('hidden');
+        }
+      });
+      
+      // Header scroll effect with enhanced shadow
+      window.addEventListener('scroll', function() {
+        if (window.scrollY > 10) {
+          header.classList.add('shadow-lg');
+          header.classList.add('bg-white/95');
+          header.classList.add('backdrop-blur-sm');
+        } else {
+          header.classList.remove('shadow-lg');
+          header.classList.remove('bg-white/95');
+          header.classList.remove('backdrop-blur-sm');
+        }
+      });
+    });
+  </script>
+</header>
+
+<style>
+  /* Header animations */
+  header {
+    transition: box-shadow 0.3s ease;
+  }
+  
+  header.scrolled {
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  }
+</style>
+
+
+    <!-- Main Content -->
+    <main class="flex-grow pt-16">
+        <!-- Page Header with Gradient Background -->
+<div class="relative bg-gradient-to-r from-blue-600 to-indigo-800 text-white py-16 mb-12">
+  <div class="absolute inset-0 bg-cover bg-center opacity-20" style="background-image: url('/assets/slider/slide_1.png');"></div>
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+    <h1 class="text-4xl md:text-5xl font-bold mb-4">Funding & Sponsors</h1>
+    
+    <p class="text-xl md:text-2xl max-w-3xl mx-auto font-light">
+      Organizations that support our research and make our work possible.
+    </p>
+    
+  </div>
+</div>
+
+<!-- Main Content -->
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-16">
+  <div class="space-y-12">
+  <!-- Current Grants -->
+  <section>
+    <h2 class="text-2xl font-bold text-gray-900 mb-8">Current Grants</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+      
+      
+    </div>
+  </section>
+
+  <!-- Past Grants -->
+  <section>
+    <h2 class="text-2xl font-bold text-gray-900 mb-8">Past Grants</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+      
+      
+    </div>
+  </section>
+
+  <!-- Industry Partners -->
+  <section>
+    <h2 class="text-2xl font-bold text-gray-900 mb-8">Industry Partners</h2>
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+      
+    </div>
+  </section>
+</div>
+
+<style>
+/* Basic styling for the funding list */
+.funding-list {
+  list-style: none;
+  padding-left: 0;
+}
+.funding-item {
+  margin-bottom: 1.5em;
+  padding-bottom: 1em;
+  border-bottom: 1px solid #eee;
+}
+.funding-item p {
+  margin: 0.3em 0;
+}
+.funding-agency {
+  font-size: 1.1em;
+}
+.funding-title {
+  font-style: italic;
+  color: #333;
+}
+.funding-details {
+  font-size: 0.9em;
+  color: #555;
+}
+.funding-link a {
+  text-decoration: none;
+  color: #007bff;
+  font-size: 0.9em;
+}
+.funding-link a:hover {
+  text-decoration: underline;
+}
+</style>
+
+</div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gradient-to-br from-gray-900 to-gray-800 text-white py-12 mt-16">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+      <!-- About Column -->
+      <div>
+        <h3 class="text-xl font-semibold mb-4 relative inline-block">
+          Intelligent Systems
+          <span class="absolute bottom-0 left-0 w-full h-0.5 bg-blue-500 transform scale-x-0 transition-transform duration-300 group-hover:scale-x-100"></span>
+        </h3>
+        <p class="text-gray-300 mb-4">The Intelligent Systems Laboratory at the University of Beira Interior focuses on computer vision, pattern recognition, and biometrics research.</p>
+        <div class="flex space-x-4 mt-6">
+          <a href="https://github.com/socia-lab" aria-label="GitHub" class="text-gray-400 hover:text-white transition-colors transform hover:scale-110 duration-300">
+            <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd" />
+            </svg>
+          </a>
+          <a href="https://twitter.com/socia_lab" aria-label="Twitter" class="text-gray-400 hover:text-white transition-colors transform hover:scale-110 duration-300">
+            <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84" />
+            </svg>
+          </a>
+          <a href="mailto:socia@di.ubi.pt" aria-label="Email" class="text-gray-400 hover:text-white transition-colors transform hover:scale-110 duration-300">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+            </svg>
+          </a>
+          <a href="https://www.linkedin.com/company/socia-lab" aria-label="LinkedIn" class="text-gray-400 hover:text-white transition-colors transform hover:scale-110 duration-300">
+            <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h-.003z"/>
+            </svg>
+          </a>
+          <a href="https://www.youtube.com/channel/UCsocialab" aria-label="YouTube" class="text-gray-400 hover:text-white transition-colors transform hover:scale-110 duration-300">
+            <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+      
+      <!-- Quick Links -->
+      <div>
+        <h3 class="text-xl font-semibold mb-4 relative inline-block">Quick Links</h3>
+        <ul class="space-y-3">
+          
+          
+          
+          <li>
+            <a href="/inlab-ubi/news/" class="text-gray-300 hover:text-white transition-colors flex items-center group">
+              <span class="w-1.5 h-1.5 bg-blue-500 rounded-full mr-2 transform scale-0 group-hover:scale-100 transition-transform duration-300"></span>
+              News
+            </a>
+          </li>
+          
+          
+          <li>
+            <a href="/inlab-ubi/team/" class="text-gray-300 hover:text-white transition-colors flex items-center group">
+              <span class="w-1.5 h-1.5 bg-blue-500 rounded-full mr-2 transform scale-0 group-hover:scale-100 transition-transform duration-300"></span>
+              Team
+            </a>
+          </li>
+          
+          
+          <li>
+            <a href="/inlab-ubi/publications/" class="text-gray-300 hover:text-white transition-colors flex items-center group">
+              <span class="w-1.5 h-1.5 bg-blue-500 rounded-full mr-2 transform scale-0 group-hover:scale-100 transition-transform duration-300"></span>
+              Publications
+            </a>
+          </li>
+          
+          
+          <li>
+            <a href="/inlab-ubi/projects/" class="text-gray-300 hover:text-white transition-colors flex items-center group">
+              <span class="w-1.5 h-1.5 bg-blue-500 rounded-full mr-2 transform scale-0 group-hover:scale-100 transition-transform duration-300"></span>
+              Projects
+            </a>
+          </li>
+          
+          
+          <li>
+            <a href="/inlab-ubi/funding/" class="text-gray-300 hover:text-white transition-colors flex items-center group">
+              <span class="w-1.5 h-1.5 bg-blue-500 rounded-full mr-2 transform scale-0 group-hover:scale-100 transition-transform duration-300"></span>
+              Funding
+            </a>
+          </li>
+          
+          
+          <li>
+            <a href="/inlab-ubi/alumni/" class="text-gray-300 hover:text-white transition-colors flex items-center group">
+              <span class="w-1.5 h-1.5 bg-blue-500 rounded-full mr-2 transform scale-0 group-hover:scale-100 transition-transform duration-300"></span>
+              Alumni
+            </a>
+          </li>
+          
+        </ul>
+      </div>
+      
+      <!-- Contact -->
+      <div>
+        <h3 class="text-xl font-semibold mb-4 relative inline-block">Contact</h3>
+        <address class="not-italic text-gray-300 space-y-2">
+          <p class="flex items-center">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 text-blue-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+            </svg>
+            University of Beira Interior
+          </p>
+          <p class="flex items-center">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 text-blue-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+            </svg>
+            Department of Computer Science
+          </p>
+          <p class="flex items-center">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 text-blue-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+            </svg>
+            Rua Marquês d'Ávila e Bolama
+          </p>
+          <p class="flex items-center ml-7">6201-001 Covilhã, Portugal</p>
+          <p class="mt-4 flex items-center">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 text-blue-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+            </svg>
+            <a href="mailto:socia@di.ubi.pt" class="text-blue-400 hover:text-blue-300 transition-colors">socia@di.ubi.pt</a>
+          </p>
+        </address>
+      </div>
+    </div>
+    
+    <div class="border-t border-gray-800 mt-10 pt-6 text-center text-gray-400 text-sm">
+      <p>© 2025 Intelligent Systems. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

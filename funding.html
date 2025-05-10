@@ -1,0 +1,110 @@
+---
+layout: page
+title: Funding & Sponsors
+description: Organizations that support our research and make our work possible.
+---
+
+<div class="space-y-12">
+  <!-- Current Grants -->
+  <section>
+    <h2 class="text-2xl font-bold text-gray-900 mb-8">Current Grants</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+      {% assign current_grants = site.data.funding | where: "status", "active" %}
+      {% for grant in current_grants %}
+      <div class="bg-white rounded-xl shadow-md p-6 hover:shadow-lg transition-shadow border border-gray-100">
+        <div class="flex items-center mb-4">
+          {% if grant.logo %}
+          <img src="{{ grant.logo }}" alt="{{ grant.organization }}" class="h-12 mr-4">
+          {% endif %}
+          <div>
+            <h3 class="text-xl font-semibold">{{ grant.title }}</h3>
+            <p class="text-gray-600">{{ grant.organization }}</p>
+          </div>
+        </div>
+        <p class="text-gray-700 mb-4">{{ grant.description }}</p>
+        <div class="flex justify-between text-sm text-gray-500">
+          <span>{{ grant.period }}</span>
+          <span>{{ grant.amount }}</span>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </section>
+
+  <!-- Past Grants -->
+  <section>
+    <h2 class="text-2xl font-bold text-gray-900 mb-8">Past Grants</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+      {% assign past_grants = site.data.funding | where: "status", "completed" %}
+      {% for grant in past_grants %}
+      <div class="bg-white rounded-xl shadow-md p-6 hover:shadow-lg transition-shadow border border-gray-100">
+        <div class="flex items-center mb-4">
+          {% if grant.logo %}
+          <img src="{{ grant.logo }}" alt="{{ grant.organization }}" class="h-12 mr-4">
+          {% endif %}
+          <div>
+            <h3 class="text-xl font-semibold">{{ grant.title }}</h3>
+            <p class="text-gray-600">{{ grant.organization }}</p>
+          </div>
+        </div>
+        <p class="text-gray-700 mb-4">{{ grant.description }}</p>
+        <div class="flex justify-between text-sm text-gray-500">
+          <span>{{ grant.period }}</span>
+          <span>{{ grant.amount }}</span>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </section>
+
+  <!-- Industry Partners -->
+  <section>
+    <h2 class="text-2xl font-bold text-gray-900 mb-8">Industry Partners</h2>
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+      {% for partner in site.data.industry_partners %}
+      <div class="bg-white rounded-xl shadow-md p-6 hover:shadow-lg transition-shadow flex items-center justify-center">
+        {% if partner.logo %}
+        <img src="{{ partner.logo }}" alt="{{ partner.name }}" class="max-h-24">
+        {% else %}
+        <h3 class="text-xl font-semibold text-center">{{ partner.name }}</h3>
+        {% endif %}
+      </div>
+      {% endfor %}
+    </div>
+  </section>
+</div>
+
+<style>
+/* Basic styling for the funding list */
+.funding-list {
+  list-style: none;
+  padding-left: 0;
+}
+.funding-item {
+  margin-bottom: 1.5em;
+  padding-bottom: 1em;
+  border-bottom: 1px solid #eee;
+}
+.funding-item p {
+  margin: 0.3em 0;
+}
+.funding-agency {
+  font-size: 1.1em;
+}
+.funding-title {
+  font-style: italic;
+  color: #333;
+}
+.funding-details {
+  font-size: 0.9em;
+  color: #555;
+}
+.funding-link a {
+  text-decoration: none;
+  color: #007bff;
+  font-size: 0.9em;
+}
+.funding-link a:hover {
+  text-decoration: underline;
+}
+</style>

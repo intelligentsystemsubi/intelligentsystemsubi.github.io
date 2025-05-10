@@ -1,0 +1,15 @@
+{%- assign social_profiles = site.minima.social_links -%}
+{%- if social_profiles -%}
+<ul class="social-media-list">
+  {%- for profile_hash in social_profiles -%}
+    {%- assign profile = profile_hash[1] -%}
+    <li>
+      <a href="{{ profile.url | escape }}" title="{{ profile.username | escape }}">
+        <svg class="svg-icon">
+          <use xlink:href="{{ '/assets/minima-social-icons.svg#' | append: profile.platform | relative_url }}"></use>
+        </svg>
+      </a>
+    </li>
+  {%- endfor -%}
+</ul>
+{%- endif -%}

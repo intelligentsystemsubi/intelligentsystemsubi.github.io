@@ -1,0 +1,115 @@
+<header class="bg-white shadow-md fixed top-0 left-0 right-0 z-50 transition-all duration-300">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex justify-between items-center py-4">
+      <a class="flex items-center gap-3 group transition-all duration-300" rel="author" href="{{ "/" | relative_url }}">
+        {% if site.logo %}
+          <img src="{{ site.logo | relative_url }}" alt="{{ site.title | escape }} logo" class="h-12 w-auto transform transition-transform duration-300 group-hover:scale-110">
+        {% endif %}
+        <span class="text-xl gradient-text transition-all duration-300">{{ site.title | escape }}</span>
+      </a>
+
+      <!-- Desktop Nav -->
+      <nav class="hidden md:flex items-center space-x-1">
+        {% assign current_page = page.url | remove: '.html' %}
+        {% assign navigation_items = "news,team,publications,projects,datasets,funding,alumni" | split: "," %}
+        
+        {% for nav_item in navigation_items %}
+        {% assign nav_url = nav_item | prepend: '/' | append: '/' %}
+        <a href="{{ nav_url | relative_url }}" 
+           class="px-3 py-2 rounded-md text-ink hover:text-primary hover:bg-primary/5 transition-all duration-200 font-medium gradient-border {% if current_page == nav_url %}text-primary bg-primary/10 font-semibold{% endif %}">
+          {{ nav_item | capitalize }}
+        </a>
+        {% endfor %}
+        
+        <!-- Contact Button with special styling -->
+        <a href="/contact/" class="ml-2 px-4 py-2 gradient-button rounded-md transition-all duration-200 shadow-sm hover:shadow-md font-medium">
+          Contact
+        </a>
+      </nav>
+
+      <!-- Mobile Nav Button -->
+      <div class="md:hidden">
+        <button type="button" class="mobile-menu-button text-ink hover:text-primary transition-colors" aria-label="Toggle menu">
+          <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Nav Menu -->
+    <div class="mobile-menu hidden md:hidden pb-4 space-y-1 bg-white">
+      {% for nav_item in navigation_items %}
+      {% assign nav_url = nav_item | prepend: '/' | append: '/' %}
+      <a href="{{ nav_url | relative_url }}" 
+         class="block py-2 px-3 rounded-md text-ink hover:text-primary hover:bg-primary/5 transition-colors {% if current_page == nav_url %}text-primary bg-primary/10 font-medium{% endif %}">
+        {{ nav_item | capitalize }}
+      </a>
+      {% endfor %}
+      <!-- Mobile Contact Button -->
+      <a href="/contact/" class="block py-2 px-3 mt-2 text-primary font-medium">
+        Contact
+      </a>
+    </div>
+  </div>
+
+  <!-- Mobile menu JavaScript -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const btn = document.querySelector('.mobile-menu-button');
+      const menu = document.querySelector('.mobile-menu');
+      const header = document.querySelector('header');
+      
+      btn.addEventListener('click', function() {
+        menu.classList.toggle('hidden');
+        // Add a slight animation
+        if (!menu.classList.contains('hidden')) {
+          // Menu is now visible - animate items
+          const menuItems = menu.querySelectorAll('a');
+          menuItems.forEach((item, index) => {
+            item.style.opacity = '0';
+            item.style.transform = 'translateY(-10px)';
+            setTimeout(() => {
+              item.style.transition = 'opacity 0.3s ease, transform 0.3s ease';
+              item.style.opacity = '1';
+              item.style.transform = 'translateY(0)';
+            }, index * 50);
+          });
+        }
+      });
+      
+      // Close mobile menu when clicking outside
+      document.addEventListener('click', function(event) {
+        if (!menu.classList.contains('hidden') && 
+            !menu.contains(event.target) && 
+            !btn.contains(event.target)) {
+          menu.classList.add('hidden');
+        }
+      });
+      
+      // Header scroll effect with enhanced shadow
+      window.addEventListener('scroll', function() {
+        if (window.scrollY > 10) {
+          header.classList.add('shadow-lg');
+          header.classList.add('bg-white/95');
+          header.classList.add('backdrop-blur-sm');
+        } else {
+          header.classList.remove('shadow-lg');
+          header.classList.remove('bg-white/95');
+          header.classList.remove('backdrop-blur-sm');
+        }
+      });
+    });
+  </script>
+</header>
+
+<style>
+  /* Header animations */
+  header {
+    transition: box-shadow 0.3s ease;
+  }
+  
+  header.scrolled {
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  }
+</style>

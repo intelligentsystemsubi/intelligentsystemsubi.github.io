@@ -1,0 +1,541 @@
+---
+layout: default
+title: Home
+---
+
+
+<!-- Hero Section with Full-width Background -->
+<div class="relative bg-gradient-to-r from-blue-500 via-indigo-500 to-purple-500 text-white py-24">
+    <div class="absolute inset-0 bg-cover bg-center opacity-20" style="background-image: url('/assets/slider/slide_1.png');"></div>
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+        <h1 style="
+        font-size: 3rem;
+        font-weight: 900;
+        margin-bottom: 1rem;
+        background: linear-gradient(135deg, #facc15, #ff6ec4, #ff4d4d, #ffffff);
+        background-size: 400% 400%;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        animation: gradient-text 5s ease-in-out infinite alternate;
+        display: inline-block;
+        text-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+      ">
+        Welcome to the Intelligent Systems Lab!
+      </h1>
+      
+      <style>
+      @keyframes gradient-text {
+        0% { background-position: 0% 50%; }
+        50% { background-position: 100% 50%; }
+        100% { background-position: 0% 50%; }
+      }
+      </style>
+      
+      
+        <p class="text-xl md:text-2xl max-w-3xl mx-auto font-light animate-fade-in">
+            We are a research group at the University of Beira Interior focused on advancing the frontiers of computer vision.
+        </p>
+        <div class="mt-10 animate-fade-in">
+            <a href="/publications" class="inline-block gradient-button hover:shadow-xl px-8 py-3 rounded-lg font-medium transform transition-transform hover:-translate-y-1 hover:shadow-xl group">
+                Explore Our Research
+                <span class="inline-block ml-2 transform group-hover:translate-x-1 transition-transform">→</span>
+            </a>
+        </div>
+    </div>
+</div>
+
+<!-- Image Slider -->
+<section class="py-12 bg-gray-50">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-10">
+            
+          <h1 style="
+            font-size: 3rem;
+            font-weight: 900;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, #facc15, #ff6ec4, #ff4d4d, #ffffff);
+            background-size: 400% 400%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: gradient-text 5s ease-in-out infinite alternate;
+            display: inline-block;
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+            ">
+            Vision Beyond the Visible
+            </h1>
+
+            <style>
+            @keyframes gradient-text {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+            }
+            </style>
+          
+         
+                      <div class="gradient-line mx-auto mt-2 mb-4"></div>
+            <p class="mt-4 text-xl text-gray-600">
+                Our lab specializes in computer vision research that extends across multiple domains and applications.
+            </p>
+        </div>
+        
+        <div class="relative overflow-hidden">
+            <div class="flex slider-container transition-transform duration-500">
+                <div class="slider-item min-w-full px-4">
+                    <div class="rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300">
+                        <img src="/assets/slider/slide_1.png" alt="Research in Computer Vision" class="w-full h-64 object-cover">
+                        <div class="p-6 bg-white">
+                            <h3 class="text-xl font-semibold text-gray-900 mb-2">Biometric Recognition</h3>
+                            <p class="text-gray-600">Advancing the state-of-the-art in iris, periocular, and face recognition.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="slider-item min-w-full px-4">
+                    <div class="rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300">
+                        <img src="/assets/slider/slide_2.png" alt="Machine Learning Applications" class="w-full h-64 object-cover">
+                        <div class="p-6 bg-white">
+                            <h3 class="text-xl font-semibold text-gray-900 mb-2">Medical Image Analysis</h3>
+                            <p class="text-gray-600">Developing algorithms to assist in medical diagnosis and treatment planning.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="slider-item min-w-full px-4">
+                    <div class="rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300">
+                        <img src="/assets/slider/slide_3.png" alt="Computer Vision Applications" class="w-full h-64 object-cover">
+                        <div class="p-6 bg-white">
+                            <h3 class="text-xl font-semibold text-gray-900 mb-2">Visual Surveillance</h3>
+                            <p class="text-gray-600">Creating advanced systems for security and behavioral analysis.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="flex justify-center mt-6 space-x-2">
+                <button class="slider-dot w-3 h-3 rounded-full bg-blue-300" data-index="0"></button>
+                <button class="slider-dot w-3 h-3 rounded-full bg-gray-300" data-index="1"></button>
+                <button class="slider-dot w-3 h-3 rounded-full bg-gray-300" data-index="2"></button>
+            </div>
+            
+            <button class="slider-control prev absolute left-0 top-1/2 transform -translate-y-1/2 bg-white/80 rounded-full p-2 shadow-md hover:bg-white transition-colors ml-2">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+                </svg>
+            </button>
+            <button class="slider-control next absolute right-0 top-1/2 transform -translate-y-1/2 bg-white/80 rounded-full p-2 shadow-md hover:bg-white transition-colors mr-2">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                </svg>
+            </button>
+        </div>
+    </div>
+</section>
+
+<!-- Latest News Section - Moved above Research Projects -->
+<section class="py-16 bg-gray-50">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12 scroll-reveal">
+            <!-- <h2 class="gradient-heading">Latest News</h2> -->
+            <h1 style="
+            font-size: 3rem;
+            font-weight: 900;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, #facc15, #ff6ec4, #ff4d4d, #ffffff);
+            background-size: 400% 400%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: gradient-text 5s ease-in-out infinite alternate;
+            display: inline-block;
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+            ">
+            Latest News!
+            </h1>
+
+            <style>
+            @keyframes gradient-text {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+            }
+            </style>
+
+            <div class="gradient-line mx-auto mt-2 mb-4"></div>
+            <p class="mt-4 text-xl text-gray-600">
+                Stay updated with our recent achievements, publications, and events.
+            </p>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 scroll-reveal">
+            {% for news in site.data.news limit:3 %}
+            <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-all duration-300 group h-full flex flex-col">
+                {% if news.image %}
+                <div class="relative h-40 overflow-hidden">
+                    <img src="{{ news.image }}" alt="{{ news.title }}" class="w-full h-40 object-cover transform transition-transform duration-500 group-hover:scale-105">
+                </div>
+                {% endif %}
+                <div class="p-6 flex-grow">
+                    <div class="flex items-center text-sm text-gray-500 mb-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                        </svg>
+                        {{ news.date | date: "%B %d, %Y" }}
+                    </div>
+                    <h3 class="text-lg font-bold mb-2 text-gray-900 group-hover:text-blue-600 transition-colors">{{ news.title }}</h3>
+                    <p class="text-gray-600 mb-4">{{ news.content | truncate: 100 }}</p>
+                </div>
+                {% if news.link %}
+                <div class="px-6 pb-6">
+                    <a href="{{ news.link }}" class="inline-flex items-center text-blue-600 hover:text-blue-800 font-medium group">
+                        Read more
+                        <span class="ml-1 transform group-hover:translate-x-1 transition-transform">→</span>
+                    </a>
+                </div>
+                {% endif %}
+            </div>
+            {% endfor %}
+        </div>
+        
+        <div class="text-center mt-12 scroll-reveal">
+            <a href="/news" class="inline-block gradient-button hover:shadow-xl px-8 py-3 rounded-lg font-medium transform transition-transform hover:-translate-y-1 hover:shadow-lg group">
+                View All News
+                <span class="inline-block ml-2 transform group-hover:translate-x-1 transition-transform">→</span>
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- Latest Publications Section -->
+<section class="py-16 bg-white">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12 scroll-reveal">
+            <!-- <h2 class="gradient-heading">Latest Publications</h2> -->
+            <h1 style="
+            font-size: 3rem;
+            font-weight: 900;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, #facc15, #ff6ec4, #ff4d4d, #ffffff);
+            background-size: 400% 400%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: gradient-text 5s ease-in-out infinite alternate;
+            display: inline-block;
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+            ">
+           Latest Publications
+            </h1>
+
+            <style>
+            @keyframes gradient-text {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+            }
+            </style>
+            
+            <div class="gradient-line mx-auto mt-2 mb-4"></div>
+            <p class="mt-4 text-xl text-gray-600">
+                Explore our recent scientific contributions and research papers.
+            </p>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 scroll-reveal">
+            {% assign publications_with_limit = site.data.publications | sort: "year" | reverse | slice: 0, 6 %}
+            {% for publication in publications_with_limit %}
+            <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-all duration-300 group h-full flex flex-col relative">
+                {% if forloop.index <= 3 %}
+                <div class="absolute top-0 right-0 bg-gradient-to-r from-blue-600 to-indigo-700 text-white text-xs font-bold px-3 py-1 rounded-bl-lg z-10 animate-pulse">
+                    NEW
+                </div>
+                {% endif %}
+                {% if publication.thumbnail %}
+                <div class="relative h-40 overflow-hidden bg-gray-50">
+                    <img src="{{ publication.thumbnail }}" alt="{{ publication.title }}" class="h-40 w-full object-contain transform transition-transform duration-500 group-hover:scale-105">
+                </div>
+                {% endif %}
+                <div class="p-6 flex-grow">
+                    <div class="flex flex-wrap items-center text-sm text-gray-500 mb-2 gap-2">
+                        <span class="publication-type-badge {{ publication.publication_type }} px-2 py-1 rounded-full text-xs inline-flex">
+                            {{ publication.publication_type | replace: "_", " " | capitalize }}
+                        </span>
+                        <span>{{ publication.year }}</span>
+                    </div>
+                    <h3 class="text-lg font-bold mb-2 text-gray-900 group-hover:text-blue-600 transition-colors">{{ publication.title | truncate: 70 }}</h3>
+                    <p class="text-gray-600 mb-2 text-sm">{{ publication.authors | truncate: 80 }}</p>
+                    {% if publication.venue %}
+                    <p class="text-gray-500 mb-4 text-xs italic">{{ publication.venue | truncate: 100 }}</p>
+                    {% endif %}
+                    {% if publication.abstract %}
+                    <div class="mb-4">
+                        <p class="text-gray-600 text-sm line-clamp-3 hover:line-clamp-none transition-all duration-300">{{ publication.abstract | strip_html | truncate: 150 }}</p>
+                    </div>
+                    {% endif %}
+                </div>
+                <div class="px-6 pb-6 mt-auto">
+                    <div class="flex flex-wrap gap-2">
+                        {% if publication.doi %}
+                        <a href="https://doi.org/{{ publication.doi }}" class="inline-flex items-center text-blue-600 hover:text-blue-800 font-medium group text-sm" target="_blank">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                            </svg>
+                            DOI
+                        </a>
+                        {% endif %}
+                        {% if publication.pdf %}
+                        <a href="{{ publication.pdf }}" class="inline-flex items-center text-blue-600 hover:text-blue-800 font-medium group text-sm" target="_blank">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
+                            </svg>
+                            PDF
+                        </a>
+                        {% endif %}
+                        {% if publication.code %}
+                        <a href="{{ publication.code }}" class="inline-flex items-center text-blue-600 hover:text-blue-800 font-medium group text-sm" target="_blank">
+                            <svg class="h-4 w-4 mr-1" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                <path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd" />
+                            </svg>
+                            Code
+                        </a>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        
+        <div class="text-center mt-12 scroll-reveal">
+            <a href="/publications" class="inline-block gradient-button hover:shadow-xl px-8 py-3 rounded-lg font-medium transform transition-transform hover:-translate-y-1 hover:shadow-lg group">
+                View All Publications
+                <span class="inline-block ml-2 transform group-hover:translate-x-1 transition-transform">→</span>
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- Research Projects Section -->
+<section class="py-16 bg-white">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12 scroll-reveal">
+            <!-- <h2 class="gradient-heading">Research Projects</h2> -->
+            <h1 style="
+            font-size: 3rem;
+            font-weight: 900;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, #facc15, #ff6ec4, #ff4d4d, #ffffff);
+            background-size: 400% 400%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: gradient-text 5s ease-in-out infinite alternate;
+            display: inline-block;
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+            ">
+           Research Projects
+            </h1>
+
+            <style>
+            @keyframes gradient-text {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+            }
+            </style>
+            <div class="gradient-line mx-auto mt-2 mb-4"></div>
+            <p class="mt-4 text-xl text-gray-600">
+                Explore our ongoing research initiatives in computer vision and machine learning.
+            </p>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 scroll-reveal">
+            {% assign featured_projects = site.data.projects | where: "featured", true | slice: 0, 3 %}
+            {% for project in featured_projects %}
+            <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-all duration-300 group hover-card">
+                {% if project.image %}
+                <div class="relative h-48 overflow-hidden">
+                    <img src="{{ project.image }}" alt="{{ project.title }}" class="w-full h-48 object-cover transform transition-transform duration-500 group-hover:scale-105">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-70"></div>
+                    <div class="absolute bottom-0 left-0 right-0 p-4">
+                        <h3 class="text-xl font-bold text-white">{{ project.title }}</h3>
+                    </div>
+                </div>
+                {% else %}
+                <div class="p-6">
+                    <h3 class="text-xl font-bold mb-2 text-gray-900 group-hover:text-blue-600 transition-colors">{{ project.title }}</h3>
+                </div>
+                {% endif %}
+                <div class="p-6 pt-{% if project.image %}2{% else %}0{% endif %}">
+                    <p class="text-gray-600 mb-4">{{ project.description | truncate: 120 }}</p>
+                    {% if project.id %}
+                    <a href="/projects/{{ project.id }}/" class="inline-flex items-center text-blue-500 hover:text-blue-700 font-medium group gradient-border">
+                        Learn more
+                        <span class="ml-1 transform group-hover:translate-x-1 transition-transform">→</span>
+                    </a>
+                    {% else %}
+                    <a href="/projects#{{ project.title | slugify }}" class="inline-flex items-center text-blue-500 hover:text-blue-700 font-medium group gradient-border">
+                        Learn more
+                        <span class="ml-1 transform group-hover:translate-x-1 transition-transform">→</span>
+                    </a>
+                    {% endif %}
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        
+        <div class="text-center mt-12 scroll-reveal">
+            <a href="/projects" class="inline-block gradient-button hover:shadow-xl px-8 py-3 rounded-lg font-medium transform transition-transform hover:-translate-y-1 hover:shadow-lg group">
+                View All Projects
+                <span class="inline-block ml-2 transform group-hover:translate-x-1 transition-transform">→</span>
+            </a>
+        </div>
+    </div>
+</section>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Image slider functionality
+        const sliderContainer = document.querySelector('.slider-container');
+        const sliderItems = document.querySelectorAll('.slider-item');
+        const dotButtons = document.querySelectorAll('.slider-dot');
+        const prevButton = document.querySelector('.slider-control.prev');
+        const nextButton = document.querySelector('.slider-control.next');
+        let currentIndex = 0;
+        const totalSlides = sliderItems.length;
+        
+        function goToSlide(index) {
+            if (index < 0) index = totalSlides - 1;
+            if (index >= totalSlides) index = 0;
+            
+            currentIndex = index;
+            const translateValue = -currentIndex * 100 + '%';
+            sliderContainer.style.transform = 'translateX(' + translateValue + ')';
+            
+            // Update dots
+            dotButtons.forEach((dot, i) => {
+                dot.classList.toggle('bg-blue-300', i === currentIndex);
+                dot.classList.toggle('bg-gray-300', i !== currentIndex);
+            });
+        }
+        
+        prevButton.addEventListener('click', () => goToSlide(currentIndex - 1));
+        nextButton.addEventListener('click', () => goToSlide(currentIndex + 1));
+        
+        dotButtons.forEach((dot, index) => {
+            dot.addEventListener('click', () => goToSlide(index));
+        });
+        
+        // Auto-advance slides
+        setInterval(() => goToSlide(currentIndex + 1), 5000);
+        
+        // Scroll reveal animation
+        const revealElements = document.querySelectorAll('.scroll-reveal');
+        
+        function checkReveal() {
+            const windowHeight = window.innerHeight;
+            const revealPoint = 150;
+            
+            revealElements.forEach(element => {
+                const top = element.getBoundingClientRect().top;
+                if (top < windowHeight - revealPoint) {
+                    element.classList.add('revealed');
+                }
+            });
+        }
+        
+        window.addEventListener('scroll', checkReveal);
+        checkReveal(); // Check on page load
+    });
+</script>
+
+<style>
+    /* Animation styles */
+    @keyframes fadeInDown {
+        from {
+            opacity: 0;
+            transform: translateY(-20px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+    
+    @keyframes fadeIn {
+        from { opacity: 0; }
+        to { opacity: 1; }
+    }
+    
+    .animate-fade-in-down {
+        animation: fadeInDown 0.6s ease-out forwards;
+    }
+    
+    .animate-fade-in {
+        animation: fadeIn 0.8s ease-out forwards;
+    }
+    
+    /* Scroll reveal animation */
+    .scroll-reveal {
+        opacity: 0;
+        transform: translateY(20px);
+        transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+    
+    .scroll-reveal.revealed {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    
+    /* Publication type badges */
+    .publication-type-badge {
+        color: white;
+        font-weight: 500;
+    }
+    
+    .conference {
+        background-color: #22c55e; /* green-500 */
+    }
+    
+    .journal, .journal_paper {
+        background-color: #ef4444; /* red-500 */
+    }
+    
+    .book {
+        background-color: #171717; /* neutral-900 */
+    }
+    
+    .book_chapter {
+        background-color: #3b82f6; /* blue-500 */
+    }
+    
+    .special_issue {
+        background-color: #6b7280; /* gray-500 */
+    }
+    
+    /* Slider container */
+    .slider-container {
+        display: flex;
+        transition: transform 0.5s ease;
+    }
+    
+    /* Line clamp for truncating text */
+    .line-clamp-3 {
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+    }
+    
+    .hover\:line-clamp-none:hover {
+        -webkit-line-clamp: unset;
+    }
+    
+    /* Animation for the NEW tag */
+    @keyframes pulse {
+        0%, 100% {
+            opacity: 1;
+        }
+        50% {
+            opacity: 0.7;
+        }
+    }
+    
+    .animate-pulse {
+        animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+    }
+</style> 

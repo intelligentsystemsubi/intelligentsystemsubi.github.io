@@ -1,0 +1,34 @@
+site_name: "Socia-Lab"
+description: "Research group at the University of Beira Interior focused on advancing the frontiers of computer vision"
+contact_email: "contact@socia-lab.com"
+
+# Social Media Links
+social_links:
+  github: "socia-lab"
+  twitter: "socia_lab"
+  linkedin: "socia-lab"
+
+# Navigation
+nav_sections:
+  - title: "News"
+    url: "/news"
+  - title: "Team"
+    url: "/team"
+  - title: "Publications"
+    url: "/publications"
+  - title: "Projects"
+    url: "/projects"
+  - title: "Alumni"
+    url: "/alumni"
+
+# Hero Section
+hero:
+  title: "Advancing Computer Vision Research"
+  subtitle: "Pushing the boundaries of visual intelligence through innovative research"
+  background_image: "/assets/images/hero-bg.jpg"
+
+# Colors
+colors:
+  primary: "#2563eb"
+  secondary: "#1e40af"
+  accent: "#3b82f6" 

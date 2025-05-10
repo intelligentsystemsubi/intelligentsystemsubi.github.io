@@ -1,0 +1,356 @@
+---
+---
+
+// Import partials from `sass_dir` (defaults to `_sass`)
+@import "minima";
+
+// Custom color scheme for Intelligent Systems
+$primary: #2563eb;       // Modern blue
+$primary-dark: #1d4ed8;  // Darker blue
+$secondary: #7c3aed;     // Purple
+$accent: #0ea5e9;        // Sky blue
+$background: #ffffff;
+$surface: #f9fafb;
+$text: #1e293b;
+$text-light: #64748b;
+$border: #e2e8f0;
+$success: #10b981;
+$warning: #f59e0b;
+$error: #ef4444;
+
+// Optional: Add custom styles below
+
+/* --- Header Styling --- */
+.site-header {
+  border-bottom: 1px solid $border;
+  min-height: 70px;
+  position: relative;
+  background-color: $background;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+.site-header .wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.site-title {
+  display: flex;
+  align-items: center;
+  font-size: 22px;
+  font-weight: 600;
+  line-height: 70px;
+  letter-spacing: -0.5px;
+  margin-bottom: 0;
+  text-decoration: none;
+  background: linear-gradient(90deg, $primary, $secondary);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  transition: all 0.3s ease-in-out;
+}
+
+.site-title:hover {
+  text-decoration: none;
+  background: linear-gradient(90deg, $primary-dark, $secondary);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.site-logo {
+  height: 45px;
+  width: auto;
+  margin-right: 15px;
+  vertical-align: middle;
+  transition: transform 0.3s ease;
+}
+
+.site-title:hover .site-logo {
+  transform: scale(1.05);
+}
+
+.site-nav {
+  line-height: 70px;
+}
+
+.site-nav .page-link {
+  color: $text;
+  line-height: normal;
+  margin-left: 10px;
+  padding: 8px 14px;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: 500;
+  transition: all 0.2s ease-in-out;
+}
+
+.site-nav .page-link:hover {
+  color: $primary;
+  background-color: rgba(37, 99, 235, 0.08);
+  text-decoration: none;
+}
+
+.site-nav .page-link.active {
+  color: $primary;
+  background-color: rgba(37, 99, 235, 0.12);
+  font-weight: 600;
+}
+
+/* Style for the currently active page link (requires more complex logic or plugin) */
+/* Example placeholder */
+/* .site-nav .page-link.active {
+  color: #000;
+  font-weight: 600;
+} */
+
+/* --- Homepage Carousel Styles --- */
+.homepage-carousel {
+  width: 100%;
+  height: 400px; /* Adjust height as needed */
+  margin-bottom: 2em;
+  border: 1px solid #eee; /* Optional border */
+  overflow: hidden; /* Ensure only the active slide is visible */
+}
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+  /* width: 60%; */ /* Removed - Let Swiper handle width for single view */
+  height: 100%; /* Ensure slide takes full height of container */
+
+  /* Center slide content vertically */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative; /* Needed for caption positioning */
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%; /* Image takes full width of the slide */
+  height: 100%; /* Image takes full height of the slide */
+  object-fit: cover; /* Cover the slide area, might crop */
+}
+
+.swiper-caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  color: white;
+  padding: 10px;
+  font-size: 0.9em;
+  text-align: center;
+}
+
+.video-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  padding-bottom: 56.25%; /* 16:9 aspect ratio */
+  overflow: hidden;
+}
+
+.video-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+/* General Style Improvements */
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  line-height: 1.6;
+  color: $text;
+  background-color: $background;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 600;
+  color: $text;
+}
+
+h1 {
+  background: linear-gradient(90deg, $primary, $secondary);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  font-weight: 700;
+}
+
+h2 {
+  position: relative;
+  padding-bottom: 10px;
+}
+
+h2:after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 50px;
+  height: 3px;
+  background: linear-gradient(90deg, $primary, $secondary, $accent);
+  border-radius: 3px;
+}
+
+a {
+  color: $primary;
+  transition: color 0.2s ease-in-out;
+}
+
+a:hover {
+  color: $primary-dark;
+  text-decoration: none;
+}
+
+.wrapper {
+  max-width: 1200px;
+}
+
+/* Style adjustments for lists */
+.news-item, .publication-item, .funding-item, .alumni-item {
+  border-bottom: 1px solid $border;
+  padding-bottom: 1.5em;
+  margin-bottom: 2em;
+  transition: transform 0.2s ease-in-out;
+}
+
+.news-item:hover, .publication-item:hover {
+  transform: translateY(-3px);
+}
+
+.team-member, .project-item {
+  border: 1px solid $border;
+  border-radius: 8px;
+  padding: 1.5em;
+  background-color: $surface;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.04);
+  transition: all 0.3s ease-in-out;
+}
+
+.team-member:hover, .project-item:hover {
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+  transform: translateY(-5px);
+}
+
+.btn, button, input[type="submit"] {
+  display: inline-block;
+  background: linear-gradient(90deg, $primary, $secondary);
+  color: white;
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  border: none;
+  cursor: pointer;
+}
+
+.btn:hover, button:hover, input[type="submit"]:hover {
+  background: linear-gradient(90deg, $primary-dark, darken($secondary, 5%));
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+}
+
+/* --- Responsive Design --- */
+
+/* Medium screens (tablets, small laptops) */
+@media screen and (max-width: 900px) {
+  .site-title {
+    font-size: 20px; /* Adjust title size */
+  }
+  .site-logo {
+    height: 35px; /* Adjust logo size */
+  }
+  .wrapper {
+    max-width: 800px;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+  .team-grid {
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); /* Adjust grid */
+  }
+  .projects-grid {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Adjust grid */
+  }
+  .homepage-carousel {
+    height: 350px; /* Slightly smaller carousel */
+  }
+}
+
+/* Small screens (mobile devices) */
+@media screen and (max-width: 600px) {
+  .wrapper {
+    max-width: 100%; /* Use full width */
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  /* Adjust slide width for mobile */
+  /* .swiper-slide { */ /* Removed - Not needed for single view */
+    /* width: 85%; */
+  /* } */
+
+  /* Use Minima's default mobile nav handling */
+  /* .site-header .wrapper {
+    flex-direction: column;
+    align-items: flex-start;
+  } */
+  /* .site-nav {
+    position: relative;
+    width: 100%;
+  } */
+  /* .site-nav .trigger {
+    clear: both;
+    display: none;
+  } */
+  /* .site-nav input[type="checkbox"]:checked ~ .trigger {
+    display: block;
+  } */
+  /* .site-nav .page-link {
+    display: block;
+    padding: 8px 0;
+    border-bottom: 1px solid #eee;
+  } */
+
+  .homepage-carousel {
+    height: 250px; /* Smaller carousel height */
+  }
+  .swiper-caption {
+    font-size: 0.8em;
+    padding: 5px;
+  }
+
+  .team-grid, .projects-grid {
+    grid-template-columns: 1fr; /* Stack items */
+    gap: 1.5em;
+  }
+
+  .pub-container {
+    flex-direction: column; /* Stack image and details */
+    gap: 1em;
+  }
+  .pub-preview {
+    flex-basis: auto; /* Allow image to take full width */
+    width: 100%;
+    max-width: 250px; /* Limit max width */
+    height: auto; /* Adjust height automatically */
+    margin: 0 auto; /* Center image */
+  }
+
+  h1 { font-size: 1.8em; }
+  h2 { font-size: 1.5em; }
+  h3 { font-size: 1.2em; }
+
+  .news-item, .publication-item, .funding-item, .alumni-item {
+    margin-bottom: 1.5em;
+    padding-bottom: 1em;
+  }
+}

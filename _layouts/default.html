@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% if page.title %}{{ page.title }} - {% endif %}{{ site.title }}</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            DEFAULT: '#2563eb',
+                            dark: '#1d4ed8',
+                            light: '#3b82f6'
+                        },
+                        secondary: {
+                            DEFAULT: '#7c3aed',
+                            dark: '#6d28d9',
+                            light: '#8b5cf6'
+                        },
+                        accent: '#0ea5e9',
+                        surface: '#f9fafb',
+                        ink: {
+                            DEFAULT: '#1e293b',2
+                            light: '#64748b'
+                        }
+                    },
+                    boxShadow: {
+                        'intense': '0 10px 25px rgba(0, 0, 0, 0.1)',
+                        'hover': '0 15px 30px rgba(0, 0, 0, 0.12)'
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="{{ '/assets/css/modern.css' | relative_url }}">
+    <link rel="stylesheet" href="{{ '/assets/css/gradient-headings.css' | relative_url }}">
+    <style>
+        /* Base styles for the Intelligent Systems lab */
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        }
+        
+        /* Gradient Text for Headings */
+        .gradient-text {
+            background: linear-gradient(to right, #facc15, #f97316, #ef4444); /* warm */
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            font-weight: 700;
+            }
+
+        
+            h1 {
+  background: linear-gradient(to right, #ffffff, #facc15, #fda4af);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  font-weight: 700;
+  display: inline-block; /* ensures background-clip works correctly */
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.15); /* subtle depth */
+
+}
+
+        
+        /* Modern card styling with subtle hover effects */
+        .card {
+            transition: all 0.3s ease;
+        }
+        
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.12);
+        }
+        
+        /* Modern gradient decorations */
+        .gradient-line {
+            height: 3px;
+            width: 50px;
+            background: linear-gradient(90deg, #2563eb 0%, #7c3aed 100%);
+            border-radius: 3px;
+            margin: 0.5rem 0 1.5rem 0;
+        }
+        
+        /* Logo animation */
+        .site-logo {
+            transition: transform 0.3s ease;
+        }
+        
+        .site-logo:hover {
+            transform: scale(1.05);
+        }
+        
+        /* Cool gradient borders */
+        .gradient-border {
+            position: relative;
+        }
+        
+        .gradient-border::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -3px;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(90deg, #2563eb, #7c3aed, #0ea5e9);
+            border-radius: 3px;
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.3s ease;
+        }
+        
+        .gradient-border:hover::after {
+            transform: scaleX(1);
+        }
+        
+        /* Fix for member profile spacing issues */
+        .relative.z-10 svg {
+            height: 40px !important;
+            max-height: 40px !important;
+        }
+        .container.mx-auto.px-4.py-4 {
+            margin-top: 0rem !important;
+        }
+        
+        /* Modern soft styling for the header strip */
+        .relative.overflow-hidden {
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+        }
+        
+        .relative.overflow-hidden::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: rgba(255, 255, 255, 0.05);
+            z-index: 1;
+        }
+        
+        /* Soften text shadows for better readability */
+        .drop-shadow-sm {
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+    {% if page.custom_css %}
+    {% for stylesheet in page.custom_css %}
+    <link rel="stylesheet" href="{{ stylesheet | relative_url }}">
+    {% endfor %}
+    {% endif %}
+</head>
+<body class="min-h-screen bg-surface flex flex-col">
+    <!-- Header -->
+    {% include header.html %}
+
+    <!-- Main Content -->
+    <main class="flex-grow pt-16">
+        {{ content }}
+    </main>
+
+    <!-- Footer -->
+    {% include footer.html %}
+</body>
+</html>

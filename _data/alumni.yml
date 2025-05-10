@@ -1,0 +1,11 @@
+# List of lab alumni
+- name: "Alan Turing"
+  role: "PhD Student"
+  graduated: 2023
+  current_position: "Research Scientist at DeepMind"
+  website: "https://example.com/turing" # Optional link
+
+- name: "Katherine Johnson"
+  role: "Postdoctoral Researcher"
+  period: "2020-2022"
+  current_position: "Assistant Professor at University of Beira Interior"

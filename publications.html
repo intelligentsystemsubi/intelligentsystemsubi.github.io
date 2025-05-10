@@ -1,0 +1,504 @@
+---
+layout: page
+title: Publications
+description: Our research contributions to the field of computer vision and machine learning.
+---
+
+<!-- Filter and Sort Controls -->
+<div class="bg-white rounded-xl shadow-md p-6 mb-8">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+        <!-- Year Filter -->
+        <div>
+            <label for="year-filter" class="block text-sm font-medium text-gray-700 mb-2">Year</label>
+            <select id="year-filter" class="w-full rounded-lg border-gray-300 shadow-sm focus:border-blue-600 focus:ring focus:ring-blue-600 focus:ring-opacity-50">
+                <option value="all">All Years</option>
+                {% assign years = site.data.publications | map: "year" | uniq | sort | reverse %}
+                {% for year in years %}
+                <option value="{{ year }}">{{ year }}</option>
+                {% endfor %}
+            </select>
+        </div>
+
+        <!-- Type Filter -->
+        <div>
+            <label for="type-filter" class="block text-sm font-medium text-gray-700 mb-2">Publication Type</label>
+            <select id="type-filter" class="w-full rounded-lg border-gray-300 shadow-sm focus:border-blue-600 focus:ring focus:ring-blue-600 focus:ring-opacity-50">
+                <option value="all">All Types</option>
+                {% assign types = site.data.publications | map: "publication_type" | uniq | sort %}
+                {% for type in types %}
+                <option value="{{ type }}">{{ type | replace: "_", " " | capitalize }}</option>
+                {% endfor %}
+            </select>
+        </div>
+
+        <!-- Tag Filter -->
+        <div>
+            <label for="tag-filter" class="block text-sm font-medium text-gray-700 mb-2">Tags</label>
+            <select id="tag-filter" class="w-full rounded-lg border-gray-300 shadow-sm focus:border-blue-600 focus:ring focus:ring-blue-600 focus:ring-opacity-50">
+                <option value="all">All Tags</option>
+                {% assign all_tags = "" | split: "," %}
+                {% for pub in site.data.publications %}
+                  {% for tag in pub.tags %}
+                    {% assign all_tags = all_tags | push: tag %}
+                  {% endfor %}
+                {% endfor %}
+                {% assign unique_tags = all_tags | uniq | sort %}
+                {% for tag in unique_tags %}
+                <option value="{{ tag }}">{{ tag }}</option>
+                {% endfor %}
+            </select>
+        </div>
+
+        <!-- Sort By -->
+        <div>
+            <label for="sort-by" class="block text-sm font-medium text-gray-700 mb-2">Sort By</label>
+            <select id="sort-by" class="w-full rounded-lg border-gray-300 shadow-sm focus:border-blue-600 focus:ring focus:ring-blue-600 focus:ring-opacity-50">
+                <option value="year">Year (Newest First)</option>
+                <option value="title">Title</option>
+                <option value="venue">Venue</option>
+            </select>
+        </div>
+    </div>
+    
+    <!-- Search Publications -->
+    <div class="mt-4 relative">
+        <input type="text" id="publication-search" placeholder="Search publications..." class="w-full px-4 py-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-600 focus:border-blue-600 outline-none pl-10">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+        </svg>
+    </div>
+    
+    <!-- Results Count -->
+    <div class="mt-4 text-sm text-gray-600">
+        Showing <span id="publications-count">0</span> publications
+    </div>
+</div>
+
+<!-- Publications List -->
+<div id="publications-list" class="space-y-6">
+    {% assign sorted_publications = site.data.publications | sort: "year" | reverse %}
+    {% for pub in sorted_publications %}
+    <div class="publication-item bg-white rounded-xl shadow-md p-6 hover:shadow-lg transition-all duration-300 border border-gray-100 group" 
+         data-year="{{ pub.year }}" 
+         data-type="{{ pub.publication_type | downcase }}"
+         data-title="{{ pub.title | downcase }}"
+         data-authors="{{ pub.authors | downcase }}"
+         data-venue="{{ pub.venue | downcase }}"
+         data-tags="{% for tag in pub.tags %}{{ tag | downcase }}{% unless forloop.last %},{% endunless %}{% endfor %}"
+         data-id="{{ forloop.index }}">
+        <div class="flex items-start">
+            {% if pub.thumbnail %}
+            <div class="flex-shrink-0 mr-6">
+                <div class="relative overflow-hidden rounded-lg h-32 w-48 bg-gray-50 shadow-sm">
+                    <img src="{{ pub.thumbnail }}" alt="Publication thumbnail" class="h-32 w-48 object-cover rounded-lg transform transition-transform duration-500 group-hover:scale-110">
+                </div>
+            </div>
+            {% endif %}
+            <div class="flex-grow">
+                <h3 class="text-xl font-semibold mb-2 text-gray-900 group-hover:text-blue-600 transition-colors">{{ pub.title }}</h3>
+                <p class="text-gray-600 mb-2">{{ pub.authors }}</p>
+                <p class="text-sm text-gray-500 mb-4">
+                    <span class="font-medium">{{ pub.venue }}</span> ({{ pub.year }})
+                    {% if pub.publication_type %}
+                    <span class="ml-2 px-2 py-1 rounded-full text-xs publication-type-badge {{ pub.publication_type }}">{{ pub.publication_type | replace: "_", " " | capitalize }}</span>
+                    {% endif %}
+                </p>
+                {% if pub.tags %}
+                <div class="flex flex-wrap gap-1 mb-4">
+                    {% for tag in pub.tags %}
+                    <span class="px-2 py-1 bg-gray-100 text-gray-700 text-xs rounded-full hover:bg-gray-200 transition-colors">{{ tag }}</span>
+                    {% endfor %}
+                </div>
+                {% endif %}
+                <div class="flex flex-wrap gap-4">
+                    {% if pub.doi %}
+                    <a href="https://doi.org/{{ pub.doi }}" class="inline-flex items-center text-blue-600 hover:text-blue-800 transition-colors" target="_blank">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                        </svg>
+                        DOI
+                    </a>
+                    {% endif %}
+                    {% if pub.pdf %}
+                    <a href="{{ pub.pdf }}" class="inline-flex items-center text-blue-600 hover:text-blue-800 transition-colors" target="_blank">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
+                        </svg>
+                        PDF
+                    </a>
+                    {% endif %}
+                    {% if pub.code %}
+                    <a href="{{ pub.code }}" class="inline-flex items-center text-blue-600 hover:text-blue-800 transition-colors" target="_blank">
+                        <svg class="h-5 w-5 mr-1" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                            <path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd" />
+                        </svg>
+                        Code
+                    </a>
+                    {% endif %}
+                    {% if pub.video %}
+                    <a href="{{ pub.video }}" class="inline-flex items-center text-blue-600 hover:text-blue-800 transition-colors" target="_blank">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" />
+                        </svg>
+                        Video
+                    </a>
+                    {% endif %}
+                    
+                    <button class="publication-details-btn inline-flex items-center text-blue-600 hover:text-blue-800 transition-colors" data-id="{{ forloop.index }}">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                        Details
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Hidden content for modal -->
+        <div class="hidden publication-details" data-id="{{ forloop.index }}">
+            <h2>{{ pub.title }}</h2>
+            <p class="authors">{{ pub.authors }}</p>
+            <p class="venue">{{ pub.venue }} ({{ pub.year }})</p>
+            {% if pub.abstract %}
+            <div class="abstract">
+                <h3>Abstract</h3>
+                <p>{{ pub.abstract }}</p>
+            </div>
+            {% endif %}
+            {% if pub.doi %}
+            <p class="doi">DOI: <a href="https://doi.org/{{ pub.doi }}" target="_blank">{{ pub.doi }}</a></p>
+            {% endif %}
+            <div class="links">
+                {% if pub.pdf %}
+                <a href="{{ pub.pdf }}" target="_blank">PDF</a>
+                {% endif %}
+                {% if pub.code %}
+                <a href="{{ pub.code }}" target="_blank">Code</a>
+                {% endif %}
+                {% if pub.video %}
+                <a href="{{ pub.video }}" target="_blank">Video</a>
+                {% endif %}
+                {% if pub.slides %}
+                <a href="{{ pub.slides }}" target="_blank">Slides</a>
+                {% endif %}
+                {% if pub.poster %}
+                <a href="{{ pub.poster }}" target="_blank">Poster</a>
+                {% endif %}
+                {% if pub.bibtex %}
+                <div class="bibtex">{{ pub.bibtex }}</div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+
+<!-- Empty State -->
+<div id="no-publications-message" class="hidden text-center py-12">
+    <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 mx-auto text-gray-400 mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+    </svg>
+    <h3 class="text-xl font-semibold text-gray-700 mb-2">No publications found</h3>
+    <p class="text-gray-500">Try adjusting your search or filter criteria</p>
+</div>
+
+<!-- Publication Details Modal -->
+<div id="publication-modal" class="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center hidden">
+    <div class="bg-white rounded-xl shadow-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto mx-4">
+        <div class="p-6">
+            <div class="flex justify-between items-start mb-4">
+                <h2 id="modal-title" class="text-2xl font-bold text-gray-900 pr-8"></h2>
+                <button id="close-modal" class="text-gray-500 hover:text-gray-700">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                </button>
+            </div>
+            <p id="modal-authors" class="text-gray-600 mb-2"></p>
+            <p id="modal-venue" class="text-sm text-gray-500 mb-6"></p>
+            
+            <div id="modal-thumbnail" class="mb-6 hidden">
+                <img src="" alt="Publication thumbnail" class="rounded-lg shadow-md max-w-full max-h-72 mx-auto">
+            </div>
+            
+            <div id="modal-abstract" class="mb-6">
+                <h3 class="text-lg font-semibold mb-2">Abstract</h3>
+                <p class="text-gray-600"></p>
+            </div>
+            
+            {% if pub.tags %}
+            <div id="modal-tags" class="mb-6">
+                <h3 class="text-lg font-semibold mb-2">Tags</h3>
+                <div class="flex flex-wrap gap-2"></div>
+            </div>
+            {% endif %}
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                <div id="modal-citation" class="bg-gray-50 p-4 rounded-lg">
+                    <h3 class="text-lg font-semibold mb-2">Citation</h3>
+                    <div class="text-sm text-gray-600 font-mono overflow-x-auto"></div>
+                </div>
+                
+                <div id="modal-links">
+                    <h3 class="text-lg font-semibold mb-2">Links</h3>
+                    <div class="flex flex-wrap gap-3"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const publicationsList = document.getElementById('publications-list');
+    const yearFilter = document.getElementById('year-filter');
+    const typeFilter = document.getElementById('type-filter');
+    const tagFilter = document.getElementById('tag-filter');
+    const sortBy = document.getElementById('sort-by');
+    const searchInput = document.getElementById('publication-search');
+    const publicationsCount = document.getElementById('publications-count');
+    const publications = Array.from(document.querySelectorAll('.publication-item'));
+    const noPublicationsMessage = document.getElementById('no-publications-message');
+    
+    // Modal elements
+    const modal = document.getElementById('publication-modal');
+    const closeModal = document.getElementById('close-modal');
+    const modalTitle = document.getElementById('modal-title');
+    const modalAuthors = document.getElementById('modal-authors');
+    const modalVenue = document.getElementById('modal-venue');
+    const modalAbstract = document.getElementById('modal-abstract');
+    const modalCitation = document.getElementById('modal-citation').querySelector('div');
+    const modalLinks = document.getElementById('modal-links').querySelector('div');
+    
+    // Detail buttons
+    const detailButtons = document.querySelectorAll('.publication-details-btn');
+    const detailsContent = document.querySelectorAll('.publication-details');
+    
+    // Open modal with publication details
+    detailButtons.forEach(btn => {
+        btn.addEventListener('click', function() {
+            const pubId = this.getAttribute('data-id');
+            const details = document.querySelector(`.publication-details[data-id="${pubId}"]`);
+            
+            if (details) {
+                modalTitle.textContent = details.querySelector('h2').textContent;
+                modalAuthors.textContent = details.querySelector('.authors').textContent;
+                modalVenue.textContent = details.querySelector('.venue').textContent;
+                
+                // Thumbnail
+                const modalThumbnail = document.getElementById('modal-thumbnail');
+                const pubItem = document.querySelector(`.publication-item[data-id="${pubId}"]`);
+                const thumbnailImg = pubItem.querySelector('.flex-shrink-0 img');
+                
+                if (thumbnailImg) {
+                    modalThumbnail.classList.remove('hidden');
+                    modalThumbnail.querySelector('img').src = thumbnailImg.src;
+                } else {
+                    modalThumbnail.classList.add('hidden');
+                }
+                
+                // Abstract
+                const abstract = details.querySelector('.abstract');
+                if (abstract) {
+                    modalAbstract.classList.remove('hidden');
+                    modalAbstract.querySelector('p').textContent = abstract.querySelector('p').textContent;
+                } else {
+                    modalAbstract.classList.add('hidden');
+                }
+                
+                // Tags
+                const modalTags = document.getElementById('modal-tags');
+                const pubItemTags = pubItem.querySelectorAll('.flex.flex-wrap.gap-1 span');
+                
+                if (pubItemTags.length > 0 && modalTags) {
+                    modalTags.classList.remove('hidden');
+                    const tagsContainer = modalTags.querySelector('.flex.flex-wrap.gap-2');
+                    tagsContainer.innerHTML = '';
+                    
+                    pubItemTags.forEach(tag => {
+                        const newTag = document.createElement('span');
+                        newTag.className = 'px-2 py-1 bg-gray-100 text-gray-700 text-sm rounded-full';
+                        newTag.textContent = tag.textContent;
+                        tagsContainer.appendChild(newTag);
+                    });
+                } else if (modalTags) {
+                    modalTags.classList.add('hidden');
+                }
+                
+                // Citation (BibTeX)
+                const bibtex = details.querySelector('.bibtex');
+                if (bibtex) {
+                    modalCitation.textContent = bibtex.textContent;
+                } else {
+                    modalCitation.textContent = `${modalAuthors.textContent}. "${modalTitle.textContent}". ${modalVenue.textContent}`;
+                }
+                
+                // Links
+                modalLinks.innerHTML = '';
+                const links = details.querySelectorAll('.links a');
+                links.forEach(link => {
+                    const newLink = document.createElement('a');
+                    newLink.href = link.href;
+                    newLink.target = '_blank';
+                    newLink.classList.add('inline-flex', 'items-center', 'px-3', 'py-2', 'bg-blue-600', 'text-white', 'rounded-lg', 'hover:bg-blue-700', 'transition-colors');
+                    
+                    let icon = '';
+                    if (link.textContent.includes('PDF')) {
+                        icon = '<svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z" /></svg>';
+                    } else if (link.textContent.includes('Code')) {
+                        icon = '<svg class="h-5 w-5 mr-1" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd" /></svg>';
+                    } else if (link.textContent.includes('Video')) {
+                        icon = '<svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" /></svg>';
+                    } else {
+                        icon = '<svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>';
+                    }
+                    
+                    newLink.innerHTML = `${icon} ${link.textContent}`;
+                    modalLinks.appendChild(newLink);
+                });
+                
+                // Show modal
+                modal.classList.remove('hidden');
+                document.body.classList.add('overflow-hidden');
+            }
+        });
+    });
+    
+    // Close modal
+    closeModal.addEventListener('click', function() {
+        modal.classList.add('hidden');
+        document.body.classList.remove('overflow-hidden');
+    });
+    
+    // Close modal when clicking outside
+    modal.addEventListener('click', function(e) {
+        if (e.target === modal) {
+            modal.classList.add('hidden');
+            document.body.classList.remove('overflow-hidden');
+        }
+    });
+    
+    // Filter and search functionality
+    function filterAndSortPublications() {
+        const selectedYear = yearFilter.value;
+        const selectedType = typeFilter.value;
+        const selectedTag = tagFilter.value;
+        const searchTerm = searchInput.value.toLowerCase();
+        
+        let visibleCount = 0;
+        
+        publications.forEach(pub => {
+            const year = pub.dataset.year;
+            const type = pub.dataset.type;
+            const title = pub.dataset.title;
+            const authors = pub.dataset.authors;
+            const venue = pub.dataset.venue;
+            const tags = pub.dataset.tags ? pub.dataset.tags.split(',') : [];
+            
+            // Check if publication matches current filters and search term
+            const matchesYear = selectedYear === 'all' || year === selectedYear;
+            const matchesType = selectedType === 'all' || type === selectedType.toLowerCase();
+            const matchesTag = selectedTag === 'all' || tags.includes(selectedTag.toLowerCase());
+            const matchesSearch = !searchTerm || 
+                                title.includes(searchTerm) || 
+                                authors.includes(searchTerm) || 
+                                venue.includes(searchTerm);
+            
+            if (matchesYear && matchesType && matchesTag && matchesSearch) {
+                pub.classList.remove('hidden');
+                pub.classList.add('animate-fade-in');
+                visibleCount++;
+            } else {
+                pub.classList.add('hidden');
+                pub.classList.remove('animate-fade-in');
+            }
+        });
+        
+        // Update results count
+        publicationsCount.textContent = visibleCount;
+        
+        // Show or hide empty state message
+        if (visibleCount === 0) {
+            publicationsList.classList.add('hidden');
+            noPublicationsMessage.classList.remove('hidden');
+        } else {
+            publicationsList.classList.remove('hidden');
+            noPublicationsMessage.classList.add('hidden');
+        }
+        
+        // Sort visible publications
+        const visiblePubs = publications.filter(pub => pub.style.display !== 'none');
+        
+        visiblePubs.sort((a, b) => {
+            switch(sortBy.value) {
+                case 'year':
+                    return parseInt(b.dataset.year) - parseInt(a.dataset.year);
+                case 'title':
+                    return a.dataset.title.localeCompare(b.dataset.title);
+                case 'venue':
+                    return a.dataset.venue.localeCompare(b.dataset.venue);
+                default:
+                    return 0;
+            }
+        });
+
+        // Clear and re-append sorted publications
+        publicationsList.innerHTML = '';
+        visiblePubs.forEach(pub => publicationsList.appendChild(pub));
+    }
+
+    // Add event listeners
+    yearFilter.addEventListener('change', filterAndSortPublications);
+    typeFilter.addEventListener('change', filterAndSortPublications);
+    tagFilter.addEventListener('change', filterAndSortPublications);
+    sortBy.addEventListener('change', filterAndSortPublications);
+    searchInput.addEventListener('input', filterAndSortPublications);
+
+    // Initial filter and sort
+    filterAndSortPublications();
+});
+</script>
+
+<style>
+/* Animation for fade-in */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate-fade-in {
+    animation: fadeIn 0.5s ease-out forwards;
+}
+
+/* Publication type badges */
+.publication-type-badge {
+    color: white;
+    font-weight: 500;
+}
+
+.conference {
+    background-color: #22c55e; /* green-500 */
+}
+
+.journal {
+    background-color: #ef4444; /* red-500 */
+}
+
+.book {
+    background-color: #171717; /* neutral-900 */
+}
+
+.book_chapter {
+    background-color: #3b82f6; /* blue-500 */
+}
+
+.special_issue {
+    background-color: #6b7280; /* gray-500 */
+}
+</style>

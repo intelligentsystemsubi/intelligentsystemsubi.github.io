@@ -1,0 +1,22 @@
+---
+# A simple layout for redirecting pages
+layout: null
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Redirecting...</title>
+    {% if page.redirect_to %}
+    <meta http-equiv="refresh" content="0;url={{ page.redirect_to | relative_url }}">
+    <link rel="canonical" href="{{ page.redirect_to | relative_url }}">
+    <script>
+        window.location.href = "{{ page.redirect_to | relative_url }}";
+    </script>
+    {% endif %}
+</head>
+<body>
+    <p>Redirecting to <a href="{{ page.redirect_to | relative_url }}">{{ page.redirect_to }}</a>...</p>
+</body>
+</html> 

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>DetReIDX Video Demo</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f8f9fa;
+        }
+        .video-container {
+            width: 100%;
+            margin: 20px 0;
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #333;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        h2 {
+            color: #4338ca;
+            margin-bottom: 15px;
+        }
+        .button-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+        .button {
+            background-color: #4338ca;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+        .button:hover {
+            background-color: #3730a3;
+        }
+    </style>
+</head>
+<body>
+    <h1>DetReIDX Dataset Video Demo</h1>
+    
+    <div class="video-container">
+        <h2>DetReIDX: A Stress-Test Dataset for Real-World UAV-Based Person Recognition</h2>
+        
+        <video 
+            id="detreIDXVideo"
+            width="100%" 
+            height="auto" 
+            controls 
+            autoplay
+            loop
+            muted
+            playsinline
+            poster="assets/datasets/detreidx.jpg"
+            style="display: block; margin: 0 auto; max-height: 450px; outline: none;">
+            <source src="assets/datasets/detreidx_small.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        
+        <div class="button-container">
+            <button class="button" onclick="playVideo()">
+                Play Video With Sound
+            </button>
+            <a href="/" class="button">
+                Return to Datasets
+            </a>
+        </div>
+    </div>
+    
+    <script>
+        // Function to play video with sound
+        function playVideo() {
+            const video = document.getElementById('detreIDXVideo');
+            video.muted = false;
+            video.play();
+        }
+        
+        document.addEventListener('DOMContentLoaded', function() {
+            const video = document.getElementById('detreIDXVideo');
+            
+            // Force autoplay on page load
+            setTimeout(function() {
+                // First try to play with the normal API
+                const playPromise = video.play();
+                
+                if (playPromise !== undefined) {
+                    playPromise.then(_ => {
+                        // Autoplay started
+                        console.log("Autoplay started successfully");
+                    }).catch(error => {
+                        // Autoplay was prevented
+                        console.log("Autoplay was prevented, trying with muted");
+                        // Try to play muted, which usually works
+                        video.muted = true;
+                        video.play().catch(e => {
+                            console.log("Even muted autoplay failed", e);
+                        });
+                    });
+                }
+            }, 1000);
+            
+            // Listen for page visibility changes to restart the video when tab becomes visible
+            document.addEventListener('visibilitychange', function() {
+                if (!document.hidden) {
+                    video.play().catch(e => {
+                        console.log("Couldn't restart video on visibility change", e);
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html> 

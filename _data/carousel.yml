@@ -1,0 +1,15 @@
+# Carousel Configuration
+# Each slide should have an image_url and caption
+# Images located in assets/slider/
+
+- image_url: "/assets/slider/slide_1.png"
+  caption: "Advancing Computer Vision Research"
+
+- image_url: "/assets/slider/slide_2.png"
+  caption: "State-of-the-art Deep Learning Solutions"
+
+- image_url: "/assets/slider/slide_3.png"
+  caption: "Collaborative Research Environment"
+
+- image_url: "/assets/slider/slide_4.png"
+  caption: "Impactful Research Publications"
