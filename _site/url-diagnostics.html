@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Alumni - Intelligent Systems</title>
+    <title>URL Diagnostics - Intelligent Systems</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -338,146 +338,89 @@
 
     <!-- Main Content -->
     <main class="flex-grow pt-16">
-        <!-- Page Header with Gradient Background -->
-<div class="relative bg-gradient-to-r from-blue-600 to-indigo-800 text-white py-16 mb-12">
-  <div class="absolute inset-0 bg-cover bg-center opacity-20" style="background-image: url('/assets/slider/slide_1.png');"></div>
-  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
-    <h1 class="text-4xl md:text-5xl font-bold mb-4">Alumni</h1>
-    
-    <p class="text-xl md:text-2xl max-w-3xl mx-auto font-light">
-      Former members of SOCIA Lab who have contributed to our research and projects over the years.
-    </p>
-    
+        <div class="w-full max-w-4xl mx-auto px-4 py-8">
+  <h1 class="text-3xl font-bold mb-8">URL Diagnostics Tool</h1>
+  
+  <div class="bg-white shadow-md rounded-lg p-6 mb-8">
+    <h2 class="text-xl font-semibold mb-4">Current Page Information</h2>
+    <ul class="list-disc pl-5 space-y-2">
+      <li><strong>page.url:</strong> /url-diagnostics</li>
+      <li><strong>page.path:</strong> url_diagnostic.html</li>
+      <li><strong>page.id:</strong> </li>
+      <li><strong>site.baseurl:</strong> ""</li>
+      <li><strong>site.url:</strong> http://localhost:4000</li>
+    </ul>
   </div>
-</div>
-
-<!-- Main Content -->
-<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-16">
-  <!-- Alumni Header -->
-<div class="text-center mb-16 relative">
-    <div class="absolute inset-0 bg-gradient-to-r from-gray-50 to-gray-200 transform -skew-y-2 z-0"></div>
-    <div class="relative z-10 py-12">
-        <h1 class="text-4xl font-bold text-gray-900 mb-4">Alumni</h1>
-        <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-            Former members of SOCIA Lab who have contributed to our research and projects over the years.
-        </p>
+  
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+    <!-- Team Member Link Test -->
+    <div class="bg-white shadow-md rounded-lg p-6">
+      <h2 class="text-xl font-semibold mb-4">Team Member Links</h2>
+      <ul class="list-disc pl-5 space-y-2">
+        <li><a href="/team/hugo_proenca" class="text-blue-600 hover:underline">Hugo Proenca (Standard)</a></li>
+        <li><a href="/team/hugo_proenca.html" class="text-blue-600 hover:underline">Hugo Proenca (.html)</a></li>
+        <li><a href="http://localhost:4000/team/hugo_proenca" class="text-blue-600 hover:underline">Hugo Proenca (with site.url)</a></li>
+        <li><a href="/team/hugo_proenca" class="text-blue-600 hover:underline">Hugo Proenca (relative_url filter)</a></li>
+        <li><a href="http://localhost:4000/team/hugo_proenca" class="text-blue-600 hover:underline">Hugo Proenca (absolute_url filter)</a></li>
+      </ul>
     </div>
-</div>
-
-<!-- Faculty Alumni -->
-
-
-
-<!-- Post-Doctoral Alumni -->
-
-
-
-<!-- PhD Alumni -->
-
-
-<section class="mb-16">
-    <h2 class="text-2xl font-bold text-gray-900 mb-8">PhD Alumni</h2>
-    <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
-        
-        <a href="/team/former_alumni" class="group">
-            <div class="bg-white rounded-lg shadow-md overflow-hidden transition-all duration-300 hover:shadow-xl transform hover:-translate-y-1 h-full flex flex-col">
-                
-                <div class="relative bg-gradient-to-r from-purple-50 to-indigo-50 h-48 flex items-center justify-center grayscale">
-                    <img src="/assets/team/formerstudent2.png" alt="Former Alumni" class="h-auto w-auto max-h-[90%] max-w-[90%] object-contain">
-                    <div class="absolute inset-0 bg-gradient-to-t from-purple-900/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                    
-                    <div class="absolute top-2 right-2 bg-gray-500 text-white text-xs font-bold px-2 py-1 rounded-full">
-                        2015 - 2021
-                    </div>
-                    
-                </div>
-                
-                <div class="p-4 relative z-10 flex-grow border-t border-gray-100">
-                    <h3 class="text-lg font-semibold mb-1 group-hover:text-purple-600 transition-colors">Former Alumni</h3>
-                    <p class="text-gray-600 text-sm mb-3"></p>
-                    
-                    <p class="text-gray-600 text-sm mb-3"><strong>Current:</strong> AI Research Institute, University of Excellence</p>
-                    
-                    
-                    <p class="text-gray-600 text-sm mb-3">
-                        <strong>Supervised by:</strong> Hugo Proença
-                         and João C. Neves
-                    </p>
-                    
-                </div>
-            </div>
-        </a>
-        
-        <a href="/team/former_student" class="group">
-            <div class="bg-white rounded-lg shadow-md overflow-hidden transition-all duration-300 hover:shadow-xl transform hover:-translate-y-1 h-full flex flex-col">
-                
-                <div class="relative bg-gradient-to-r from-purple-50 to-indigo-50 h-48 flex items-center justify-center grayscale">
-                    <img src="/assets/team/formerstudent1.png" alt="Former Student" class="h-auto w-auto max-h-[90%] max-w-[90%] object-contain">
-                    <div class="absolute inset-0 bg-gradient-to-t from-purple-900/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                    
-                    <div class="absolute top-2 right-2 bg-gray-500 text-white text-xs font-bold px-2 py-1 rounded-full">
-                        2016 - 2020
-                    </div>
-                    
-                </div>
-                
-                <div class="p-4 relative z-10 flex-grow border-t border-gray-100">
-                    <h3 class="text-lg font-semibold mb-1 group-hover:text-purple-600 transition-colors">Former Student</h3>
-                    <p class="text-gray-600 text-sm mb-3">Person Re-identification in Surveillance Videos</p>
-                    
-                    <p class="text-gray-600 text-sm mb-3"><strong>Current:</strong> Tech Company Inc., Senior AI Researcher</p>
-                    
-                    
-                    <p class="text-gray-600 text-sm mb-3">
-                        <strong>Supervised by:</strong> Hugo Proença
-                        
-                    </p>
-                    
-                </div>
-            </div>
-        </a>
-        
+    
+    <!-- Navigation Links Test -->
+    <div class="bg-white shadow-md rounded-lg p-6">
+      <h2 class="text-xl font-semibold mb-4">Navigation Links</h2>
+      <ul class="list-disc pl-5 space-y-2">
+        <li><a href="/team" class="text-blue-600 hover:underline">Team (Standard)</a></li>
+        <li><a href="/team.html" class="text-blue-600 hover:underline">Team (.html)</a></li>
+        <li><a href="http://localhost:4000/team" class="text-blue-600 hover:underline">Team (with site.url)</a></li>
+        <li><a href="/team" class="text-blue-600 hover:underline">Team (relative_url filter)</a></li>
+        <li><a href="http://localhost:4000/team" class="text-blue-600 hover:underline">Team (absolute_url filter)</a></li>
+      </ul>
     </div>
-</section>
-
-
-<!-- Master Alumni -->
-
-
-
-<!-- Staff Alumni -->
-
-
-
-<style>
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(10px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-section {
-  animation: fadeIn 0.5s ease-out forwards;
-}
-
-/* Image greyscale effect for alumni */
-.grayscale {
-  filter: grayscale(100%);
-  transition: filter 0.3s ease;
-}
-
-.grayscale:hover {
-  filter: grayscale(50%);
-}
-</style>
-
-</div>
-
+  </div>
+  
+  <div class="bg-white shadow-md rounded-lg p-6 mt-6">
+    <h2 class="text-xl font-semibold mb-4">Link Format Conversion Examples</h2>
+    <table class="min-w-full divide-y divide-gray-200">
+      <thead>
+        <tr>
+          <th class="px-6 py-3 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Original Path</th>
+          <th class="px-6 py-3 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">relative_url</th>
+          <th class="px-6 py-3 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">prepend: "/"</th>
+          <th class="px-6 py-3 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">remove: "/"</th>
+        </tr>
+      </thead>
+      <tbody class="bg-white divide-y divide-gray-200">
+        <tr>
+          <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">/team/hugo_proenca/</td>
+          <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">/team/hugo_proenca/</td>
+          <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">//team/hugo_proenca/</td>
+          <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">/teamhugo_proenca</td>
+        </tr>
+        <tr>
+          <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">/team/hugo_proenca</td>
+          <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">/team/hugo_proenca</td>
+          <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">//team/hugo_proenca</td>
+          <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">/teamhugo_proenca</td>
+        </tr>
+        <tr>
+          <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">team/hugo_proenca</td>
+          <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">/team/hugo_proenca</td>
+          <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">/team/hugo_proenca</td>
+          <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">/teamhugo_proenca</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  
+  <div class="bg-white shadow-md rounded-lg p-6 mt-6">
+    <h2 class="text-xl font-semibold mb-4">Jekyll URL Debug</h2>
+    <div class="overflow-auto">
+      <pre class="text-xs bg-gray-100 p-4 rounded">
+<!-- Debug tag removed - not supported in standard Jekyll -->
+      </pre>
+    </div>
+  </div>
+</div> 
     </main>
 
     <!-- Footer -->

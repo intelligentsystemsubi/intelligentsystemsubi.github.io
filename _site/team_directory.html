@@ -340,7 +340,7 @@
     <main class="flex-grow pt-16">
         <!-- Page Header with Gradient Background -->
 <div class="relative bg-gradient-to-r from-blue-600 to-indigo-800 text-white py-16 mb-12">
-  <div class="absolute inset-0 bg-cover bg-center opacity-20" style="background-image: url('/is-ubi/assets/slider/slide_1.png');"></div>
+  <div class="absolute inset-0 bg-cover bg-center opacity-20" style="background-image: url('/assets/slider/slide_1.png');"></div>
   <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
     <h1 class="text-4xl md:text-5xl font-bold mb-4">Team Directory</h1>
     
@@ -391,46 +391,50 @@
 
 <div class="team-list">
   <h1>Team Member Directory</h1>
-  <p>This is a simplified directory with basic links to all team member profiles.</p>
+  <p>This is a simplified directory with direct links to team members</p>
   
-  <!-- Direct URL links without JavaScript -->
+  <!-- Section for testing links -->
+  <div class="team-category">
+    <h2>Test Different Link Types</h2>
+    
+    <div class="member-item">
+      <p>Absolute URL: <a href="https://intelligentsystemsubi.github.io/team/hugo_proenca">Hugo's Profile (absolute URL)</a></p>
+    </div>
+    
+    <div class="member-item">
+      <p>Relative URL: <a href="/team/hugo_proenca">Hugo's Profile (relative URL)</a></p>
+    </div>
+    
+    <div class="member-item">
+      <p>URL with JS redirect: <a href="#" onclick="window.location.href='/team/hugo_proenca'; return false;">Hugo's Profile (JS redirect)</a></p>
+    </div>
+  </div>
   
-  
-  <!-- Faculty Members -->
+  <!-- Faculty -->
   <div class="team-category">
     <h2>Faculty</h2>
     
     
-      <div class="member-item">
-        <p>
-          <!-- Three different link options for testing -->
-          <a href="/team/hugo_proenca/">Hugo Proença</a>
-          <small style="color: #666;">
-            (Full Professor | 
-            <a href="/team/hugo_proenca/" style="display: inline; font-weight: normal;">relative</a> | 
-            <a href="/team/hugo_proenca/" style="display: inline; font-weight: normal;">baseurl</a>)
-          </small>
-        </p>
-      </div>
     
-      <div class="member-item">
-        <p>
-          <!-- Three different link options for testing -->
-          <a href="/team/joao_neves/">João C. Neves</a>
-          <small style="color: #666;">
-            (Full Professor | 
-            <a href="/team/joao_neves/" style="display: inline; font-weight: normal;">relative</a> | 
-            <a href="/team/joao_neves/" style="display: inline; font-weight: normal;">baseurl</a>)
-          </small>
-        </p>
-      </div>
+    <div class="member-item">
+      <p>
+        <a href="/teamhugo_proenca">Hugo Proença</a>
+        <span style="color: #666; font-size: 0.9em;">
+          (Link URLs: 
+          <a href="/teamhugo_proenca" style="display: inline; font-weight: normal;">standard</a>)
+        </span>
+      </p>
+    </div>
     
-  </div>
-  
-  <!-- Post-Doctoral Researchers -->
-  <div class="team-category">
-    <h2>Post-Doctoral Researchers</h2>
-    
+    <div class="member-item">
+      <p>
+        <a href="/teamjoao_neves">João C. Neves</a>
+        <span style="color: #666; font-size: 0.9em;">
+          (Link URLs: 
+          <a href="/teamjoao_neves" style="display: inline; font-weight: normal;">standard</a>)
+        </span>
+      </p>
+    </div>
     
   </div>
   
@@ -439,32 +443,40 @@
     <h2>PhD Students</h2>
     
     
-      <div class="member-item">
-        <p>
-          <a href="/team/kailashhambarde/">Kailash Hambarde</a>
-          <small style="color: #666;">(PhD Student)</small>
-        </p>
-      </div>
     
-      <div class="member-item">
-        <p>
-          <a href="/team/pranitasamale/">Pranita Samale</a>
-          <small style="color: #666;">(PhD Student)</small>
-        </p>
-      </div>
+    <div class="member-item">
+      <p>
+        <a href="/teamkailashhambarde">Kailash Hambarde</a>
+        
+        <span style="color: #666; font-size: 0.9em;">(Supervisor: João C. Neves)</span>
+        
+      </p>
+    </div>
     
-      <div class="member-item">
-        <p>
-          <a href="/team/sample_student/">Sample Student</a>
-          <small style="color: #666;">(PhD Student)</small>
-        </p>
-      </div>
+    <div class="member-item">
+      <p>
+        <a href="/teampranitasamale">Pranita Samale</a>
+        
+        <span style="color: #666; font-size: 0.9em;">(Supervisor: Hugo Proença)</span>
+        
+      </p>
+    </div>
+    
+    <div class="member-item">
+      <p>
+        <a href="/teamsample_student">Sample Student</a>
+        
+        <span style="color: #666; font-size: 0.9em;">(Supervisor: João C. Neves)</span>
+        
+      </p>
+    </div>
     
   </div>
   
   <!-- Master Students -->
   <div class="team-category">
     <h2>Master Students</h2>
+    
     
     
   </div>
@@ -474,11 +486,13 @@
     <h2>Bachelor Students</h2>
     
     
+    
   </div>
   
-  <!-- Research Staff -->
+  <!-- Staff -->
   <div class="team-category">
     <h2>Research Staff</h2>
+    
     
     
   </div>

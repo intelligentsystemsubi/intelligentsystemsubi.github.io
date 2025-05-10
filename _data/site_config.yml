@@ -25,7 +25,7 @@ nav_sections:
 hero:
   title: "Advancing Computer Vision Research"
   subtitle: "Pushing the boundaries of visual intelligence through innovative research"
-  background_image: "/is-ubi/assets/images/hero-bg.jpg"
+  background_image: "/assets/images/hero-bg.jpg"
 
 # Colors
 colors:

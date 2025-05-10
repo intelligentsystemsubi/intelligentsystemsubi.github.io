@@ -15,7 +15,7 @@
         
         {% for nav_item in navigation_items %}
         {% assign nav_url = nav_item | prepend: '/' %}
-        <a href="{{ nav_url | relative_url }}" 
+        <a href="{{ nav_url }}" 
            class="px-3 py-2 rounded-md text-ink hover:text-primary hover:bg-primary/5 transition-all duration-200 font-medium gradient-border {% if current_page == nav_url %}text-primary bg-primary/10 font-semibold{% endif %}">
           {{ nav_item | capitalize }}
         </a>
@@ -41,7 +41,7 @@
     <div class="mobile-menu hidden md:hidden pb-4 space-y-1 bg-white">
       {% for nav_item in navigation_items %}
       {% assign nav_url = nav_item | prepend: '/' %}
-      <a href="{{ nav_url | relative_url }}" 
+      <a href="{{ nav_url }}" 
          class="block py-2 px-3 rounded-md text-ink hover:text-primary hover:bg-primary/5 transition-colors {% if current_page == nav_url %}text-primary bg-primary/10 font-medium{% endif %}">
         {{ nav_item | capitalize }}
       </a>

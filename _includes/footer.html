@@ -45,7 +45,7 @@
           {% for nav_item in navigation_items %}
           {% assign nav_url = nav_item | prepend: '/' %}
           <li>
-            <a href="{{ nav_url | relative_url }}" class="text-gray-300 hover:text-white transition-colors flex items-center group">
+            <a href="{{ nav_url }}" class="text-gray-300 hover:text-white transition-colors flex items-center group">
               <span class="w-1.5 h-1.5 bg-blue-500 rounded-full mr-2 transform scale-0 group-hover:scale-100 transition-transform duration-300"></span>
               {{ nav_item | capitalize }}
             </a>

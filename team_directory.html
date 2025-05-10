@@ -42,97 +42,105 @@ description: A simplified directory of all team members
 
 <div class="team-list">
   <h1>Team Member Directory</h1>
-  <p>This is a simplified directory with basic links to all team member profiles.</p>
+  <p>This is a simplified directory with direct links to team members</p>
   
-  <!-- Direct URL links without JavaScript -->
-  {% assign all_members = site.team_members | where: "active", true | sort: "title" %}
-  
-  <!-- Faculty Members -->
+  <!-- Section for testing links -->
   <div class="team-category">
-    <h2>Faculty</h2>
-    {% assign faculty = all_members | where: "role", "faculty" %}
-    {% for member in faculty %}
-      <div class="member-item">
-        <p>
-          <!-- Three different link options for testing -->
-          <a href="{{ member.url }}">{{ member.title }}</a>
-          <small style="color: #666;">
-            ({{ member.position }} | 
-            <a href="{{ member.url | relative_url }}" style="display: inline; font-weight: normal;">relative</a> | 
-            <a href="{{ site.baseurl }}{{ member.url }}" style="display: inline; font-weight: normal;">baseurl</a>)
-          </small>
-        </p>
-      </div>
-    {% endfor %}
+    <h2>Test Different Link Types</h2>
+    
+    <div class="member-item">
+      <p>Absolute URL: <a href="https://intelligentsystemsubi.github.io/team/hugo_proenca">Hugo's Profile (absolute URL)</a></p>
+    </div>
+    
+    <div class="member-item">
+      <p>Relative URL: <a href="/team/hugo_proenca">Hugo's Profile (relative URL)</a></p>
+    </div>
+    
+    <div class="member-item">
+      <p>URL with JS redirect: <a href="#" onclick="window.location.href='/team/hugo_proenca'; return false;">Hugo's Profile (JS redirect)</a></p>
+    </div>
   </div>
   
-  <!-- Post-Doctoral Researchers -->
+  <!-- Faculty -->
   <div class="team-category">
-    <h2>Post-Doctoral Researchers</h2>
-    {% assign postdocs = all_members | where: "role", "postdoc" %}
-    {% for member in postdocs %}
-      <div class="member-item">
-        <p>
-          <a href="{{ member.url }}">{{ member.title }}</a>
-          <small style="color: #666;">({{ member.position }})</small>
-        </p>
-      </div>
+    <h2>Faculty</h2>
+    
+    {% assign faculty = site.team_members | where: "role", "faculty" | where: "active", true %}
+    {% for member in faculty %}
+    <div class="member-item">
+      <p>
+        <a href="{{ member.url | remove: "/" | prepend: "/" }}">{{ member.title }}</a>
+        <span style="color: #666; font-size: 0.9em;">
+          (Link URLs: 
+          <a href="{{ member.url | remove: "/" | prepend: "/" }}" style="display: inline; font-weight: normal;">standard</a>)
+        </span>
+      </p>
+    </div>
     {% endfor %}
   </div>
   
   <!-- PhD Students -->
   <div class="team-category">
     <h2>PhD Students</h2>
-    {% assign phd_students = all_members | where: "role", "phd" %}
+    
+    {% assign phd_students = site.team_members | where: "role", "phd" | where: "active", true %}
     {% for member in phd_students %}
-      <div class="member-item">
-        <p>
-          <a href="{{ member.url }}">{{ member.title }}</a>
-          <small style="color: #666;">({{ member.position }})</small>
-        </p>
-      </div>
+    <div class="member-item">
+      <p>
+        <a href="{{ member.url | remove: "/" | prepend: "/" }}">{{ member.title }}</a>
+        {% if member.supervisor %}
+        <span style="color: #666; font-size: 0.9em;">(Supervisor: {{ member.supervisor }})</span>
+        {% endif %}
+      </p>
+    </div>
     {% endfor %}
   </div>
   
   <!-- Master Students -->
   <div class="team-category">
     <h2>Master Students</h2>
-    {% assign master_students = all_members | where: "role", "master" %}
+    
+    {% assign master_students = site.team_members | where: "role", "master" | where: "active", true %}
     {% for member in master_students %}
-      <div class="member-item">
-        <p>
-          <a href="{{ member.url }}">{{ member.title }}</a>
-          <small style="color: #666;">({{ member.position }})</small>
-        </p>
-      </div>
+    <div class="member-item">
+      <p>
+        <a href="{{ member.url | remove: "/" | prepend: "/" }}">{{ member.title }}</a>
+        {% if member.supervisor %}
+        <span style="color: #666; font-size: 0.9em;">(Supervisor: {{ member.supervisor }})</span>
+        {% endif %}
+      </p>
+    </div>
     {% endfor %}
   </div>
   
   <!-- Bachelor Students -->
   <div class="team-category">
     <h2>Bachelor Students</h2>
-    {% assign bachelor_students = all_members | where: "role", "bachelor" %}
+    
+    {% assign bachelor_students = site.team_members | where: "role", "bachelor" | where: "active", true %}
     {% for member in bachelor_students %}
-      <div class="member-item">
-        <p>
-          <a href="{{ member.url }}">{{ member.title }}</a>
-          <small style="color: #666;">({{ member.position }})</small>
-        </p>
-      </div>
+    <div class="member-item">
+      <p>
+        <a href="{{ member.url | remove: "/" | prepend: "/" }}">{{ member.title }}</a>
+        {% if member.supervisor %}
+        <span style="color: #666; font-size: 0.9em;">(Supervisor: {{ member.supervisor }})</span>
+        {% endif %}
+      </p>
+    </div>
     {% endfor %}
   </div>
   
-  <!-- Research Staff -->
+  <!-- Staff -->
   <div class="team-category">
     <h2>Research Staff</h2>
-    {% assign staff = all_members | where: "role", "staff" %}
+    
+    {% assign staff = site.team_members | where: "role", "staff" | where: "active", true %}
     {% for member in staff %}
-      <div class="member-item">
-        <p>
-          <a href="{{ member.url }}">{{ member.title }}</a>
-          <small style="color: #666;">({{ member.position }})</small>
-        </p>
-      </div>
+    <div class="member-item">
+      <p>
+        <a href="{{ member.url | remove: "/" | prepend: "/" }}">{{ member.title }}</a>
+      </p>
+    </div>
     {% endfor %}
   </div>
 </div> 

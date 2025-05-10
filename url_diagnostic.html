@@ -1,0 +1,89 @@
+---
+layout: default
+title: URL Diagnostics
+permalink: /url-diagnostics
+---
+
+<div class="w-full max-w-4xl mx-auto px-4 py-8">
+  <h1 class="text-3xl font-bold mb-8">URL Diagnostics Tool</h1>
+  
+  <div class="bg-white shadow-md rounded-lg p-6 mb-8">
+    <h2 class="text-xl font-semibold mb-4">Current Page Information</h2>
+    <ul class="list-disc pl-5 space-y-2">
+      <li><strong>page.url:</strong> {{ page.url }}</li>
+      <li><strong>page.path:</strong> {{ page.path }}</li>
+      <li><strong>page.id:</strong> {{ page.id }}</li>
+      <li><strong>site.baseurl:</strong> "{{ site.baseurl }}"</li>
+      <li><strong>site.url:</strong> {{ site.url }}</li>
+    </ul>
+  </div>
+  
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+    <!-- Team Member Link Test -->
+    <div class="bg-white shadow-md rounded-lg p-6">
+      <h2 class="text-xl font-semibold mb-4">Team Member Links</h2>
+      <ul class="list-disc pl-5 space-y-2">
+        <li><a href="/team/hugo_proenca" class="text-blue-600 hover:underline">Hugo Proenca (Standard)</a></li>
+        <li><a href="/team/hugo_proenca.html" class="text-blue-600 hover:underline">Hugo Proenca (.html)</a></li>
+        <li><a href="{{ site.url }}/team/hugo_proenca" class="text-blue-600 hover:underline">Hugo Proenca (with site.url)</a></li>
+        <li><a href="{{ "/team/hugo_proenca" | relative_url }}" class="text-blue-600 hover:underline">Hugo Proenca (relative_url filter)</a></li>
+        <li><a href="{{ "/team/hugo_proenca" | absolute_url }}" class="text-blue-600 hover:underline">Hugo Proenca (absolute_url filter)</a></li>
+      </ul>
+    </div>
+    
+    <!-- Navigation Links Test -->
+    <div class="bg-white shadow-md rounded-lg p-6">
+      <h2 class="text-xl font-semibold mb-4">Navigation Links</h2>
+      <ul class="list-disc pl-5 space-y-2">
+        <li><a href="/team" class="text-blue-600 hover:underline">Team (Standard)</a></li>
+        <li><a href="/team.html" class="text-blue-600 hover:underline">Team (.html)</a></li>
+        <li><a href="{{ site.url }}/team" class="text-blue-600 hover:underline">Team (with site.url)</a></li>
+        <li><a href="{{ "/team" | relative_url }}" class="text-blue-600 hover:underline">Team (relative_url filter)</a></li>
+        <li><a href="{{ "/team" | absolute_url }}" class="text-blue-600 hover:underline">Team (absolute_url filter)</a></li>
+      </ul>
+    </div>
+  </div>
+  
+  <div class="bg-white shadow-md rounded-lg p-6 mt-6">
+    <h2 class="text-xl font-semibold mb-4">Link Format Conversion Examples</h2>
+    <table class="min-w-full divide-y divide-gray-200">
+      <thead>
+        <tr>
+          <th class="px-6 py-3 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Original Path</th>
+          <th class="px-6 py-3 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">relative_url</th>
+          <th class="px-6 py-3 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">prepend: "/"</th>
+          <th class="px-6 py-3 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">remove: "/"</th>
+        </tr>
+      </thead>
+      <tbody class="bg-white divide-y divide-gray-200">
+        <tr>
+          <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">/team/hugo_proenca/</td>
+          <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{{ "/team/hugo_proenca/" | relative_url }}</td>
+          <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{{ "/team/hugo_proenca/" | prepend: "/" }}</td>
+          <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{{ "/team/hugo_proenca/" | remove: "/" | prepend: "/" }}</td>
+        </tr>
+        <tr>
+          <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">/team/hugo_proenca</td>
+          <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{{ "/team/hugo_proenca" | relative_url }}</td>
+          <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{{ "/team/hugo_proenca" | prepend: "/" }}</td>
+          <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{{ "/team/hugo_proenca" | remove: "/" | prepend: "/" }}</td>
+        </tr>
+        <tr>
+          <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">team/hugo_proenca</td>
+          <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{{ "team/hugo_proenca" | relative_url }}</td>
+          <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{{ "team/hugo_proenca" | prepend: "/" }}</td>
+          <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{{ "team/hugo_proenca" | remove: "/" | prepend: "/" }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  
+  <div class="bg-white shadow-md rounded-lg p-6 mt-6">
+    <h2 class="text-xl font-semibold mb-4">Jekyll URL Debug</h2>
+    <div class="overflow-auto">
+      <pre class="text-xs bg-gray-100 p-4 rounded">
+<!-- Debug tag removed - not supported in standard Jekyll -->
+      </pre>
+    </div>
+  </div>
+</div> 
