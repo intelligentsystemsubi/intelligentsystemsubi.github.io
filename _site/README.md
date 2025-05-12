@@ -1,4 +1,4 @@
-# Intelligent Systems Lab Website
+# Intelligent Systems Lab Website ( https://intelligentsystemsubi.github.io/ )
 
 This repository contains the Jekyll-based website for the Intelligent Systems Lab at the University of Beira Interior.
 
