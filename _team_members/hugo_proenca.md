@@ -35,14 +35,26 @@ courses:
     semester: "Spring Semester"
     year: "2024"
 awards:
-  - title: "IBM Scientific Prize"
-    organization: "IBM"
-    year: 2009
-    description: "Awarded for scientific innovation in Biometrics"
-  - title: "IAPR Young Researcher Award"
-    organization: "International Association for Pattern Recognition"
-    year: 2008
-    description: "Recognized for distinguished research contributions in pattern recognition"
+  - title: "Top-3 Best Associate Editors"
+    organization: "Elsevier Image and Vision Computing Journal"
+    year: 2023
+    description: "Awarded for Best Associate Editors"
+  - title: "Academic Excellence Prize"
+    organization: "Federal University of Parana (UFPR)"
+    year: 2023
+    description: "Awarded in recognition of the co-supervision of the Ph.D. thesis 'Deep Representations for Iris and Periocular Biometric Systems' by Luiz Zanlorensi, 2022."
+  - title: "Academic Excellence Prize"
+    organization: "Federal University of Parana (UFPR)"
+    year: 2023
+    description: "Awarded for the co-supervision of the Ph.D. thesis 'Deep Representations for Iris and Periocular Biometric Systems' by Luiz Zanlorensi, 2022."
+
+  - title: "Best M.Sc. Dissertation in Informatics Engineering (Supervisor)"
+    organization: "Future Healthcare Prize"
+    year: 2022
+    description: "Awarded to João Brito for the thesis 'A Deep Adversarial Framework for Visually Interpretable Biometric Recognition'."
+
+    description: "Interviewed in the 'Cérebros' section of Visão magazine on biometric iris recognition."
+
 profile_links:
   - name: "UBI"
     url: "http://www.ubi.pt/Pessoa/hugomcp"
