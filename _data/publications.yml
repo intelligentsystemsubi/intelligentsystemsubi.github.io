@@ -1993,21 +1993,21 @@
     - "Yield Estimation"
   abstract: "The fruit detection is crucial for yield estimation and fruit picking system performance. Many state-of-art methods for fruit detection use convolutional neural network (CNN). This paper presents the results for peaches detection applying the framework Faster R-CNN in images captured in an outdoor orchard. Although this method has been used in other studies to detect fruits, there is no research works with peaches. Since the fruit colors, it sizes, it shape, tree branches, fruit bunches and the distribution in the tree are particular, the development of the fruit detection procedure is specific. The results show a large potential for using this method to detect this type of fruit. A detection accuracy of 0.90 using the metric average precision (AP) was achieved for the fruit detection. Precision agriculture applications such Deep Neural Networks (DNN) as proposed in this paper can help to mitigate climate change due to horticultural activities by accurate products prediction leading to improved resources management such as irrigation water, nutrients, herbicides, pesticides, as well as helping reducing food loss and waste by improved agricultural activities scheduling."
 
-- id: "KineticGAN"
-  title: "Generative Adversarial Graph Convolutional Networks for Human Action Synthesis"
-  authors: "Bruno Degardin, João C. Neves, Vasco Lopes, João Brito, Ehsan Yaghoubi, Hugo Proença"
-  venue: "Proceedings of the 2022 IEEE/CVF Winter Conference on Applications of Computer Vision - WACV 2022"
-  year: 2022
-  status: "published"
-  publication_type: "conference"
-  doi: "10.1109/WACV51458.2022.00281"
-  pdf: "http://www.di.ubi.pt/~hugomcp/doc/wacv21.pdf"
-  thumbnail: "/assets/publications/cvf.jpg"
-  tags:
-    - "Human Action Synthesis"
-    - "Generative Adversarial Networks"
-    - "Graph Convolutional Networks"
-  abstract: "Synthesising the spatial and temporal dynamics of the human body skeleton remains a challenging task, not only in terms of the quality of the generated shapes, but also of their diversity, particularly to synthesise realistic body movements of a specific action (action conditioning). In this paper, we propose Kinetic-GAN, a novel architecture that leverages the benefits of Generative Adversarial Networks and Graph Convolutional Networks to synthesise the kinetics of the human body. The proposed adversarial architecture can condition up to 120 different actions over local and global body movements while improving sample quality and diversity through latent space disentanglement and stochastic variations. Our experiments were carried out in three well-known datasets, where Kinetic-GAN notably surpasses the state-of-the-art methods in terms of distribution quality metrics while having the ability to synthesise more than one order of magnitude regarding the number of different actions."
+# - id: "KineticGAN"
+#   title: "Generative Adversarial Graph Convolutional Networks for Human Action Synthesis"
+#   authors: "Bruno Degardin, João C. Neves, Vasco Lopes, João Brito, Ehsan Yaghoubi, Hugo Proença"
+#   venue: "Proceedings of the 2022 IEEE/CVF Winter Conference on Applications of Computer Vision - WACV 2022"
+#   year: 2022
+#   status: "published"
+#   publication_type: "conference"
+#   doi: "10.1109/WACV51458.2022.00281"
+#   pdf: "http://www.di.ubi.pt/~hugomcp/doc/wacv21.pdf"
+#   thumbnail: "/assets/publications/cvf.jpg"
+#   tags:
+#     - "Human Action Synthesis"
+#     - "Generative Adversarial Networks"
+#     - "Graph Convolutional Networks"
+#   abstract: "Synthesising the spatial and temporal dynamics of the human body skeleton remains a challenging task, not only in terms of the quality of the generated shapes, but also of their diversity, particularly to synthesise realistic body movements of a specific action (action conditioning). In this paper, we propose Kinetic-GAN, a novel architecture that leverages the benefits of Generative Adversarial Networks and Graph Convolutional Networks to synthesise the kinetics of the human body. The proposed adversarial architecture can condition up to 120 different actions over local and global body movements while improving sample quality and diversity through latent space disentanglement and stochastic variations. Our experiments were carried out in three well-known datasets, where Kinetic-GAN notably surpasses the state-of-the-art methods in terms of distribution quality metrics while having the ability to synthesise more than one order of magnitude regarding the number of different actions."
 
 - id: "REGINA"
   title: "REGINA - Reasoning Graph Convolutional Networks in Human Action Recognition"
