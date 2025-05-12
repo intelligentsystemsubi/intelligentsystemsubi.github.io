@@ -321,7 +321,7 @@ layout: default # Inherit from the main default layout
         {% assign master_students = site.team_members | where: "supervisor", page.title | where: "role", "master" | where: "active", true | sort: "joining_year" | reverse %}
         {% assign co_supervised_phd = site.team_members | where: "co_supervisor", page.title | where: "role", "phd" | where: "active", true | sort: "joining_year" | reverse %}
         {% assign co_supervised_master = site.team_members | where: "co_supervisor", page.title | where: "role", "master" | where: "active", true | sort: "joining_year" | reverse %}
-        <p>Kailahs</p>
+        <!-- <p>Kailahs</p> -->
         {% if phd_students.size > 0 or master_students.size > 0 or co_supervised_phd.size > 0 or co_supervised_master.size > 0 %}
         <div class="bg-white rounded-lg shadow-md overflow-hidden mb-8 transform transition hover:shadow-lg">
           <div class="border-b border-gray-100">
