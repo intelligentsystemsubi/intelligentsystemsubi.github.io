@@ -427,10 +427,12 @@ document.addEventListener('DOMContentLoaded', function() {
         }
         
         // Sort visible publications
-        const visiblePubs = publications.filter(pub => pub.style.display !== 'none');
+        const visiblePubs = publications.filter(pub => !pub.classList.contains('hidden'));
+        
+        const currentSort = sortBy.value || 'year'; // Default to year if not set
         
         visiblePubs.sort((a, b) => {
-            switch(sortBy.value) {
+            switch(currentSort) {
                 case 'year':
                     return parseInt(b.dataset.year) - parseInt(a.dataset.year);
                 case 'title':
@@ -438,7 +440,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 case 'venue':
                     return a.dataset.venue.localeCompare(b.dataset.venue);
                 default:
-                    return 0;
+                    return parseInt(b.dataset.year) - parseInt(a.dataset.year); // Default to sort by year
             }
         });
 
@@ -453,6 +455,9 @@ document.addEventListener('DOMContentLoaded', function() {
     tagFilter.addEventListener('change', filterAndSortPublications);
     sortBy.addEventListener('change', filterAndSortPublications);
     searchInput.addEventListener('input', filterAndSortPublications);
+
+    // Set default sort to year (newest first)
+    sortBy.value = 'year';
 
     // Initial filter and sort
     filterAndSortPublications();
