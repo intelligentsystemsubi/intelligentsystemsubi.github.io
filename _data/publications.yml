@@ -3275,9 +3275,10 @@
   authors: "Kailash A. Hambarde, Nzakiese Mbongo, Pavan Kumar MP, Satish Mekewad, Carolina Fernandes, Gökhan Silahtaroğlu, Alice Nithya, Pawan Wasnik, Md. Rashidunnabi, Pranita Samale, Hugo Proença"
   venue: "IEEE Transactions on Biometrics, Behavior, and Identity Science"
   year: 2025
-  publication_type: "journal"
+  publication_type: "arxiv"
   doi: "10.48550/arXiv.2505.04793"
   pdf: "https://arxiv.org/pdf/2505.04793v1.pdf"
+  thumbnail: "/assets/publications/detreidx_v1.png"
   tags:
     - "Person Re-Identification"
     - "UAV Surveillance"

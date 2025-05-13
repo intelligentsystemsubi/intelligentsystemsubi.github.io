@@ -272,7 +272,7 @@ title: Home
                 <div class="px-6 pb-6 mt-auto">
                     <div class="flex flex-wrap gap-2">
                         {% if publication.doi %}
-                        <a href="https://doi.org/{{ publication.doi }}" class="inline-flex items-center text-blue-600 hover:text-blue-800 font-medium group text-sm" target="_blank">
+                        <a href="https://doi.org/{{ publication.doi }}" class="inline-flex items-center text-blue-600 hover:text-blue-800 font-medium group text-sm cursor-pointer relative z-20" target="_blank" onclick="window.open(this.href, '_blank'); return false;">
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
                             </svg>
@@ -280,7 +280,7 @@ title: Home
                         </a>
                         {% endif %}
                         {% if publication.pdf %}
-                        <a href="{{ publication.pdf }}" class="inline-flex items-center text-blue-600 hover:text-blue-800 font-medium group text-sm" target="_blank">
+                        <a href="{{ publication.pdf }}" class="inline-flex items-center text-blue-600 hover:text-blue-800 font-medium group text-sm cursor-pointer relative z-20" target="_blank" onclick="window.open(this.href, '_blank'); return false;">
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
                             </svg>
@@ -440,6 +440,19 @@ title: Home
         
         window.addEventListener('scroll', checkReveal);
         checkReveal(); // Check on page load
+
+        // Fix for publication links
+        const publicationLinks = document.querySelectorAll('.publication-item a[href]');
+        publicationLinks.forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.stopPropagation(); // Prevent event bubbling
+                if (this.getAttribute('target') === '_blank') {
+                    window.open(this.href, '_blank');
+                } else {
+                    window.location.href = this.href;
+                }
+            });
+        });
     });
 </script>
 
