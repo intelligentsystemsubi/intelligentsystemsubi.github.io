@@ -3226,3 +3226,62 @@
     - "Railway Control"
     - "Machine Learning"
   abstract: "Previous research works have demonstrated that traffic control models based on the comparison between an historical archive of information and current traffic conditions tend to produce better results, usually by improving the system's proactivity behavior. Based on this assumption, we present in this paper MARCS - Multi-Agent Railway Control System, a multi-agent system for communications based trains traffic control. For this purpose we have developed a system infrastructure based on an architecture composed of two independent layers: 'Control' and 'Learning'. 'Control' layer is responsible for traffic supervision, regulation, security and fluidity, including three distinct agent types: 'Supervisor', 'Train' and 'Station'. The 'Learning' layer, using situations accumulated by the 'Control' layer, will infer rules that can improve traffic control processes, minimizing waiting time and stop orders sent for each train."
+  
+- id: "Advanced_Long_Range_Person_Detection"
+  title: "Advanced Long-Range Person Detection in Ultra-Low Resolution Videos Using Deep Learning and Generative Modeling"
+  authors: "Md Rashidunnabi"
+  venue: "30th Portuguese Conference on Pattern Recognition"
+  year: 2024
+  publication_type: "conference_poster"
+  pdf: ""
+  tags:
+    - "Person Detection"
+    - "Deep Learning"
+    - "Generative Modeling"
+    - "Ultra-Low Resolution"
+  abstract: "This paper presents a novel approach for detecting persons in ultra-low resolution videos using deep learning and generative modeling. The approach is specifically designed for long-range detection in challenging surveillance scenarios."
+
+- id: "Predictive_Analysis_of_Air_Pollutants"
+  title: "Predictive Analysis of Air Pollutants: Harnessing Meteorological Data to Forecast Air Quality Concentrations in Cork, Ireland"
+  authors: "Md Rashidunnabi"
+  venue: "Master's Thesis, Munster Technological University"
+  year: 2023
+  publication_type: "thesis"
+  doi: "10.5281/zenodo.15102420"
+  pdf: "https://doi.org/10.5281/zenodo.15102420"
+  tags:
+    - "Predictive Analysis"
+    - "Air Quality"
+    - "Meteorological Data"
+    - "Machine Learning"
+  abstract: "This thesis explores the use of meteorological data to predict air quality concentrations in Cork, Ireland. It employs advanced machine learning techniques to improve forecasting accuracy."
+
+
+- id: "BEHAV_I_AIR_Report"
+  title: "BEHAV-I-AIR Clean Air Day Roundtable - Report of Key Results and Actions"
+  authors: "Md Rashidunnabi"
+  venue: "ResearchGate"
+  year: 2023
+  publication_type: "report"
+  pdf: "https://www.researchgate.net/publication/375275537_BEHAV-I-AIR_Clean_Air_Day_Roundtable_-_Report_of_key_results_and_actions"
+  tags:
+    - "Air Quality"
+    - "Data Analysis"
+    - "Environmental Science"
+  abstract: "This report summarizes the key findings and action points from the BEHAV-I-AIR Clean Air Day Roundtable, focusing on air quality improvement strategies and data-driven insights."
+
+- id: "DetReIDX"
+  title: "DetReIDX: A Stress-Test Dataset for Real-World UAV-Based Person Recognition"
+  authors: "Kailash A. Hambarde, Nzakiese Mbongo, Pavan Kumar MP, Satish Mekewad, Carolina Fernandes, Gökhan Silahtaroğlu, Alice Nithya, Pawan Wasnik, Md. Rashidunnabi, Pranita Samale, Hugo Proença"
+  venue: "IEEE Transactions on Biometrics, Behavior, and Identity Science"
+  year: 2025
+  publication_type: "journal"
+  doi: "10.48550/arXiv.2505.04793"
+  pdf: "https://arxiv.org/pdf/2505.04793v1.pdf"
+  tags:
+    - "Person Re-Identification"
+    - "UAV Surveillance"
+    - "Cross-View Recognition"
+    - "Aerial-Ground Dataset"
+    - "Soft Biometrics"
+  abstract: "This paper introduces DetReIDX, a large-scale aerial-ground person dataset explicitly designed as a stress test for person re-identification under real-world conditions. DetReIDX includes over 13 million bounding boxes from 509 identities, collected in seven university campuses across three continents. The dataset captures extreme data variability, including wide altitude ranges, cross-view domain gaps, and multi-session clothing changes, providing a robust benchmark for long-term ReID. The dataset, annotations, and evaluation protocols are publicly available at https://www.it.ubi.pt/DetReIDX."
