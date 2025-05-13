@@ -9,7 +9,7 @@
   publication_type: "journal"
   doi: "10.1016/j.csbj.2025.02.013"
   pdf: "https://www.sciencedirect.com/science/article/pii/S2001037025000418"
-  thumbnail: "/assets/publications/SkinLesionDiagnosis"
+  thumbnail: "/assets/publications/SkinLesionDiagnosis.png"
   tags:
     - "Skin Lesion Diagnosis"
     - "Interpretability"
