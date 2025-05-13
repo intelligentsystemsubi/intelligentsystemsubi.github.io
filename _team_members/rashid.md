@@ -12,7 +12,7 @@ website: "https://mdrashidunnabi.github.io/portfolio/"
 image: "/assets/team/rashid.jpeg"
 supervisor: "Hugo Proença"
 co_supervisor: "João C. Neves"
-co_supervisor: "Vasco Ferrinho Lopes"
+# co_supervisor: "Vasco Ferrinho Lopes"
 joining_year: 2024
 active: true
 research_interests:
