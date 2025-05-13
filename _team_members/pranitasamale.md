@@ -6,6 +6,7 @@ role: phd
 image: "/assets/team/pranita.jpeg"
 email: pranita@ubi.pt
 supervisor: Hugo Proença
+co-supervisor: João C. Neves
 active: true
 joining_year: 2022
 research_interests:

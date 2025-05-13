@@ -1,6 +1,6 @@
 ---
 layout: member
-title: Kailash Hambarde
+title: "Kailash Hambarde"
 position: Researcher 
 role: postdoc
 image: "/assets/team/Kailash-Hambarde.png"
