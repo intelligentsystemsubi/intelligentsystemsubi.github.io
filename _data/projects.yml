@@ -1,325 +1,325 @@
-# List of research projects
-- title: "Real-time Object Detection"
-  id: "object-detection" # Used for linking (e.g., from publications)
-  description: "Developing efficient algorithms for detecting objects in images and videos."
-  members: ["John Doe", "Jane Smith", "Prof. Ada Lovelace, Pranita Samale"]
-  image: "/is-ubi/assets/images/projects/object_detection.png" # Optional project image
-  link: "/projects/object-detection" # Optional link to a dedicated project page
-
-- title: "3D Scene Reconstruction"
-  id: "3d-reconstruction"
-  description: "Reconstructing detailed 3D models from multiple camera views."
-  members: ["Dr. Charles Babbage", "Grace Hopper"]
-  image: "/is-ubi/assets/images/projects/3d_reconstruction.jpg"
-
-# Sample Projects Data
-- title: "DeepOcular: Deep Learning for Ocular Biometrics"
-  id: "deepocular" # Used for linking and generating pages
-  description: "Research and development of novel deep learning architectures for ocular biometrics, including iris, periocular, and sclera recognition. The project focuses on challenging scenarios like low-resolution, off-angle, and degraded images."
-  status: "active"
-  featured: true
-  start_date: 2021-01-01
-  end_date: 2023-12-31
-  image: "/is-ubi/assets/projects/deep_ocular.jpg"
-  website: "https://deep-ocular.ubi.pt/"
-  github: "https://github.com/socia-lab/deep-ocular"
-  funding: "European Research Council (ERC) - €1.2 million"
-  tags:
-    - "Deep Learning"
-    - "Ocular Biometrics"
-    - "Computer Vision"
-  team:
-    - "Hugo Proença"
-    - "Joana C. Costa"
-    - "David Menotti"
-    - "Maria Rodriguez"
-  publications:
-    - title: "Attention-based Deep Architecture for Periocular Recognition"
-      authors: "Hugo Proença, Joana C. Costa, David Menotti"
-      venue: "IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR), 2023"
-      url: "/publications#periocular-attention"
-    - title: "Multi-spectral Iris Recognition in Unconstrained Settings"
-      authors: "Joana C. Costa, Hugo Proença"
-      venue: "International Conference on Biometrics (ICB), 2023"
-      url: "/publications#multi-spectral-iris"
-  long_description: |
-    ## Project Overview
-
-    DeepOcular is a comprehensive research project focused on advancing ocular biometrics through deep learning approaches. The primary goal is to develop robust recognition systems that can operate reliably under challenging real-world conditions.
-
-    ## Research Objectives
-
-    1. **Robust Feature Extraction**: Develop attention-based architectures that can focus on the most discriminative regions of the eye, even in degraded or partially occluded images.
-
-    2. **Cross-spectral Matching**: Create models capable of matching eye images captured across different spectral bands (visible light vs. near-infrared).
-
-    3. **Periocular Recognition**: Explore the surrounding eye region as a biometric trait, particularly valuable when the iris is not clearly visible.
-
-    4. **Lightweight Architectures**: Design efficient networks that can run on mobile and edge devices with constrained resources.
-
-    ## Technical Approach
-
-    The project employs a multi-stage approach to ocular biometrics:
-
-    ### Stage 1: Multi-resolution De-noising Stem
-
-    Our initial processing stage incorporates a novel multi-resolution branch network that processes the input image at different scales simultaneously. This allows the network to capture both fine-grained texture details and broader structural information. 
-
-    The de-noising component specifically targets common degradations in real-world scenarios:
-    - Motion blur
-    - Low resolution
-    - Poor illumination
-    - Specular reflections
-
-    ### Stage 2: Attention Mechanisms
-
-    We implement several attention mechanisms:
-    - Spatial attention to focus on discriminative regions
-    - Channel attention to emphasize important feature maps
-    - Self-attention to capture long-range dependencies
-
-    ### Stage 3: Identity Embedding
-
-    The final stage converts the extracted features into a compact, discriminative embedding that can be used for recognition. We employ:
-    - Contrastive learning to ensure similar identities cluster together
-    - Triplet loss to maximize inter-class variation and minimize intra-class variation
-    - Angular margin-based losses for improved separation in the embedding space
-
-    ## Datasets
-
-    The project utilizes several proprietary and public datasets:
-    - UBIRIS.v2 (visible wavelength iris images)
-    - CASIA-Iris (NIR iris images)
-    - VISOB (visible spectrum mobile captures)
-    - Our own multi-spectral ocular dataset with 10,000+ images
-
-    ## Results
-
-    Our approach has achieved state-of-the-art results on multiple benchmarks:
-    - 97.8% rank-1 recognition rate on the UBIRIS.v2 dataset
-    - 99.3% verification accuracy on the CASIA-Iris dataset
-    - Best Paper Award at ICB 2023 for our cross-spectral matching technique
+# # List of research projects
+# - title: "Real-time Object Detection"
+#   id: "object-detection" # Used for linking (e.g., from publications)
+#   description: "Developing efficient algorithms for detecting objects in images and videos."
+#   members: ["John Doe", "Jane Smith", "Prof. Ada Lovelace, Pranita Samale"]
+#   image: "/is-ubi/assets/images/projects/object_detection.png" # Optional project image
+#   link: "/projects/object-detection" # Optional link to a dedicated project page
+
+# - title: "3D Scene Reconstruction"
+#   id: "3d-reconstruction"
+#   description: "Reconstructing detailed 3D models from multiple camera views."
+#   members: ["Dr. Charles Babbage", "Grace Hopper"]
+#   image: "/is-ubi/assets/images/projects/3d_reconstruction.jpg"
+
+# # Sample Projects Data
+# - title: "DeepOcular: Deep Learning for Ocular Biometrics"
+#   id: "deepocular" # Used for linking and generating pages
+#   description: "Research and development of novel deep learning architectures for ocular biometrics, including iris, periocular, and sclera recognition. The project focuses on challenging scenarios like low-resolution, off-angle, and degraded images."
+#   status: "active"
+#   featured: true
+#   start_date: 2021-01-01
+#   end_date: 2023-12-31
+#   image: "/is-ubi/assets/projects/deep_ocular.jpg"
+#   website: "https://deep-ocular.ubi.pt/"
+#   github: "https://github.com/socia-lab/deep-ocular"
+#   funding: "European Research Council (ERC) - €1.2 million"
+#   tags:
+#     - "Deep Learning"
+#     - "Ocular Biometrics"
+#     - "Computer Vision"
+#   team:
+#     - "Hugo Proença"
+#     - "Joana C. Costa"
+#     - "David Menotti"
+#     - "Maria Rodriguez"
+#   publications:
+#     - title: "Attention-based Deep Architecture for Periocular Recognition"
+#       authors: "Hugo Proença, Joana C. Costa, David Menotti"
+#       venue: "IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR), 2023"
+#       url: "/publications#periocular-attention"
+#     - title: "Multi-spectral Iris Recognition in Unconstrained Settings"
+#       authors: "Joana C. Costa, Hugo Proença"
+#       venue: "International Conference on Biometrics (ICB), 2023"
+#       url: "/publications#multi-spectral-iris"
+#   long_description: |
+#     ## Project Overview
+
+#     DeepOcular is a comprehensive research project focused on advancing ocular biometrics through deep learning approaches. The primary goal is to develop robust recognition systems that can operate reliably under challenging real-world conditions.
+
+#     ## Research Objectives
+
+#     1. **Robust Feature Extraction**: Develop attention-based architectures that can focus on the most discriminative regions of the eye, even in degraded or partially occluded images.
+
+#     2. **Cross-spectral Matching**: Create models capable of matching eye images captured across different spectral bands (visible light vs. near-infrared).
+
+#     3. **Periocular Recognition**: Explore the surrounding eye region as a biometric trait, particularly valuable when the iris is not clearly visible.
+
+#     4. **Lightweight Architectures**: Design efficient networks that can run on mobile and edge devices with constrained resources.
+
+#     ## Technical Approach
+
+#     The project employs a multi-stage approach to ocular biometrics:
+
+#     ### Stage 1: Multi-resolution De-noising Stem
+
+#     Our initial processing stage incorporates a novel multi-resolution branch network that processes the input image at different scales simultaneously. This allows the network to capture both fine-grained texture details and broader structural information. 
+
+#     The de-noising component specifically targets common degradations in real-world scenarios:
+#     - Motion blur
+#     - Low resolution
+#     - Poor illumination
+#     - Specular reflections
+
+#     ### Stage 2: Attention Mechanisms
+
+#     We implement several attention mechanisms:
+#     - Spatial attention to focus on discriminative regions
+#     - Channel attention to emphasize important feature maps
+#     - Self-attention to capture long-range dependencies
+
+#     ### Stage 3: Identity Embedding
+
+#     The final stage converts the extracted features into a compact, discriminative embedding that can be used for recognition. We employ:
+#     - Contrastive learning to ensure similar identities cluster together
+#     - Triplet loss to maximize inter-class variation and minimize intra-class variation
+#     - Angular margin-based losses for improved separation in the embedding space
+
+#     ## Datasets
+
+#     The project utilizes several proprietary and public datasets:
+#     - UBIRIS.v2 (visible wavelength iris images)
+#     - CASIA-Iris (NIR iris images)
+#     - VISOB (visible spectrum mobile captures)
+#     - Our own multi-spectral ocular dataset with 10,000+ images
+
+#     ## Results
+
+#     Our approach has achieved state-of-the-art results on multiple benchmarks:
+#     - 97.8% rank-1 recognition rate on the UBIRIS.v2 dataset
+#     - 99.3% verification accuracy on the CASIA-Iris dataset
+#     - Best Paper Award at ICB 2023 for our cross-spectral matching technique
 
-    ## Future Work
+#     ## Future Work
 
-    Future directions for this project include:
-    - Adversarial robustness for anti-spoofing
-    - Multimodal fusion with face recognition
-    - Privacy-preserving biometric recognition
-    - Explainable AI techniques for regulatory compliance
+#     Future directions for this project include:
+#     - Adversarial robustness for anti-spoofing
+#     - Multimodal fusion with face recognition
+#     - Privacy-preserving biometric recognition
+#     - Explainable AI techniques for regulatory compliance
 
-- title: "VisualSurveillance: Privacy-Preserving Video Analytics"
-  id: "visualsurveillance"
-  description: "Development of privacy-preserving technologies for video surveillance systems, including face de-identification, activity recognition without identity disclosure, and secure multi-party computation for distributed video analytics."
-  status: "active"
-  featured: true
-  start_date: 2022-03-01
-  end_date: 2025-02-28
-  image: "/is-ubi/assets/projects/visual_surveillance.jpg"
-  website: "https://visual-surveillance.ubi.pt/"
-  github: "https://github.com/socia-lab/visual-surveillance"
-  funding: "National Science Foundation - €900,000"
-  tags:
-    - "Privacy"
-    - "Video Analytics"
-    - "Security"
-    - "Computer Vision"
-  team:
-    - "Hugo Proença"
-    - "David Menotti"
-    - "Alex Chen"
-  publications:
-    - title: "Privacy-Preserving Face Recognition in Surveillance Systems"
-      authors: "Hugo Proença, David Menotti"
-      venue: "IEEE Transactions on Information Forensics and Security, 2022"
-      url: "/publications#privacy-face"
-    - title: "Federated Learning for Privacy-Preserving Activity Recognition"
-      authors: "Alex Chen, Hugo Proença"
-      venue: "European Conference on Computer Vision (ECCV), 2023"
-      url: "/publications#federated-activity"
-  long_description: |
-    ## Project Overview
-
-    The VisualSurveillance project addresses the growing concern for privacy in an increasingly monitored world. We develop technologies that enable effective video surveillance while protecting the privacy rights of individuals captured in the footage. Our work bridges the gap between security needs and privacy regulations like GDPR in Europe and CCPA in California.
-
-    ## Research Objectives
-
-    1. **Face De-identification**: Develop methods to obfuscate identity-revealing facial features while preserving attributes needed for surveillance (gender, approximate age, activity).
-
-    2. **Privacy-Preserving Activity Recognition**: Create techniques to analyze human behavior without revealing identities.
-
-    3. **Secure Distributed Video Analytics**: Design protocols for analyzing video data across multiple stakeholders without sharing raw footage.
-
-    4. **Compliance Framework**: Establish technical guidelines for implementing privacy-by-design in surveillance systems.
-
-    ## Technical Approach
+# - title: "VisualSurveillance: Privacy-Preserving Video Analytics"
+#   id: "visualsurveillance"
+#   description: "Development of privacy-preserving technologies for video surveillance systems, including face de-identification, activity recognition without identity disclosure, and secure multi-party computation for distributed video analytics."
+#   status: "active"
+#   featured: true
+#   start_date: 2022-03-01
+#   end_date: 2025-02-28
+#   image: "/is-ubi/assets/projects/visual_surveillance.jpg"
+#   website: "https://visual-surveillance.ubi.pt/"
+#   github: "https://github.com/socia-lab/visual-surveillance"
+#   funding: "National Science Foundation - €900,000"
+#   tags:
+#     - "Privacy"
+#     - "Video Analytics"
+#     - "Security"
+#     - "Computer Vision"
+#   team:
+#     - "Hugo Proença"
+#     - "David Menotti"
+#     - "Alex Chen"
+#   publications:
+#     - title: "Privacy-Preserving Face Recognition in Surveillance Systems"
+#       authors: "Hugo Proença, David Menotti"
+#       venue: "IEEE Transactions on Information Forensics and Security, 2022"
+#       url: "/publications#privacy-face"
+#     - title: "Federated Learning for Privacy-Preserving Activity Recognition"
+#       authors: "Alex Chen, Hugo Proença"
+#       venue: "European Conference on Computer Vision (ECCV), 2023"
+#       url: "/publications#federated-activity"
+#   long_description: |
+#     ## Project Overview
+
+#     The VisualSurveillance project addresses the growing concern for privacy in an increasingly monitored world. We develop technologies that enable effective video surveillance while protecting the privacy rights of individuals captured in the footage. Our work bridges the gap between security needs and privacy regulations like GDPR in Europe and CCPA in California.
+
+#     ## Research Objectives
+
+#     1. **Face De-identification**: Develop methods to obfuscate identity-revealing facial features while preserving attributes needed for surveillance (gender, approximate age, activity).
+
+#     2. **Privacy-Preserving Activity Recognition**: Create techniques to analyze human behavior without revealing identities.
+
+#     3. **Secure Distributed Video Analytics**: Design protocols for analyzing video data across multiple stakeholders without sharing raw footage.
+
+#     4. **Compliance Framework**: Establish technical guidelines for implementing privacy-by-design in surveillance systems.
+
+#     ## Technical Approach
 
-    ### Privacy-Preserving Face Recognition
-
-    Our approach combines advanced cryptographic techniques with deep learning to enable face recognition without exposing the actual facial data:
+#     ### Privacy-Preserving Face Recognition
+
+#     Our approach combines advanced cryptographic techniques with deep learning to enable face recognition without exposing the actual facial data:
 
-    - **Homomorphic Encryption**: Allows computations on encrypted facial features without decryption
-    - **Secure Multi-Party Computation**: Divides sensitive data among multiple parties so no single entity has complete access
-    - **Differential Privacy**: Adds calibrated noise to prevent the extraction of individual identity information
+#     - **Homomorphic Encryption**: Allows computations on encrypted facial features without decryption
+#     - **Secure Multi-Party Computation**: Divides sensitive data among multiple parties so no single entity has complete access
+#     - **Differential Privacy**: Adds calibrated noise to prevent the extraction of individual identity information
 
-    ### Reversible Identity Protection
+#     ### Reversible Identity Protection
 
-    We've developed a novel two-tier system that separates identity information from behavioral data:
+#     We've developed a novel two-tier system that separates identity information from behavioral data:
 
-    1. **Layer 1 (Behavioral Analysis)**: Analyzes activities, crowd flows, and anomalies using privacy-protected data
-    2. **Layer 2 (Identity Management)**: Securely stores identity information, accessible only with proper authorization
+#     1. **Layer 1 (Behavioral Analysis)**: Analyzes activities, crowd flows, and anomalies using privacy-protected data
+#     2. **Layer 2 (Identity Management)**: Securely stores identity information, accessible only with proper authorization
 
-    ### Federated Learning
+#     ### Federated Learning
 
-    Our system leverages federated learning to train models across multiple sites without centralizing the data:
+#     Our system leverages federated learning to train models across multiple sites without centralizing the data:
 
-    - Models are trained locally at each surveillance node
-    - Only model updates (not raw data) are shared with a central server
-    - Differential privacy mechanisms protect against model inversion attacks
+#     - Models are trained locally at each surveillance node
+#     - Only model updates (not raw data) are shared with a central server
+#     - Differential privacy mechanisms protect against model inversion attacks
 
-    ## Implementation
+#     ## Implementation
 
-    The project includes several practical implementations:
+#     The project includes several practical implementations:
 
-    - **PrivacyGuard API**: A software library for real-time face de-identification in video streams
-    - **SecureVision Platform**: A complete surveillance system with built-in privacy protections
-    - **Compliance Verification Tool**: Software to validate that surveillance systems meet privacy regulations
+#     - **PrivacyGuard API**: A software library for real-time face de-identification in video streams
+#     - **SecureVision Platform**: A complete surveillance system with built-in privacy protections
+#     - **Compliance Verification Tool**: Software to validate that surveillance systems meet privacy regulations
 
-    ## Results
+#     ## Results
 
-    Our technology has been successfully deployed in several pilot locations:
+#     Our technology has been successfully deployed in several pilot locations:
 
-    - University campus with 85% reduction in identifiable information while maintaining 92% security event detection
-    - Public transportation hub with privacy-compliant crowd monitoring
-    - Shopping center with anonymous customer flow analysis
+#     - University campus with 85% reduction in identifiable information while maintaining 92% security event detection
+#     - Public transportation hub with privacy-compliant crowd monitoring
+#     - Shopping center with anonymous customer flow analysis
 
-    ## Future Work
+#     ## Future Work
 
-    Future developments will focus on:
+#     Future developments will focus on:
 
-    - Extending techniques to other biometric traits (gait, voice)
-    - Developing standards for privacy-preserving surveillance
-    - Creating tools for auditing existing systems for compliance
-    - Exploring blockchain technology for immutable access logs
+#     - Extending techniques to other biometric traits (gait, voice)
+#     - Developing standards for privacy-preserving surveillance
+#     - Creating tools for auditing existing systems for compliance
+#     - Exploring blockchain technology for immutable access logs
 
-- title: "MedicalVision: AI for Medical Image Analysis"
-  id: "medicalvision"
-  description: "Application of computer vision and deep learning techniques to medical imaging problems, including tumor detection, segmentation of anatomical structures, and longitudinal analysis of disease progression."
-  status: "completed"
-  featured: true
-  start_date: 2020-05-01
-  end_date: 2022-12-31
-  image: "/is-ubi/assets/projects/medical_vision.jpg"
-  demo: "https://medical-vision-demo.ubi.pt/"
-  github: "https://github.com/socia-lab/medical-vision"
-  funding: "Healthcare Innovation Foundation - €750,000"
-  tags:
-    - "Medical Imaging"
-    - "Deep Learning"
-    - "Healthcare"
-    - "Segmentation"
-  team:
-    - "David Menotti"
-    - "Joana C. Costa"
-    - "Maria Rodriguez"
-  publications:
-    - title: "Automated Detection of COVID-19 in Chest X-Ray Images"
-      authors: "David Menotti, Joana C. Costa"
-      venue: "Medical Image Analysis, 2022"
-      url: "/publications#covid-detection"
-    - title: "Deep Learning for Lung Nodule Segmentation"
-      authors: "Maria Rodriguez, David Menotti"
-      venue: "IEEE International Symposium on Biomedical Imaging (ISBI), 2021"
-      url: "/publications#lung-nodule"
-  long_description: |
-    ## Project Overview
+# - title: "MedicalVision: AI for Medical Image Analysis"
+#   id: "medicalvision"
+#   description: "Application of computer vision and deep learning techniques to medical imaging problems, including tumor detection, segmentation of anatomical structures, and longitudinal analysis of disease progression."
+#   status: "completed"
+#   featured: true
+#   start_date: 2020-05-01
+#   end_date: 2022-12-31
+#   image: "/is-ubi/assets/projects/medical_vision.jpg"
+#   demo: "https://medical-vision-demo.ubi.pt/"
+#   github: "https://github.com/socia-lab/medical-vision"
+#   funding: "Healthcare Innovation Foundation - €750,000"
+#   tags:
+#     - "Medical Imaging"
+#     - "Deep Learning"
+#     - "Healthcare"
+#     - "Segmentation"
+#   team:
+#     - "David Menotti"
+#     - "Joana C. Costa"
+#     - "Maria Rodriguez"
+#   publications:
+#     - title: "Automated Detection of COVID-19 in Chest X-Ray Images"
+#       authors: "David Menotti, Joana C. Costa"
+#       venue: "Medical Image Analysis, 2022"
+#       url: "/publications#covid-detection"
+#     - title: "Deep Learning for Lung Nodule Segmentation"
+#       authors: "Maria Rodriguez, David Menotti"
+#       venue: "IEEE International Symposium on Biomedical Imaging (ISBI), 2021"
+#       url: "/publications#lung-nodule"
+#   long_description: |
+#     ## Project Overview
 
-    The MedicalVision project focused on developing state-of-the-art computer vision and deep learning solutions for medical image analysis. Our primary goal was to create tools that assist healthcare professionals in diagnosing and monitoring various medical conditions through advanced image processing techniques.
+#     The MedicalVision project focused on developing state-of-the-art computer vision and deep learning solutions for medical image analysis. Our primary goal was to create tools that assist healthcare professionals in diagnosing and monitoring various medical conditions through advanced image processing techniques.
 
-    ## Research Objectives
+#     ## Research Objectives
 
-    1. **Early Disease Detection**: Develop algorithms for early detection of diseases, particularly focusing on cancer and respiratory conditions.
+#     1. **Early Disease Detection**: Develop algorithms for early detection of diseases, particularly focusing on cancer and respiratory conditions.
 
-    2. **Precise Segmentation**: Create accurate segmentation methods for anatomical structures and abnormalities in different imaging modalities.
+#     2. **Precise Segmentation**: Create accurate segmentation methods for anatomical structures and abnormalities in different imaging modalities.
 
-    3. **Longitudinal Analysis**: Design systems to track disease progression over time through sequential imaging studies.
+#     3. **Longitudinal Analysis**: Design systems to track disease progression over time through sequential imaging studies.
 
-    4. **Clinical Integration**: Develop practical tools that integrate into clinical workflows with interpretable outputs for medical professionals.
+#     4. **Clinical Integration**: Develop practical tools that integrate into clinical workflows with interpretable outputs for medical professionals.
 
-    ## Technical Approach
+#     ## Technical Approach
 
-    ### Multi-modal Image Analysis
+#     ### Multi-modal Image Analysis
 
-    Our research incorporates various medical imaging modalities:
+#     Our research incorporates various medical imaging modalities:
 
-    - **Radiography (X-ray)**: For lung disease detection, bone fracture analysis
-    - **Computed Tomography (CT)**: For detailed 3D analysis of internal structures
-    - **Magnetic Resonance Imaging (MRI)**: For soft tissue examination and brain imaging
-    - **Ultrasound**: For real-time examination of dynamic processes
+#     - **Radiography (X-ray)**: For lung disease detection, bone fracture analysis
+#     - **Computed Tomography (CT)**: For detailed 3D analysis of internal structures
+#     - **Magnetic Resonance Imaging (MRI)**: For soft tissue examination and brain imaging
+#     - **Ultrasound**: For real-time examination of dynamic processes
 
-    ### Deep Learning Architectures
+#     ### Deep Learning Architectures
 
-    We developed and optimized several deep learning architectures for specific medical tasks:
+#     We developed and optimized several deep learning architectures for specific medical tasks:
 
-    #### 1. Detection Networks
+#     #### 1. Detection Networks
 
-    - Modified EfficientDet with medical-specific anchor boxes
-    - Specialized RetinaNet variant with focal loss for small lesion detection
-    - Attention-guided detectors for highlighting clinically relevant regions
+#     - Modified EfficientDet with medical-specific anchor boxes
+#     - Specialized RetinaNet variant with focal loss for small lesion detection
+#     - Attention-guided detectors for highlighting clinically relevant regions
 
-    #### 2. Segmentation Networks
+#     #### 2. Segmentation Networks
 
-    - U-Net with residual connections for organ and lesion segmentation
-    - DeepLab v3+ adapted for medical image peculiarities
-    - 3D convolutional networks for volumetric data processing
+#     - U-Net with residual connections for organ and lesion segmentation
+#     - DeepLab v3+ adapted for medical image peculiarities
+#     - 3D convolutional networks for volumetric data processing
 
-    #### 3. Classification Systems
+#     #### 3. Classification Systems
 
-    - Ensemble methods combining multiple expert networks
-    - Uncertainty-aware classifiers with calibrated confidence scores
-    - Few-shot learning approaches for rare pathologies
+#     - Ensemble methods combining multiple expert networks
+#     - Uncertainty-aware classifiers with calibrated confidence scores
+#     - Few-shot learning approaches for rare pathologies
 
-    ## Clinical Applications
+#     ## Clinical Applications
 
-    ### COVID-19 Detection
+#     ### COVID-19 Detection
 
-    During the pandemic, we quickly pivoted to develop a chest X-ray analysis system for COVID-19 detection:
+#     During the pandemic, we quickly pivoted to develop a chest X-ray analysis system for COVID-19 detection:
 
-    - 94% sensitivity and 96% specificity on a multi-center dataset
-    - Deployment in three regional hospitals as a screening tool
-    - Heat map visualization to explain model decisions to radiologists
+#     - 94% sensitivity and 96% specificity on a multi-center dataset
+#     - Deployment in three regional hospitals as a screening tool
+#     - Heat map visualization to explain model decisions to radiologists
 
-    ### Cancer Screening
+#     ### Cancer Screening
 
-    Our lung nodule detection system achieved:
+#     Our lung nodule detection system achieved:
 
-    - 96% detection rate for nodules >4mm
-    - Automatic malignancy risk assessment based on nodule characteristics
-    - Integration with patient history for contextualized risk scores
+#     - 96% detection rate for nodules >4mm
+#     - Automatic malignancy risk assessment based on nodule characteristics
+#     - Integration with patient history for contextualized risk scores
 
-    ### Neurological Analysis
+#     ### Neurological Analysis
 
-    For brain imaging, we developed:
+#     For brain imaging, we developed:
 
-    - Automatic segmentation of brain structures in MRI
-    - White matter lesion quantification for multiple sclerosis monitoring
-    - Early detection of neurodegenerative changes
+#     - Automatic segmentation of brain structures in MRI
+#     - White matter lesion quantification for multiple sclerosis monitoring
+#     - Early detection of neurodegenerative changes
 
-    ## Results and Impact
+#     ## Results and Impact
 
-    The project resulted in several clinical deployments:
+#     The project resulted in several clinical deployments:
 
-    - COVID-19 screening tool used in 3 hospitals during the pandemic peak
-    - Lung cancer screening system integrated into a regional cancer center
-    - Brain MRI analysis tool used in 2 neurology departments
+#     - COVID-19 screening tool used in 3 hospitals during the pandemic peak
+#     - Lung cancer screening system integrated into a regional cancer center
+#     - Brain MRI analysis tool used in 2 neurology departments
 
-    Our tools have helped analyze over 50,000 medical images and contributed to improving diagnostic accuracy in partnering institutions.
+#     Our tools have helped analyze over 50,000 medical images and contributed to improving diagnostic accuracy in partnering institutions.
 
-    ## Project Legacy
+#     ## Project Legacy
 
-    Though officially completed, the MedicalVision project has led to:
+#     Though officially completed, the MedicalVision project has led to:
 
-    - Three ongoing clinical trials evaluating our technologies
-    - A spin-off company commercializing the lung nodule detection system
-    - An open-source library of medical image processing tools
-    - Educational materials for training radiologists in AI-assisted diagnosis
+#     - Three ongoing clinical trials evaluating our technologies
+#     - A spin-off company commercializing the lung nodule detection system
+#     - An open-source library of medical image processing tools
+#     - Educational materials for training radiologists in AI-assisted diagnosis

@@ -1,44 +1,50 @@
 # Example news items
 # Add new items to the top
+- date: 2025-05-13
+  title: "DetReIDX Dataset Released"
+  description: "We are excited to release the DetReIDX dataset, a large-scale dataset for object detection in images."
+  image: "/assets/publications/detreidx_v1.png"
+  link: https://arxiv.org/pdf/2505.04793v1.pdf 
+
 - date: 2025-05-09
   title: "Lab Website Launched!"
   description: "Our new lab website, powered by Jekyll and YAML, is now live."
   image: "/assets/news/news1.png"
   link: /news/website-launch # Optional link to a full post or external page
 
-- date: 2025-03-20
-  title: "Paper Accepted at CVPR 2025"
-  description: "John Doe's paper on 'Novel Object Detection Techniques' has been accepted."
-  image: "/assets/news/cvpr.png"
-  link: https://example.com/cvpr-paper # Optional external link
+# - date: 2025-03-20
+#   title: "Paper Accepted at CVPR 2025"
+#   description: "John Doe's paper on 'Novel Object Detection Techniques' has been accepted."
+#   image: "/assets/news/cvpr.png"
+#   link: https://example.com/cvpr-paper # Optional external link
 
-# Sample News Data
-- title: "Best Paper Award at CVPR 2023"
-  date: 2023-03-15
-  content: "Our research on 'Attention-based Deep Architecture for Periocular Recognition' has been accepted for publication at CVPR 2023. This work, led by Dr. Hugo Proença and Joana Costa, introduces a novel approach for periocular recognition in challenging scenarios."
-  image: "/assets/news/bestaward.png"
-  link: "/publications#periocular-attention"
+# # Sample News Data
+# - title: "Best Paper Award at CVPR 2023"
+#   date: 2023-03-15
+#   content: "Our research on 'Attention-based Deep Architecture for Periocular Recognition' has been accepted for publication at CVPR 2023. This work, led by Dr. Hugo Proença and Joana Costa, introduces a novel approach for periocular recognition in challenging scenarios."
+#   image: "/assets/news/bestaward.png"
+#   link: "/publications#periocular-attention"
 
 
-- title: "New Research Grant Awarded"
-  date: 2023-02-01
-  content: "Socia-Lab has been awarded a €1.5 million research grant from the European Research Council (ERC) for our project on 'Privacy-Preserving Biometric Recognition Systems'. The project will run for four years and create three new research positions."
-  image: "/assets/news/erc_grant.jpg"
-  link: "/projects#privacy-biometrics"
+# - title: "New Research Grant Awarded"
+#   date: 2023-02-01
+#   content: "Socia-Lab has been awarded a €1.5 million research grant from the European Research Council (ERC) for our project on 'Privacy-Preserving Biometric Recognition Systems'. The project will run for four years and create three new research positions."
+#   image: "/assets/news/erc_grant.jpg"
+#   link: "/projects#privacy-biometrics"
 
-- title: "PhD Student Wins Best Paper Award"
-  date: 2023-01-20
-  content: "Joana Costa, a PhD student in our lab, has won the Best Paper Award at the International Conference on Biometrics (ICB) 2023 for her work on 'Multi-spectral Iris Recognition in Unconstrained Settings'."
-  image: "/assets/news/best_paper.jpg"
-  link: "/publications#multi-spectral-iris"
+# - title: "PhD Student Wins Best Paper Award"
+#   date: 2023-01-20
+#   content: "Joana Costa, a PhD student in our lab, has won the Best Paper Award at the International Conference on Biometrics (ICB) 2023 for her work on 'Multi-spectral Iris Recognition in Unconstrained Settings'."
+#   image: "/assets/news/best_paper.jpg"
+#   link: "/publications#multi-spectral-iris"
 
-- title: "New Collaboration with Medical Research Center"
-  date: 2022-11-10
-  content: "Socia-Lab has established a new collaboration with the University Hospital Center to apply computer vision techniques to medical imaging problems. This partnership will focus on early detection of retinal diseases using deep learning."
-  image: "/assets/news/medical_collab.jpg"
+# - title: "New Collaboration with Medical Research Center"
+#   date: 2022-11-10
+#   content: "Socia-Lab has established a new collaboration with the University Hospital Center to apply computer vision techniques to medical imaging problems. This partnership will focus on early detection of retinal diseases using deep learning."
+#   image: "/assets/news/medical_collab.jpg"
 
-- title: "Open Source Release: DeepOcular Library"
-  date: 2022-10-05
-  content: "We are excited to announce the release of DeepOcular, an open-source library for ocular biometrics research. The library includes pre-trained models, datasets, and evaluation protocols for iris and periocular recognition."
-  image: "/assets/news/open_source.jpg"
-  link: "https://github.com/socia-lab/deep-ocular"
+# - title: "Open Source Release: DeepOcular Library"
+#   date: 2022-10-05
+#   content: "We are excited to announce the release of DeepOcular, an open-source library for ocular biometrics research. The library includes pre-trained models, datasets, and evaluation protocols for iris and periocular recognition."
+#   image: "/assets/news/open_source.jpg"
+#   link: "https://github.com/socia-lab/deep-ocular"
