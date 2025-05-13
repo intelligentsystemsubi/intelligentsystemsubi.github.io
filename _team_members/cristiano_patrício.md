@@ -3,7 +3,7 @@ layout: member
 title: Cristiano Patrício
 position: PhD Student
 role: phd
-image: "/assets/team/cristianopatrício.jpg"
+image: "/assets/team/cristianopatricio.jpg"
 email: cristiano.patricio@ubi.pt
 supervisor: João C. Neves
 scholar: "https://scholar.google.com/citations?user=HK6AZb8AAAAJ&hl"
