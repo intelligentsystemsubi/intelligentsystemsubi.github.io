@@ -1,6 +1,6 @@
 ---
 layout: member
-title: Cristiano Patrício
+title: "Cristiano Patrício"
 position: PhD Student
 role: phd
 image: "/assets/team/cristianopatricio.jpg"

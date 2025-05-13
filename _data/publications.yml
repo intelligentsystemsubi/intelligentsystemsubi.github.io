@@ -1,7 +1,25 @@
 
+- id: "SkinLesionDiagnosis"
+  title: "A Two-Step Concept-Based Approach for Enhanced Interpretability and Trust in Skin Lesion Diagnosis"
+  authors: "Cristiano Patrício, Luís F Teixeira, João C Neves"
+  venue: "Computational and Structural Biotechnology Journal, Elsevier"
+  year: 2025
+  publication_date: 2025/2/20
+  status: "published"
+  publication_type: "journal"
+  doi: "10.1016/j.csbj.2025.02.013"
+  pdf: "https://www.sciencedirect.com/science/article/pii/S2001037025000418"
+  thumbnail: "/assets/publications/SkinLesionDiagnosis"
+  tags:
+    - "Skin Lesion Diagnosis"
+    - "Interpretability"
+    - "Trust"
+  abstract: "The main challenges hindering the adoption of deep learning-based systems in clinical settings are the scarcity of annotated data and the lack of interpretability and trust in these systems. Concept Bottleneck Models (CBMs) offer inherent interpretability by constraining the final disease prediction on a set of human-understandable concepts. However, this inherent interpretability comes at the cost of greater annotation burden. Additionally, adding new concepts requires retraining the entire system. In this work, we introduce a novel two-step methodology that addresses both of these challenges. By simulating the two stages of a CBM, we utilize a pretrained Vision Language Model (VLM) to automatically predict clinical concepts, and an off-the-shelf Large Language Model (LLM) to generate disease diagnoses grounded on the predicted concepts. Furthermore, our approach supports test-time human intervention, enabling corrections to predicted concepts, which improves final diagnoses and enhances transparency in decision-making. We validate our approach on three skin lesion datasets, demonstrating that it outperforms traditional CBMs and state-of-the-art explainable methods, all without requiring any training and utilizing only a few annotated examples. The code is available at https://github.com/CristianoPatricio/2-step-concept-based-skin-diagnosis."
+  code: "https://github.com/CristianoPatricio/2-step-concept-based-skin-diagnosis"
+
 - id: "VisibleWavelengthFeasibility"
   title: "On the Feasibility of the Visible Wavelength, At-A-Distance and On-The-Move Iris Recognition"
-  authors: "Hugo Proença, Kailash Hambarde"
+  authors: "Hugo Proença"
   venue: "IEEE Symposium Series on Computational Intelligence in Biometrics: Theory, Algorithms, and Applications - CIBIM SSCI 2009"
   year: 2009
   status: "published"
