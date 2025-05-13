@@ -3233,7 +3233,7 @@
   venue: "30th Portuguese Conference on Pattern Recognition"
   year: 2024
   publication_type: "conference_poster"
-  pdf: ""
+  pdf: "https://aprp.pt/wp-content/uploads/2025/01/RECPAD24_Proceedings.pdf"
   tags:
     - "Person Detection"
     - "Deep Learning"
