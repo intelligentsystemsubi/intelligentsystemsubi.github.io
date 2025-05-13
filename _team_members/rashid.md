@@ -3,8 +3,8 @@ layout: member
 title: "Md Rashidunnabi"
 role: "phd"
 position: 
-  - "PhD Student (University of Beira Interior, Portugal)"
-  - "Research Scientist (DeepNeuronic, Portugal)"
+  - "PhD Student"
+#   - "Research Scientist (DeepNeuronic, Portugal)"
 email: "md.rashidunnabi@ubi.pt"
 github: "https://github.com/MdRashidunnabi"
 scholar: "https://scholar.google.com/citations?user=0_6ryVoAAAAJ&hl=en"
