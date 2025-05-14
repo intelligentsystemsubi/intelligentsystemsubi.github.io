@@ -14,6 +14,21 @@
   authors: "Kailash Hambarde, Hugo Proença, Carolina Fernandes, Pavan Kumar MP, Nzakiese Mbongo, Satishkumar Mekewad, Gökhan SİLAHTAROĞLU, Alice A. Nithya, Pawan Wasnik, Md Rashidunnabi, Pranita Samale"
   paper_url: "https://arxiv.org/pdf/2505.04793"
   
+
+- name: "Lusitano Fabric Defect Detection Dataset"
+  title: "Lusitano Fabric Defect Detection Dataset"
+  year: 2024
+  url: "https://kailashhambarde.github.io/Lusitano/#home"
+  image: "/assets/datasets/lusitanov1.png"
+  description: "Our efforts are aimed at addressing the intricate challenges posed by the extensive diversity in colors, textures, and defect characteristics encountered in fabric defect detection. To facilitate research and innovation in this field, we are pleased to introduce a groundbreaking dataset. This dataset comprises a comprehensive selection of fabrics and defects sourced from a reputable textile company based in Portugal."
+  key_features:
+    - "training set contains 32k normal images"
+    - "10+ Defects"
+    - "testing set contains 1646 defect images and 1038 normal images"
+  authors: "Rui Carrilho, Kailash A. Hambarde, and Hugo Proença,"
+  paper_url: "https://www.mdpi.com/2076-3417/14/12/5298"
+
+
 - name: "P-DESTRE"
   title: "P-DESTRE: Fully Annotated Datasets for Pedestrian Detection, Tracking, Re-Identification and Search from Aerial Devices"
   year: 2020
