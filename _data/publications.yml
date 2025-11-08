@@ -27,6 +27,15 @@
   publication_type: "journal"
   doi: "https://doi.org/10.1016/j.compbiomed.2025.111145"
   pdf: "https://doi.org/10.1016/j.compbiomed.2025.111145"
+- id: "PatricioCBVML"
+  title: "CBVLM: Training-free Explainable Concept-based Large Vision Language Models for Medical Image Classification"
+  authors: "Cristiano Patrício, Isabel Rio-Torto, Jaime S. Cardoso, Luís F Teixeira, João C Neves"
+  venue: "ArXiv Preprint"
+  year: 2025
+  status: "preprint"
+  publication_type: "journal"
+  doi: ""
+  pdf: "https://arxiv.org/pdf/2501.12266"
   thumbnail: "/assets/publications/CBVLM2025_CristianoPatricio.png"
   tags:
     - "Explainable AI"
